@@ -2,9 +2,10 @@
 title: "CV"
 permalink: /cv/
 layout: single
-author_profile: false
+author_profile: true
 ---
 
+<div style="display:none;">
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: jld@stu.scu.edu.cn, 765984881@qq.com  
@@ -12,8 +13,7 @@ author_profile: false
 **Salary Expectation**: ¥10k-¥15k/month  
 **Location**: From Xianning, Hubei, currently living in Haikou, Hainan  
 **Graduation Year**: Class of 2024  
-
----
+</div>
 
 ## Education
 
