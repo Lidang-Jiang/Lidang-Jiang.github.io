@@ -1,3 +1,10 @@
+---
+title: "CV"
+permalink: /cv/
+layout: single
+author_profile: true
+---
+
 # Lidang Jiang
 
 **Date of Birth**: August 12, 1995  
