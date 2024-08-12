@@ -68,6 +68,7 @@
 
   </article>
 </div> -->
+
 {% include base_path %}
 
 {% if post.header.teaser %}
@@ -119,8 +120,8 @@
     {% endif %}
 
     {% if post.image %}
-    <div class="archive__item-image">
-      <img src="{{ post.image }}" alt="{{ post.title }}" style="max-width:50%; height:auto; margin-top: 10px;">
+    <div class="archive__item-image" style="text-align: center; margin-top: 10px;">
+      <img src="{{ post.image }}" alt="{{ post.title }}" style="max-width: 30%; height: auto;">
     </div>
     {% endif %}
 
