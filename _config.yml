@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Lidang Jiang"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Lidang Jiang"
 description              : &description "Lidang Jiang's personal academic website."
