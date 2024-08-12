@@ -14,20 +14,19 @@ author_profile: true
 **Graduation Year**: Class of 2024  
 
 ---
-
 ## Education
 
-**Master's in Materials and Chemical Engineering**  
-Sichuan University, 2021.09 - 2024.07  
+**Sichuan University**  
+Master's in Materials and Chemical Engineering, 2021.09 - 2024.07  
 - Second-class Academic Scholarship, Academic Year 2021 - 2022  
 - Second-class Academic Scholarship, Academic Year 2022 - 2023  
 - Second-class Academic Scholarship, Academic Year 2023 - 2024  
 
-**Bachelor's in Applied Chemistry**  
-Jinzhong University, 2014.09 - 2018.07  
+**Jinzhong University**  
+Bachelor's in Applied Chemistry, 2014.09 - 2018.07  
 
-**High School**  
-Tongshan County No.1 High School, Hubei, 2011.09 - 2014.07  
+**Tongshan County No.1 High School, Hubei**  
+High School, 2011.09 - 2014.07  
 
 ---
 
