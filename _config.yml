@@ -20,7 +20,7 @@ repository               : "Lidang-Jiang/Lidang-Jiang.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.JPG"
+  avatar           : "profile.png"
   name             : "Lidang Jiang"
   pronouns         : # example: "she/her"  
   bio              : "Algorithm Engineer"
