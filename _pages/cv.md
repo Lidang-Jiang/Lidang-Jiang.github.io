@@ -12,6 +12,7 @@ author_profile: true
 **Salary Expectation**: ¥10k-¥15k/month  
 **Location**: From Xianning, Hubei, currently living in Haikou, Hainan  
 **Graduation Year**: Class of 2024  
+
 ---
 
 ## Education
@@ -27,6 +28,8 @@ Bachelor's in Applied Chemistry, 2014.09 - 2018.07
 
 **Tongshan County No.1 High School, Hubei**  
 High School, 2011.09 - 2014.07  
+
+---
 
 ## Academic Performance
 
