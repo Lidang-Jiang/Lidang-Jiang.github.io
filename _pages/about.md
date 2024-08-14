@@ -1,8 +1,41 @@
 ---
 permalink: /
-title: "About Me"
+title: ""
 author_profile: true
 ---
-I am a master student of SCU (Sichuan University) in 2021 and will graduate in 2024. 
+## Brief Self-Introduction
+
+I studied Applied Chemistry at Jinzhong University from September 2014 to July 2018. After working for a year following my undergraduate graduation, I took the national postgraduate entrance examinations for the 2020 and 2021 cohorts, scoring 263 and 400 points, respectively. After completing the postgraduate entrance interviews, I worked in the education and training sector for a period of time. From September 2021 to July 2024, I pursued a Master's degree in Materials and Chemical Engineering at Sichuan University, where I was awarded the Second-class Academic Scholarship for three consecutive years. During my master's program, my research focused on the intersection of machine learning and lithium-ion batteries. As the first author, I have published or submitted 3 SCI papers, two of which are in the top quartile of the Chinese Academy of Sciences (CAS) journals (*Energy* (IF=9) and *Applied Energy* (IF=11.2)).
+
+---
+
+## Education
+
+**Sichuan University**  
+Master's in Materials and Chemical Engineering, 2021.09 - 2024.07  
+- Second-class Academic Scholarship, Academic Year 2021 - 2022  
+- Second-class Academic Scholarship, Academic Year 2022 - 2023  
+- Second-class Academic Scholarship, Academic Year 2023 - 2024  
+
+**Jinzhong University**  
+Bachelor's in Applied Chemistry, 2014.09 - 2018.07  
+
+**Tongshan County No.1 High School, Hubei**  
+High School, 2011.09 - 2014.07  
+
+---
+
+## Academic Performance
+
+- College entrance examination: 502 points
+- Undergraduate GPA: 2.9/5 (Ranked 45/50)
+- 2020 postgraduate entrance examination: 263 points
+- 2021 postgraduate entrance examination: 400 points (Ranked 8/120)  
+  - Mathematics II: 141 points (Ranked 1/120)
+- Graduate GPA: 3.5/4 (Top 30%)
+
+---
+
+## Research Interests
 
 My current research interests include AI for Science, generative AI, deep learning, LLMs, and ML systems.

@@ -12,8 +12,8 @@ author_profile: true
 **Salary Expectation**: ¥10k-¥15k/month  
 **Location**: From Xianning, Hubei, currently living in Haikou, Hainan  
 **Graduation Year**: Class of 2024  
-
 ---
+
 ## Education
 
 **Sichuan University**  
@@ -28,17 +28,23 @@ Bachelor's in Applied Chemistry, 2014.09 - 2018.07
 **Tongshan County No.1 High School, Hubei**  
 High School, 2011.09 - 2014.07  
 
----
+## Academic Performance
+
+- College entrance examination: 502 points
+- Undergraduate GPA: 2.9/5 (Ranked 45/50)
+- 2020 postgraduate entrance examination: 263 points
+- 2021 postgraduate entrance examination: 400 points (Ranked 8/120)  
+  - Mathematics II: 141 points (Ranked 1/120)
+- Graduate GPA: 3.5/4 (Top 30%)
 
 ## Self-evaluation
 
-- **Education**: College entrance examination (502 points), undergraduate GPA (2.9/5, ranked 45/50). Scored 263 in the 2020 postgraduate entrance examination and 400 in the 2021 postgraduate entrance examination (8/120), with a score of 141 in Mathematics II (1/120). Graduate GPA is 3.5/4, ranking in the top 30%.
-  
 - **Research**: During my graduate studies, I focused on the intersection of machine learning and lithium-ion batteries. At the algorithm level, I have mastered machine learning, deep learning, and some simple generative AI algorithms. In terms of engineering, I am proficient in using cloud computing platforms (such as Alibaba Cloud), Git, Docker, Linux, distributed training, etc. Additionally, I have conducted some experimental projects on silicon-carbon batteries, familiar with commonly used material characterization methods, and some common coin cell experiments.
 
 - **Publications**: During my master's program, I have authored or co-authored 3 academic papers as the first author. The first paper has been published in *Energies* (IF=3.2), and the second and third papers are currently under review in *Energy* (IF=9) and *Applied Energy* (IF=11.2) respectively. Over the three years of my master's program, I have developed the ability to independently conduct interdisciplinary scientific research. My current research interests include AI for Science, generative AI, deep learning, LLMs, and ML systems.
 
 ---
+
 
 ## Professional Skills and Courses
 
