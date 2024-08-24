@@ -44,7 +44,7 @@ High School, 2011.09 - 2014.07
 
 - **Research**: During my graduate studies, I focused on the intersection of machine learning and lithium-ion batteries. At the algorithm level, I have mastered machine learning, deep learning, and some simple generative AI algorithms. In terms of engineering, I am proficient in using cloud computing platforms (such as Alibaba Cloud), Git, Docker, Linux, distributed training, etc. Additionally, I have conducted some experimental projects on silicon-carbon batteries, familiar with commonly used material characterization methods, and some common coin cell experiments.
 
-- **Publications**: During my master's program, I have authored or co-authored 3 academic papers as the first author. The first paper has been published in *Energies* (IF=3.2), and the second and third papers are currently under review in *Energy* (IF=9) and *Applied Energy* (IF=11.2) respectively. Over the three years of my master's program, I have developed the ability to independently conduct interdisciplinary scientific research. My current research interests include AI for Science, generative AI, deep learning, LLMs, and ML systems.
+- **Publications**: During my master's program, I have published or submitted two papers in top-quartile Chinese Academy of Sciences (CAS) journals as the first author. One is in *Energy* (IF=9), and the other is in *Applied Energy* (IF=11.2). Over the three years of my master's program, I have developed the ability to independently conduct interdisciplinary scientific research. My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
 
 ---
 

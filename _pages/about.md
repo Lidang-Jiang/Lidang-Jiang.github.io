@@ -41,4 +41,4 @@ High School, 2011.09 - 2014.07
 
 ## Research Interests
 
-My current research interests include AI4Science, Agent, Generative AI, Deep Learning, LLMs, and ML systems.
+My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
