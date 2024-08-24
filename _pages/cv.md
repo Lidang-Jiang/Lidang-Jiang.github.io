@@ -59,13 +59,11 @@ High School, 2011.09 - 2014.07
 
 ## Publications
 
-1. **Jiang, Lidang, et al.** "Predicting the Remaining Useful Life of Lithium-Ion Batteries Using 10 Random Data Points and a Flexible Parallel Neural Network." *Energies*, 2024, 17(7): 1695.
-   - Sparse data, lithium batteries
 
-2. **Jiang, Lidang, et al.** "Flexible Parallel Neural Network Architecture Model for Early Prediction of Lithium Battery Life." arXiv preprint arXiv:2401.16102 (2024).
+1. **Jiang, Lidang, et al.** "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." *Energy* 308 (2024): 132840. https://doi.org/10.1016/j.energy.2024.132840.
    - Video-like data, Bayesian optimization, dual-stream network, 3D CNN, InceptionBlock, learning outcomes, Feature Map
 
-3. **Jiang, Lidang, et al.** "Generating Comprehensive Lithium Battery Charging Data with Generative AI." arXiv preprint arXiv:2404.07577 (2024).
+2. **Jiang, Lidang, et al.** "Generating Comprehensive Lithium Battery Charging Data with Generative AI." arXiv preprint arXiv:2404.07577 (2024).
    - Video-like data, Bayesian optimization, generative model, learning outcomes, optimization algorithm, CVAE
 
 ---
