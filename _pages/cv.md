@@ -11,7 +11,6 @@ author_profile: true
 **Position**: Algorithm Engineer  
 **Salary Expectation**: ¥10k-¥15k/month  
 **Location**: From Xianning, Hubei, currently living in Haikou, Hainan  
-**Graduation Year**: Class of 2024  
 
 ---
 
@@ -42,18 +41,26 @@ High School, 2011.09 - 2014.07
 
 ## Self-evaluation
 
-- **Research**: During my graduate studies, I focused on the intersection of machine learning and lithium-ion batteries. At the algorithm level, I have mastered machine learning, deep learning, and some simple generative AI algorithms. In terms of engineering, I am proficient in using cloud computing platforms (such as Alibaba Cloud), Git, Docker, Linux, distributed training, etc. Additionally, I have conducted some experimental projects on silicon-carbon batteries, familiar with commonly used material characterization methods, and some common coin cell experiments.
+- **Research**: During my graduate studies, I focused primarily on the intersection of AI and lithium-ion batteries (LiBs). As the first author, I have published or submitted two papers in journals ranked Q1 by both the Chinese Academy of Sciences and the Journal Citation Reports (JCR). One of the papers is in *Energy* (IF=9), and the other is in *Applied Energy* (IF=11.2). Throughout these three years of my Master's studies, I developed the ability to independently conduct interdisciplinary research.
 
-- **Publications**: During my master's program, I have published or submitted two papers in top-quartile Chinese Academy of Sciences (CAS) journals as the first author. One is in *Energy* (IF=9), and the other is in *Applied Energy* (IF=11.2). Over the three years of my master's program, I have developed the ability to independently conduct interdisciplinary scientific research. My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
+- **Work Experience**: While working as a large model algorithm engineer, I learned and mastered various technologies, including word embedding models, RAG (Milvus), Agent, Langchain, fine-tuning, chain of thought, few-shot learning, and large model testing. In addition, I also became familiar with the API usage methods for large models developed by various companies, such as TeleChat (in-house), Tsinghua's ChatGLM, Alibaba's QWen, and OpenAI.
+
+- **Current Research Interests**: My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
+
 
 ---
 
 
 ## Professional Skills and Courses
 
-- **Engineering and Algorithms**: Distributed Training, Git, Docker, Linux, Anaconda, Python, Pytorch, Data Analysis, LaTeX, Neural Networks, Bayesian Optimization, Generative AI  
-- **English**: College English Test (CET-4)  
-- **Courses**: Mathematical Methods, Numerical Analysis, Chemical Engineering Thermodynamics  
+- **Algorithms**: Machine Learning, Deep Learning, Generative AI (GenAI), RAG (Milvus), Agent, PyTorch, Langchain, Distributed Training, Fine-tuning, Bayesian Optimization
+
+- **Skills**: FastAPI, Streamlit, Attu, Git, Docker, Linux, Data Analysis, LaTeX
+
+- **English**: CET-4
+
+- **Courses**: Mathematical Methods, Numerical Analysis, Chemical Engineering Thermodynamics, Transport Phenomena, Stanford CS 231n, CS 224n
+
 
 ---
 
@@ -69,6 +76,11 @@ High School, 2011.09 - 2014.07
 ---
 
 ## Previous Experience
+
+**China Telecom Digital Intelligence Technology Co., Ltd.**, LLM Algorithm Engineer  
+July 2024 - Present
+
+- Third-party contract, large model testing, RAG, Agent, deployment
 
 **Wenjia Education, etc.**  
 Graduate Entrance Exam Subject Tutoring, 2021.05 - 2021.12  
