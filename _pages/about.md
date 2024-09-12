@@ -9,6 +9,7 @@ I studied Applied Chemistry at Jinzhong University from September 2014 to July 2
 
 From September 2021 to July 2024, I pursued a Master's degree in Materials and Chemical Engineering at Sichuan University, where I was awarded the Second-class Academic Scholarship for three consecutive years. During my master's program, my research focused on the intersection of machine learning and lithium-ion batteries. As the first author, I have published or submitted two papers in top-quartile Chinese Academy of Sciences (CAS) journals. One is in *Energy* (IF=9), and the other is in *Applied Energy* (IF=11.2).
 
+While working as a large model algorithm engineer, I learned and mastered various technologies, including word embedding models, RAG (Milvus), Agent, Langchain, fine-tuning, chain of thought, few-shot learning, and large model testing. In addition, I also became familiar with the API usage methods for large models developed by various companies, such as TeleChat (in-house), Tsinghua's ChatGLM, Alibaba's QWen, and OpenAI.
 
 ---
 
