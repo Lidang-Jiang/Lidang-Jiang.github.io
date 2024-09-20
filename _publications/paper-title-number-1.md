@@ -6,7 +6,8 @@ permalink: /publication/2024-flexible-parallel-neural-network
 excerpt: 'This paper presents a robust adapted Flexible Parallel Neural Network (FPNN) architecture for the early prediction of lithium battery lifespan, demonstrating superior predictive performance on the MIT dataset.'
 date: 2024-08-22  # 假设发布日期为2024年1月16日
 venue: 'Energy'
-paperurl: 'https://www.sciencedirect.com/science/article/pii/S0360544224026148'
+# paperurl: 'https://www.sciencedirect.com/science/article/pii/S0360544224026148'
+paperurl: '/files/paper1.pdf'  # 链接到对应的 PDF 文件
 citation: 'Lidang Jiang, Zhuoxiang Li, Changyan Hu, Junxiong Chen, Qingsong Huang, Ge He. (2024). "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." <i>Energy</i>, 308, 132840.'
 image: '/images/paper1.jpg' # 这里添加图片路径
 ---
