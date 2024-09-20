@@ -5,10 +5,7 @@ layout: single
 author_profile: true
 ---
 
-
-[resume <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary }
-
-[resume-zh <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
+[resume <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary } [resume-zh <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
 
 ---
 **Date of Birth**: August 12, 1995  
