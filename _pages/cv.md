@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 ---
 
-[CV <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
+[CV-en <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
 
 
 ---
