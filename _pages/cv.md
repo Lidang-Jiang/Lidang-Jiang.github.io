@@ -6,7 +6,9 @@ author_profile: true
 ---
 
 
-[下载我的 PDF 简历](/files/resume.pdf){: .btn .btn-primary }
+[下载英文简历 <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary }
+
+[下载中文简历 <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
 
 ---
 **Date of Birth**: August 12, 1995  
