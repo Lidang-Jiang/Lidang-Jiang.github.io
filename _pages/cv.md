@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 ---
 
-[英文简历 <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary } [中文简历 <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
+[CV <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
 
 
 ---
