@@ -1,5 +1,5 @@
 ---
-title: "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan"
+title: "<a href='https://www.sciencedirect.com/science/article/pii/S0360544224026148' target='_blank'>A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan</a>"
 collection: publications
 category: manuscripts
 permalink: /publication/2024-flexible-parallel-neural-network
