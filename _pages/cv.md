@@ -3,12 +3,12 @@ title: ""
 permalink: /cv/
 layout: single
 author_profile: true
+---
+
+
 [下载我的 PDF 简历](/files/resume.pdf){: .btn .btn-primary }
 
 ---
-
----
-
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: jld@stu.scu.edu.cn, 765984881@qq.com  
