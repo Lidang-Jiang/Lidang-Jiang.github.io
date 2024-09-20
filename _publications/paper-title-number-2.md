@@ -1,12 +1,12 @@
 ---
-title: "Generating Comprehensive Lithium Battery Charging Data with Generative AI"
+title: "<a href='https://arxiv.org/abs/2404.07577' target='_blank'>Generating Comprehensive Lithium Battery Charging Data with Generative AI</a>"
 collection: publications
 category: manuscripts
 permalink: /publication/2024-generating-comprehensive-lithium-battery-data
 excerpt: 'This study introduces a generative AI model to synthesize comprehensive lithium battery charging data, addressing the challenges of data incompleteness and high-quality dataset generation.'
 date: 2024-04-07  # 假设发布日期为2024年4月7日
 venue: 'arXiv'
-paperurl: 'https://arxiv.org/abs/2404.07577'
+paperurl: '/files/paper2.pdf'  # 替换为指向PDF的路径
 citation: 'Lidang Jiang, Changyan Hu, Sibei Ji, Hang Zhao, Junxiong Chen, Ge He. (2024). "Generating Comprehensive Lithium Battery Charging Data with Generative AI." <i>arXiv</i>.'
 image: '/images/paper2.jpg' # 这里添加图片路径
 ---
