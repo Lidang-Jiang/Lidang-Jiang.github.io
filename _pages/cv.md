@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 ---
 
-[CV-en <i class="fa fa-file-pdf-o"></i>](/files/resume.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/resume-zh.pdf){: .btn .btn-success }
+[CV-en <i class="fa fa-file-pdf-o"></i>](/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/江李当_算法工程师_15307241568.pdf){: .btn .btn-success }
 
 
 ---
