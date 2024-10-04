@@ -7,14 +7,15 @@ author_profile: true
 
 [CV-en <i class="fa fa-file-pdf-o"></i>](/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/江李当_算法工程师_15307241568.pdf){: .btn .btn-success }
 
-
 ---
+
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: jld@stu.scu.edu.cn, 765984881@qq.com  
-**Position**: Algorithm Engineer  
-**Salary Expectation**: ¥10k-¥15k/month  
-**Location**: From Xianning, Hubei, currently living in Haikou, Hainan  
+**Position**: Algorithm & Front-end Development Engineer  
+**Salary Expectation**: ¥12k-17k/month  
+**Location**: From Xianning, Hubei Province, currently living in Haikou, Hainan Province  
+**Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/)
 
 ---
 
@@ -36,64 +37,60 @@ High School, 2011.09 - 2014.07
 
 ## Academic Performance
 
-- College entrance examination: 502 points
-- Undergraduate GPA: 2.9/5 (Ranked 45/50)
-- 2020 postgraduate entrance examination: 263 points
+- College entrance examination: 502 points  
+- Undergraduate GPA: 2.9/5 (Ranked 45/50)  
+- 2020 postgraduate entrance examination: 263 points  
 - 2021 postgraduate entrance examination: 400 points (Ranked 8/120)  
-  - Mathematics II: 141 points (Ranked 1/120)
-- Graduate GPA: 3.5/4 (Top 30%)
-
-## Self-evaluation
-
-- **Research**: During my graduate studies, I focused primarily on the intersection of AI and lithium-ion batteries (LiBs). As the first author, I have published or submitted two papers in journals ranked Q1 by both the Chinese Academy of Sciences and the Journal Citation Reports (JCR). One of the papers is in *Energy* (IF=9), and the other is in *Applied Energy* (IF=11.2). Throughout these three years of my Master's studies, I developed the ability to independently conduct interdisciplinary research.
-
-- **Work Experience**: While working as a large model algorithm engineer, I learned and mastered various technologies, including word embedding models, RAG (Milvus), Agent, Langchain, fine-tuning, chain of thought, few-shot learning, and large model testing. In addition, I also became familiar with the API usage methods for large models developed by various companies, such as TeleChat (in-house), Tsinghua's ChatGLM, Alibaba's QWen, and OpenAI.
-
-- **Current Research Interests**: My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
-
+  - Mathematics II: 141 points (Ranked 1/120)  
+- Graduate GPA: 3.5/4 (Top 30%)  
 
 ---
 
+## Self-evaluation
+
+During my graduate studies, I primarily focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I have published two papers in *Energy* and *Applied Energy* (both are Q1 journals in CAS and JCR rankings). Throughout these three years of master's studies, I developed the ability to independently conduct interdisciplinary research.
+
+While working as a large model algorithm engineer, I learned and mastered technologies such as word embedding models, RAG (Milvus), Agents, LangChain, fine-tuning, chain-of-thought, few-shot learning, large model testing, and common large model (e.g., company's self-developed TeleChat, QWen, ChatGPT) API usage methods. Additionally, I also learned and mastered front-end development technologies.
+
+My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
+
+---
 
 ## Professional Skills and Courses
 
-- **Algorithms**: Machine Learning, Deep Learning, Generative AI (GenAI), RAG (Milvus), Agent, PyTorch, Langchain, Distributed Training, Fine-tuning, Bayesian Optimization
-
-- **Skills**: FastAPI, Streamlit, Attu, Git, Docker, Linux, Data Analysis, LaTeX
-
-- **English**: CET-4
-
-- **Courses**: Mathematical Methods, Numerical Analysis, Chemical Engineering Thermodynamics, Transport Phenomena, Stanford CS 231n, CS 224n
-
+- **Algorithms**: Machine Learning, Deep Learning, GenAI, RAG (Milvus), Agents, PyTorch, LangChain, Distributed Training, Fine-tuning, Bayesian Optimization  
+- **Skills**: FastAPI, Streamlit, Attu, Git, Docker, Linux, Data Analysis, HTML, CSS, JavaScript, Vue, LaTeX  
+- **English**: CET-4  
+- **Courses**: Mathematical Methods, Numerical Analysis, Stanford CS 231n, CS 224n  
 
 ---
 
 ## Publications
 
+1. **Jiang, Lidang, et al.** "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." *Energy*, 308:132840, 2024. (IF=9)  
+   - Video-like data, Bayesian optimization, dual-stream network, 3D CNN, InceptionBlock, learning outcomes, optimization algorithms  
 
-1. **Jiang, Lidang, et al.** "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." *Energy* 308 (2024): 132840. https://doi.org/10.1016/j.energy.2024.132840.
-   - Video-like data, Bayesian optimization, dual-stream network, 3D CNN, InceptionBlock, learning outcomes, Feature Map
-
-2. **Jiang, Lidang, et al.** "Generating Comprehensive Lithium Battery Charging Data with Generative AI." arXiv preprint arXiv:2404.07577 (2024).
-   - Video-like data, Bayesian optimization, generative model, learning outcomes, optimization algorithm, CVAE
+2. **Jiang, Lidang, et al.** "Generating Comprehensive Lithium Battery Charging Data with Generative AI." *Applied Energy*, 377:124604, 2025. (IF=10.1)  
+   - Video-like data, Bayesian optimization, generative models, learning outcomes, optimization algorithms, CVAE, embedding layers  
 
 ---
 
-## Previous Experience
+## Work Experience
 
-**China Telecom Digital Intelligence Technology Co., Ltd.**, LLM Algorithm Engineer  
-July 2024 - Present
+**China Telecom Digital Intelligence Technology Co., Ltd.**, Algorithm Engineer  
+*July 2024 - Present*  
+- Hainan Branch (Labor Dispatch), Large Model Algorithm Engineer  
 
-- Third-party contract, large model testing, RAG, Agent, deployment
+**Wenjia Education, etc.**, Graduate Entrance Exam Subject Tutor  
+*May 2021 - Dec 2021*  
 
-**Wenjia Education, etc.**  
-Graduate Entrance Exam Subject Tutoring, 2021.05 - 2021.12  
-
-**Guangzhou Lizhi Education Technology Co., Ltd., Yousi Tutoring, etc.**  
-Math Tutor, 2021.05 - 2021.12  
+**Guangzhou Lizhi Education Technology Co., Ltd., Yousi Tutoring, etc.**, Math Tutor  
+*May 2021 - Dec 2021*  
 
 **Other (e.g., Unemployed, Preparing for Exams at Home, etc.)**  
-2019.09 - 2021.05  
+*Sep 2019 - May 2021*  
 
 **Real Estate Consultant, Environmental Engineer, Hotel Receptionist, Game Booster**  
-2018.07 - 2019.09  
+*July 2018 - Sep 2019*  
+
+---

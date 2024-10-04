@@ -1,5 +1,5 @@
 ---
-title: "<a href='https://www.sciencedirect.com/science/article/pii/S0360544224026148' target='_blank'>A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan</a>"
+title: "<a href='https://doi.org/10.1016/j.energy.2024.132840' target='_blank'>A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan</a>"
 collection: publications
 category: manuscripts
 permalink: /publication/2024-flexible-parallel-neural-network
@@ -7,7 +7,7 @@ excerpt: 'This paper presents a robust adapted Flexible Parallel Neural Network 
 date: 2024-08-22  # 假设发布日期为2024年1月16日
 venue: 'Energy'
 paperurl: '/files/paper1.pdf'  # 链接到对应的 PDF 文件
-citation: 'Lidang Jiang, Zhuoxiang Li, Changyan Hu, Junxiong Chen, Qingsong Huang, Ge He. (2024). "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." <i>Energy</i>, 308, 132840.'
+citation: 'Lidang Jiang, Zhuoxiang Li, Changyan Hu, Junxiong Chen, Qingsong Huang, Ge He. (2024). "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." <i>Energy</i>, 308:132840, 2024.'
 image: '/images/paper1.jpg' # 这里添加图片路径
 ---
 
