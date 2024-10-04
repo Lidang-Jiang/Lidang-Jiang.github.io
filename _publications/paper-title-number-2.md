@@ -7,7 +7,7 @@ excerpt: 'This study introduces a generative AI model to synthesize comprehensiv
 date: 2024-10-04  # 假设发布日期为2024年4月7日
 venue: 'Applied Energy'
 paperurl: '/files/paper2.pdf'  # 替换为指向PDF的路径
-citation: 'Lidang Jiang, Changyan Hu, Sibei Ji, Hang Zhao, Junxiong Chen, Ge He. (2024). "Generating Comprehensive Lithium Battery Charging Data with Generative AI." <i>Applied Energy</i>, 377:124604, 2025.'
+citation: 'Lidang Jiang, Changyan Hu, Sibei Ji, Hang Zhao, Junxiong Chen, Ge He. "Generating Comprehensive Lithium Battery Charging Data with Generative AI." <i>Applied Energy</i>, 377:124604, 2025.'
 image: '/images/paper2.jpg' # 这里添加图片路径
 ---
 
