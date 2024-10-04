@@ -15,7 +15,7 @@ author_profile: true
 **Position**: Algorithm & Front-end Development Engineer  
 **Salary Expectation**: ¥12k-17k/month  
 **Location**: From Xianning, Hubei Province, currently living in Haikou, Hainan Province  
-**Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/)
+<!-- **Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/) -->
 
 ---
 
