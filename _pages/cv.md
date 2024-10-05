@@ -18,20 +18,22 @@ author_profile: true
 <!-- **Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/) -->
 
 ---
-
 ## Education
 
 **Sichuan University**  
+College of Chemical Engineering  
 Master's in Materials and Chemical Engineering, 2021.09 - 2024.07  
-- Second-class Academic Scholarship, Academic Year 2021 - 2022  
-- Second-class Academic Scholarship, Academic Year 2022 - 2023  
-- Second-class Academic Scholarship, Academic Year 2023 - 2024  
+- University Second-class Academic Scholarship, Academic Year 2021 - 2022  
+- University Second-class Academic Scholarship, Academic Year 2022 - 2023  
+- University Second-class Academic Scholarship, Academic Year 2023 - 2024  
 
 **Jinzhong University**  
+College of Chemistry and Chemical Engineering  
 Bachelor's in Applied Chemistry, 2014.09 - 2018.07  
 
 **Tongshan County No.1 High School, Hubei**  
-High School, 2011.09 - 2014.07  
+High School Diploma, 2011.09 - 2014.07  
+
 
 ---
 
