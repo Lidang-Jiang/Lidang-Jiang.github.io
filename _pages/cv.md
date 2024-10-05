@@ -20,19 +20,17 @@ author_profile: true
 ---
 ## Education
 
-**Sichuan University**  
-College of Chemical Engineering  
-Master's in Materials and Chemical Engineering, 2021.09 - 2024.07  
-- University Second-class Academic Scholarship, Academic Year 2021 - 2022  
-- University Second-class Academic Scholarship, Academic Year 2022 - 2023  
-- University Second-class Academic Scholarship, Academic Year 2023 - 2024  
+**Sichuan University**, *Master's Degree* (2021.09 - 2024.07)  
+College of Chemical Engineering, Materials and Chemical Engineering
 
-**Jinzhong University**  
-College of Chemistry and Chemical Engineering  
-Bachelor's in Applied Chemistry, 2014.09 - 2018.07  
+- University Second-class Academic Scholarship, Academic Year 2021 - 2022
+- University Second-class Academic Scholarship, Academic Year 2022 - 2023
+- University Second-class Academic Scholarship, Academic Year 2023 - 2024
 
-**Tongshan County No.1 High School, Hubei**  
-High School Diploma, 2011.09 - 2014.07  
+**Jinzhong University**, *Bachelor's Degree* (2014.09 - 2018.07)  
+College of Chemistry and Chemical Engineering, Applied Chemistry
+
+**Tongshan County No.1 High School** (2011.09 - 2014.07)
 
 
 ---
