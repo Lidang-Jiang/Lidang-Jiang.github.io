@@ -12,15 +12,15 @@ image: '/images/paper1.jpg'
 ---
 
 <!-- 创建一个两列布局，图片在左，文本在右 -->
-<div style="display: flex; align-items: flex-start; gap: 20px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
 
   <!-- 左侧图片列 -->
-  <div style="flex: 1;">
-    <img src="/images/paper1.jpg" alt="Paper Image" style="width: 100%; max-width: 300px;">
+  <div style="flex: 1 1 300px; max-width: 300px;">
+    <img src="/images/paper1.jpg" alt="Paper Image" style="width: 100%; height: auto;">
   </div>
 
   <!-- 右侧文本列 -->
-  <div style="flex: 2;">
+  <div style="flex: 2 1 60%; max-width: 70%;">
     <p>Early prediction of End of Life (EPEOL) is crucial for improving lithium battery efficiency and lifespan. Traditional fixed-architecture neural networks often suffer from underfitting or overfitting due to diverse data distributions. To address this, we propose the Flexible Parallel Neural Network (FPNN). This model integrates modules like InceptionBlock, 3D CNN, 2D CNN, and dual-stream networks. By effectively extracting electrochemical features from video-format data through the 3D CNN and achieving multi-scale feature abstraction with InceptionBlock, FPNN ensures effective module coordination. The model can adaptively adjust the number of InceptionBlocks to handle tasks of varying complexity.</p>
 
     <p>Experimental results on the MIT dataset show that FPNN achieves MAPE values of 1.26%, 0.41%, 0.37%, 0.33%, 0.32%, 0.32%, 0.31%, 0.31%, 0.22%, and 0.34% using the first 10, 20, 30, 40, 50, 60, 70, 80, 90, and 100 cycle data, respectively. The interpretability of FPNN is reflected in its structural design and flexible unit choices, providing a basis for model interpretation. Comprising multiple modules, FPNN enables smooth feature extraction from electrochemical data through collaborative interaction. The diverse branching structure of the flexible units allows the model to capture features at different scales, learning richer information.</p>
