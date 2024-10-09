@@ -5,17 +5,18 @@ layout: single
 author_profile: true
 ---
 
-<!-- 将PDF图标放在页面中央 -->
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
-  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center; margin-right: 40px;">
-    <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 40px; height: auto;">
+  <!-- 第一个图标向左移动，通过margin-right调整 -->
+  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center; margin-right: 20px; padding-left: 10px;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 20.8px;">
     <div>CV-en</div>
   </a>
   <a href="/files/江李当_算法工程师_15307241568.pdf" style="text-align: center;">
-    <img src="/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 40px; height: auto;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 20.8px;">
     <div>CV-zh</div>
   </a>
 </div>
+
 
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
