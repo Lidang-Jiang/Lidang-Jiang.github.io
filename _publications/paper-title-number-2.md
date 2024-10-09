@@ -8,6 +8,7 @@ date: 2024-10-04
 venue: "Applied Energy"
 paperurl: "/files/paper2.pdf"
 citation: 'Lidang Jiang, Changyan Hu, Sibei Ji, Hang Zhao, Junxiong Chen, Ge He. "Generating Comprehensive Lithium Battery Charging Data with Generative AI." <i>Applied Energy</i>, 377:124604, 2025.'
+image: '/images/paper2.jpg'
 ---
 
 <!-- <p>In optimizing the performance and extending the lifespan of lithium batteries, accurate state prediction is crucial. Traditional regression and classification methods have achieved some success in predicting battery states. However, the effectiveness of these data-driven approaches largely depends on the availability and quality of public datasets. Additionally, generating electrochemical data primarily through battery experiments is a lengthy and costly process, making it extremely difficult to obtain high-quality data. This difficulty, combined with data incompleteness, significantly affects prediction accuracy.</p>
