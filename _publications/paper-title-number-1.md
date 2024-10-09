@@ -8,7 +8,7 @@ date: 2024-08-22
 venue: "Energy"
 paperurl: "/files/paper1.pdf"
 citation: 'Lidang Jiang, Zhuoxiang Li, Changyan Hu, Junxiong Chen, Qingsong Huang, Ge He. "A Robust Adapted Flexible Parallel Neural Network Architecture for Early Prediction of Lithium Battery Lifespan." <i>Energy</i>, 308:132840, 2024.'
-image: "/images/paper1.jpg"
+# image: "/images/paper1.jpg"
 ---
 
 <!-- 自定义内容开始 -->
@@ -24,4 +24,3 @@ image: "/images/paper1.jpg"
     <!-- 您可以在这里添加更多内容 -->
   </div>
 </div>
-<!-- 自定义内容结束 -->
