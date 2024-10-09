@@ -84,16 +84,25 @@
 .content {
     position: relative;
     z-index: 1;
-    /* 根据需要，添加其他样式 */
-    /* 例如，设置文本颜色和背景，以提高可读性 */
     color: white;
     /* 可选：添加半透明背景色 */
     /* background-color: rgba(0, 0, 0, 0.5); */
     /* padding: 20px; */
 }
 
-/* 页脚样式，确保在内容之上 */
+/* 页脚样式 */
 .page__footer {
     position: relative;
     z-index: 1;
+}
+
+/* 移动设备适配 */
+@media only screen and (max-width: 768px) {
+    .video-background {
+        display: none;
+    }
+
+    .content {
+        background-color: #0077be;
+    }
 }
