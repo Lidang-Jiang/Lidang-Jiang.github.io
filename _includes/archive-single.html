@@ -54,17 +54,17 @@
      
     {% if post.citation and post.paperurl and post.slidesurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}"> Download PDF
-            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 16px; height: 16px; margin-left: 5px;"></a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20.8px; margin-left: 5px;"></a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.citation and post.paperurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}"> Download PDF
-            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 16px; height: 16px; margin-left: 5px;"></a></p>
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20.8px; margin-left: 5px;"></a></p>
     {% elsif post.citation and post.slidesurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.citation %}
       <p>Recommended citation: {{ post.citation }}</p>
     {% elsif post.paperurl %}
       <p><a href=" {{ post.paperurl }} "> Download PDF
-            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 16px; height: 16px; margin-left: 5px;"></a></p>
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20.8px; margin-left: 5px;"></a></p>
     {% elsif post.slidesurl %}
       <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p></p>
     {% endif %}
@@ -129,18 +129,18 @@
 
     {% if post.citation and post.paperurl and post.slidesurl %}
     <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}"> Download PDF
-            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 16px; height: 16px; margin-left: 5px;"></a> | <a
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20.8px; margin-left: 5px;"></a> | <a
         href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.citation and post.paperurl %}
     <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}"> Download PDF
-            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 16px; height: 16px; margin-left: 5px;"></a></p>
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20.8px; margin-left: 5px;"></a></p>
     {% elsif post.citation and post.slidesurl %}
     <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.citation %}
     <p>Recommended citation: {{ post.citation }}</p>
     {% elsif post.paperurl %}
     <p><a href=" {{ post.paperurl }} "> Download PDF
-            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 16px; height: 16px; margin-left: 5px;"></a></p>
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20.8px; margin-left: 5px;"></a></p>
     {% elsif post.slidesurl %}
     <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p>
     </p>
