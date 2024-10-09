@@ -4,28 +4,57 @@ layout: compress
 
 {% include base_path %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
   <head>
-    {% include head.html %}
-    {% include head/custom.html %}
+    {% include head.html %} {% include head/custom.html %}
   </head>
 
-  <body>
+  <!-- <body>
+    {% include browser-upgrade.html %} {% include masthead.html %} {{ content }}
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %} {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+  </body> -->
+  <body>
+    {% include browser-upgrade.html %} {% include masthead.html %}
+
+    <!-- 添加PDF下载按钮到页面顶部 -->
+    <div class="header-buttons" style="text-align: right; padding: 10px">
+      <a
+        href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf"
+        style="margin-right: 20px"
+      >
+        <img
+          src="/images/custom-pdf-icon.svg"
+          alt="CV-en"
+          style="width: 40px; height: auto"
+        />
+        <span style="display: block; text-align: center">CV-en</span>
+      </a>
+      <a href="/files/江李当_算法工程师_15307241568.pdf">
+        <img
+          src="/images/custom-pdf-icon.svg"
+          alt="CV-zh"
+          style="width: 40px; height: auto"
+        />
+        <span style="display: block; text-align: center">CV-zh</span>
+      </a>
+    </div>
 
     {{ content }}
 
     <div class="page__footer">
       <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
+        {% include footer/custom.html %} {% include footer.html %}
       </footer>
     </div>
 
     {% include scripts.html %}
-
   </body>
 </html>
