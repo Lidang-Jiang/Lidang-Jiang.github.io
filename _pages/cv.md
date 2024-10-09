@@ -5,9 +5,9 @@ layout: single
 author_profile: true
 ---
 
-<!-- 将PDF图标分别放在页面宽度的三等分点 -->
-<div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 20px;">
-  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center;">
+<!-- 将PDF图标放在页面中央 -->
+<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center; margin-right: 40px;">
     <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 40px; height: auto;">
     <div>CV-en</div>
   </a>
