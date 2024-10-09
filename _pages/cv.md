@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 
-
 <!-- 添加PDF下载按钮到页面右上角 -->
 <div style="float: right; display: flex; gap: 20px;">
   <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center;">
@@ -17,6 +16,8 @@ author_profile: true
     <div>CV-zh</div>
   </a>
 </div>
+---
+
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: jld@stu.scu.edu.cn, 765984881@qq.com  
