@@ -20,19 +20,20 @@ author_profile: true
     <div style="text-align: center;">CV-zh</div>
   </a>
 </div> -->
- <!-- 添加PDF下载按钮到页面顶部 -->
-  <div class="header-buttons" style="text-align: right; padding: 10px;">
-    <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="margin-right: 20px;">
-      <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 40px; height: auto;">
-      <span style="display: block; text-align: center;">CV-en</span>
-    </a>
-    <a href="/files/江李当_算法工程师_15307241568.pdf">
-      <img src="/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 40px; height: auto;">
-      <span style="display: block; text-align: center;">CV-zh</span>
-    </a>
-  </div>
+
 ---
 
+<!-- 添加PDF下载按钮到页面右上角 -->
+<div style="float: right; display: flex; gap: 20px;">
+  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 40px; height: auto;">
+    <div>CV-en</div>
+  </a>
+  <a href="/files/江李当_算法工程师_15307241568.pdf" style="text-align: center;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 40px; height: auto;">
+    <div>CV-zh</div>
+  </a>
+</div>
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: jld@stu.scu.edu.cn, 765984881@qq.com  
