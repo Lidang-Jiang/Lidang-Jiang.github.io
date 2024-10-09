@@ -4,37 +4,35 @@ layout: compress
 
 {% include base_path %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
   <head>
-    {% include head.html %}
-    {% include head/custom.html %}
+    {% include head.html %} {% include head/custom.html %}
   </head>
-
   <body>
-
-    <!-- 添加视频背景 -->
+    <!-- 视频背景 -->
     <video autoplay muted loop class="video-background">
-      <source src="{{ '/assets/videos/sea-background.mp4' | relative_url }}" type="video/mp4">
+      <source
+        src="{{ '/assets/videos/sea-background.mp4' | relative_url }}"
+        type="video/mp4"
+      />
       您的浏览器不支持视频标签。
     </video>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <!-- 半透明遮罩层 -->
+    <div class="overlay"></div>
+
+    {% include browser-upgrade.html %} {% include masthead.html %}
 
     <!-- 包裹内容的容器 -->
-    <div class="content">
-      {{ content }}
-    </div>
+    <div class="content">{{ content }}</div>
 
     <div class="page__footer">
       <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
+        {% include footer/custom.html %} {% include footer.html %}
       </footer>
     </div>
 
     {% include scripts.html %}
-
   </body>
 </html>
