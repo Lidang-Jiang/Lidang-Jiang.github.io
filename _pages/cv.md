@@ -4,9 +4,8 @@ permalink: /cv/
 layout: single
 author_profile: true
 ---
-
-<!-- 添加PDF下载按钮到页面上方并居中 -->
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+<!-- 将PDF图标分别放在页面宽度的三等分点 -->
+<div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 20px;">
   <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center;">
     <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 40px; height: auto;">
     <div>CV-en</div>
