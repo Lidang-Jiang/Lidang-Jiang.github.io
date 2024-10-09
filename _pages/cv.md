@@ -5,8 +5,8 @@ layout: single
 author_profile: true
 ---
 
-<!-- 添加PDF下载按钮到页面右上角 -->
-<div style="float: right; display: flex; gap: 20px;">
+<!-- 添加PDF下载按钮到页面上方并居中 -->
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
   <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center;">
     <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 40px; height: auto;">
     <div>CV-en</div>
@@ -16,7 +16,6 @@ author_profile: true
     <div>CV-zh</div>
   </a>
 </div>
----
 
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
