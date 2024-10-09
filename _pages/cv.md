@@ -9,14 +9,14 @@ author_profile: true
 [CV-en <i class="fa fa-file-pdf-o"></i>](/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf){: .btn .btn-primary } [CV-zh <i class="fa fa-file-pdf-o"></i>](/files/江李当_算法工程师_15307241568.pdf){: .btn .btn-success } -->
 <div style="text-align: center; display: inline-block; margin-right: 10px;">
   <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf">
-    <img src="/assets/images/custom-pdf-icon.svg" alt="CV-en" style="width: 100px; height: auto;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 100px; height: auto;">
     <div style="text-align: center;">CV-en</div>
   </a>
 </div>
 
 <div style="text-align: center; display: inline-block;">
   <a href="/files/江李当_算法工程师_15307241568.pdf">
-    <img src="/assets/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 100px; height: auto;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 100px; height: auto;">
     <div style="text-align: center;">CV-zh</div>
   </a>
 </div>
