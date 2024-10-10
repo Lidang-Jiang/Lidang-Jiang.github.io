@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Lidang Jiang"
 title_separator          : "-"
 name                     : &name "Lidang Jiang"
 description              : &description "Lidang Jiang's personal academic website."
@@ -21,7 +21,7 @@ repository               : "Lidang-Jiang/Lidang-Jiang.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Lidang Jiang"
+  # name             : "Lidang Jiang"
   pronouns         : # example: "she/her"  
   bio              : "Algorithm Engineer"
   location         : "China"
