@@ -99,7 +99,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 **China Telecom Digital Intelligence Technology Co., Ltd.**, Algorithm Engineer  
 _July 2024 - Present_
 
-- Hainan Branch (Labor Dispatch), Large language Model Algorithm Engineer
+- Hainan Branch (Labor Dispatch), Large Language Model Algorithm Engineer
 
 **Wenjia Education, etc.**, Graduate Entrance Exam Subject Tutor  
 _May 2021 - Dec 2021_
