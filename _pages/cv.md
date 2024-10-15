@@ -68,7 +68,7 @@ College of Chemistry and Chemical Engineering, Applied Chemistry
 
 During my graduate studies, I primarily focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I have published two papers in _Energy_ and _Applied Energy_ (both are Q1 journals in CAS and JCR rankings). Throughout these three years of master's studies, I developed the ability to independently conduct interdisciplinary research.
 
-While working as a large model algorithm engineer, I learned and mastered technologies such as word embedding models, RAG (Milvus), Agents, LangChain, fine-tuning, chain-of-thought, few-shot learning, large model testing, and common large model (e.g., company's self-developed TeleChat, QWen, ChatGPT) API usage methods. Additionally, I also learned and mastered front-end development technologies.
+While working as a large language model algorithm engineer, I learned and mastered technologies such as word embedding models, RAG (Milvus), Agents, LangChain, fine-tuning, chain-of-thought, few-shot learning, large model testing, and common large model (e.g., company's self-developed TeleChat, QWen, ChatGPT) API usage methods. Additionally, I also learned and mastered front-end development technologies.
 
 My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
 
@@ -99,7 +99,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 **China Telecom Digital Intelligence Technology Co., Ltd.**, Algorithm Engineer  
 _July 2024 - Present_
 
-- Hainan Branch (Labor Dispatch), Large Model Algorithm Engineer
+- Hainan Branch (Labor Dispatch), Large language Model Algorithm Engineer
 
 **Wenjia Education, etc.**, Graduate Entrance Exam Subject Tutor  
 _May 2021 - Dec 2021_
