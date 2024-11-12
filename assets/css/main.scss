@@ -109,6 +109,49 @@
 
 
 
+
+
+.download-button {
+    display: inline-flex;
+    /* 使按钮宽度自适应内容 */
+    align-items: center;
+    /* 图标和文本垂直居中 */
+    padding: 8px 12px;
+    /* 内边距 */
+    font-size: 14px;
+    border-radius: 4px;
+    /* 适当的圆角半径 */
+    text-decoration: none !important;
+        /* 去除下划线 */    /* 移除下划线 */
+    color: #fff;
+    /* 文字颜色 */
+    border: 1px solid #fff;
+    /* 白色边框，保持简洁 */
+    background-color: transparent;
+    /* 透明背景 */
+    transition: all 0.3s ease;
+    /* 添加过渡效果 */
+
+    /* 悬停效果 */
+    &:hover {
+        color: #333;
+        /* 悬停时文字颜色变深 */
+        background-color: #fff;
+        /* 悬停时背景色为白色 */
+    }
+
+    /* 图标样式 */
+    .download-icon {
+        margin-right: 8px;
+        /* 图标与文字之间的间距 */
+        width: 20px;
+        height: auto;
+    }
+}
+
+
+
+
 /* 移动设备适配 */
 @media only screen and (max-width: 768px) {
     .video-background {

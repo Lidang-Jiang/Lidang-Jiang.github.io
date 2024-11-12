@@ -58,22 +58,45 @@
           {{ post.content }}
         </div>
 
+        <!-- 更新后的PDF下载按钮布局 -->
         {% if post.citation and post.paperurl and post.slidesurl %}
-        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}"> Download PDF
-                <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20px; margin-left: 5px;"></a> | <a
-            href="{{ post.slidesurl }}">Download Slides</a></p>
+        <p>Recommended citation: {{ post.citation }}<br />
+          <a href="{{ post.paperurl }}" class="download-button">
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" class="download-icon">
+            Download PDF
+          </a> | 
+          <a href="{{ post.slidesurl }}" class="download-button">
+            Download Slides
+          </a>
+        </p>
         {% elsif post.citation and post.paperurl %}
-        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}"> Download PDF
-                <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20px; margin-left: 5px;"></a></p>
+        <p>Recommended citation: {{ post.citation }}<br />
+          <a href="{{ post.paperurl }}" class="download-button">
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" class="download-icon">
+            Download PDF
+          </a>
+        </p>
         {% elsif post.citation and post.slidesurl %}
-        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
+        <p>Recommended citation: {{ post.citation }}<br />
+          <a href="{{ post.slidesurl }}" class="download-button">
+            Download Slides
+          </a>
+        </p>
         {% elsif post.citation %}
         <p>Recommended citation: {{ post.citation }}</p>
         {% elsif post.paperurl %}
-        <p><a href="{{ post.paperurl }}"> Download PDF
-                <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" style="width: 20px; margin-left: 5px;"></a></p>
+        <p>
+          <a href="{{ post.paperurl }}" class="download-button">
+            <img src="/images/custom-pdf-icon.svg" alt="PDF Icon" class="download-icon">
+            Download PDF
+          </a>
+        </p>
         {% elsif post.slidesurl %}
-        <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p>
+        <p>
+          <a href="{{ post.slidesurl }}" class="download-button">
+            Download Slides
+          </a>
+        </p>
         {% endif %}
       </div>
     </div>

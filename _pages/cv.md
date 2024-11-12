@@ -5,26 +5,29 @@ layout: single
 author_profile: true
 ---
 
+
 <!-- 创建一个三等分的布局 -->
 <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 20px;">
   <div style="flex: 1;"></div> <!-- 第一个等分空白 -->
   
-  <!-- 第一个图标，位于第二个等分点 -->
-  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" style="text-align: center;">
-    <img src="/images/custom-pdf-icon.svg" alt="CV-en" style="width: 48px;">
-    <div>CV-en</div>
+  <!-- 第一个按钮 -->
+  <a href="/files/Lidang_Jiang_Algorithm_Engineer_15307241568.pdf" class="download-button" style="text-align: center;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-en" class="download-icon">
+    <span>CV-en</span>
   </a>
   
   <div style="flex: 1;"></div> <!-- 第二个等分空白 -->
   
-  <!-- 第二个图标，位于第三个等分点 -->
-  <a href="/files/江李当_算法工程师_15307241568.pdf" style="text-align: center;">
-    <img src="/images/custom-pdf-icon.svg" alt="CV-zh" style="width: 48px;">
-    <div>CV-zh</div>
+  <!-- 第二个按钮 -->
+  <a href="/files/江李当_算法工程师_15307241568.pdf" class="download-button" style="text-align: center;">
+    <img src="/images/custom-pdf-icon.svg" alt="CV-zh" class="download-icon">
+    <span>CV-zh</span>
   </a>
   
   <div style="flex: 1;"></div> <!-- 第三个等分空白 -->
 </div>
+
+
 
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
