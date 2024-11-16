@@ -32,7 +32,6 @@ author_profile: true
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: 2021223075161@alu.scu.edu.cn 
-
 **Position**: Algorithm & Front-end Development Engineer  
 **Salary Expectation**: ¥12k-17k/month  
 **Location**: From Xianning, Hubei Province, currently living in Haikou, Hainan Province
