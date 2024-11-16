@@ -11,7 +11,7 @@ author_profile: true
 
   <li>From September 2021 to July 2024, I pursued my Master's degree in Materials and Chemical Engineering at Sichuan University, where I was awarded the second-class academic scholarship for three consecutive years. During my graduate studies, I focused on interdisciplinary research at the intersection of AI and LiBs (Lithium-ion Batteries). As the first author, I published two papers in <em>Energy</em> and <em>Applied Energy</em>, both ranked as Q1 in the Chinese Academy of Sciences and JCR. Over these three years of Master's study, I developed the ability to independently conduct interdisciplinary research.</li>
 
-  <li>During my time as a large language model algorithm engineer, I learned and mastered several technologies, including word embedding models, RAG (Milvus), Agent, Langchain, fine-tuning, Chain of Thought, few-shot learning, and large model testing. I also became proficient in using APIs of various large models, such as the company’s self-developed TeleChat, QWen, and ChatGPT. Additionally, I learned and mastered frontend development technologies.</li>
+  <li>While working as a large language model algorithm engineer, I quickly mastered a variety of large language model technologies (e.g., RAG, LangChain, fine-tuning, few-shot learning, etc.). Additionally, I expanded my skill set in front-end development, building full-stack development capabilities.</li>
 </ul>
 
 ---
