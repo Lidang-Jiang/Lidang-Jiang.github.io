@@ -124,7 +124,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
     </tr>
     <tr>
       <td style="padding: 8px; border: none;">RAG, Agents, LangChain</td>
-      <td style="padding: 8px; border: none;">Vue Router, Element-UI, Vant</td>
+      <td style="padding: 8px; border: none;">Element-UI, Vant</td>
       <td style="padding: 8px; border: none;">LaTeX, Data Analysis</td>
       <td style="padding: 8px; border: none;">Stanford CS 231n, CS 224n</td>
     </tr>
