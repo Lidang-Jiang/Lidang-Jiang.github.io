@@ -131,7 +131,7 @@
     /* 透明背景 */
     transition: all 0.3s ease;
     /* 添加过渡效果 */
-
+    margin-top: 6px;
     /* 悬停效果 */
     &:hover {
         color: #333;
@@ -153,12 +153,12 @@
 
 
 /* 移动设备适配 */
-@media only screen and (max-width: 768px) {
-    .video-background {
-        display: none;
-    }
+// @media only screen and (max-width: 768px) {
+//     .video-background {
+//         display: none;
+//     }
 
-    .content {
-        background-color: #0077be;
-    }
-}
+//     .content {
+//         background-color: #0077be;
+//     }
+// }
