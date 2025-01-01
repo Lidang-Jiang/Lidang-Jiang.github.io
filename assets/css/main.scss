@@ -69,7 +69,32 @@
     max-width: 70%;
 }
 
+.masthead__inner-wrap nav{
+        background-color: rgba(0, 0, 0, 0.6) !important;
+                background: rgba(0, 0, 0, 0.6) !important;
+}
+/* 在 main.scss 里追加 */
 
+.masthead {
+    // 如果你想让导航区域都半透明黑:
+    background: rgba(0, 0, 0, 0.6) !important;
+
+    // 或者你只想让 .masthead__inner-wrap nav 背景半透明
+    .masthead__inner-wrap {
+        nav {
+            background: rgba(0, 0, 0, 0.6) !important;
+
+            a {
+                color: #fff !important;
+                /* 文字白色 */
+                font-weight: 700 !important;
+                /* 加粗 */
+            }
+        }
+    }
+
+    // 如果还有别的地方(如 masthead 标题之类), 你也可以单独调
+}
 /* 视频背景样式 */
 .video-background {
     position: fixed;
@@ -103,10 +128,15 @@
 }
 
 .page__footer {
-    position: relative;
-    z-index: 1;
-}
+    background: rgba(0, 0, 0, 0.6) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
 
+    a {
+        color: #fff !important;
+        font-weight: 700 !important;
+    }
+}
 
 
 
