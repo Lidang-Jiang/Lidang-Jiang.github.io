@@ -96,16 +96,16 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 
 
 
-<h2>Professional Skills and Courses</h2>
+<h2 style='margin-bottom: 0%;'>Professional Skills and Courses</h2>
 
 <table style="width: 100%; border-collapse: collapse; text-align: left; border: none;">
   <!-- 表头 -->
   <thead>
     <tr style="border-bottom: 1px solid #ffffff;">
-      <th style="padding: 8px; border: none; background-color: #333333; color: #ffffff;">Algorithm Skills</th>
-      <th style="padding: 8px; border: none; background-color: #333333; color: #ffffff;">Front-end Skills</th>
-      <th style="padding: 8px; border: none; background-color: #333333; color: #ffffff;">Other Skills</th>
-      <th style="padding: 8px; border: none; background-color: #333333; color: #ffffff;">Courses and Language</th>
+      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Algorithm Skills</th>
+      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Front-end Skills</th>
+      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Other Skills</th>
+      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Courses and Language</th>
     </tr>
   </thead>
   
