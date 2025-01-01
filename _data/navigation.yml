@@ -9,20 +9,20 @@
 #     url: /publications/
 
 #   - title: "Talks"
-#     url: /talks/    
+#     url: /talks/
 
 #   - title: "Teaching"
-#     url: /teaching/    
-    
+#     url: /teaching/
+
 #   - title: "Portfolio"
 #     url: /portfolio/
-        
+
 #   - title: "Blog Posts"
 #     url: /year-archive/
-    
-#   - title: "CV"
+
+#   - title: "Resume"
 #     url: /cv/
-    
+
 #   - title: "Guide"
 #     url: /markdown/
 # The following is the order of the links in the header of the website.
@@ -35,7 +35,7 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "CV"
+  - title: "Resume"
     url: /cv/
 
   - title: "Projects"

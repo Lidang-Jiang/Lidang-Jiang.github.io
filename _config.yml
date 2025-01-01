@@ -199,7 +199,7 @@ defaults:
       author_profile: true
 
   - scope:
-      path: "files/cv.pdf"  # 这是 PDF 文件的相对路径
+      path: "files/Resume.pdf"  # 这是 PDF 文件的相对路径
       type: pages
     values:
       layout: none
