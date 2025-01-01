@@ -41,6 +41,31 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+
+
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+a,
+blockquote,
+table,
+th,
+td,
+.page__footer-copyright {
+    font-family: "Times New Roman", serif !important;
+}
+
+
+
 /* 自定义出版物布局样式 */
 .publication-custom-layout {
     display: flex;
