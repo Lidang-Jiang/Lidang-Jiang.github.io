@@ -95,6 +95,33 @@
 
     // 如果还有别的地方(如 masthead 标题之类), 你也可以单独调
 }
+.hidden-links {
+    background: rgba(0, 0, 0, 0.6) !important;
+    /* 半透明黑 */
+    border: 1px solid rgba(0, 0, 0, 0.8) !important;
+
+    a {
+        color: #fff !important;
+        font-weight: 700;
+        text-decoration: none;
+
+        /* 关键：覆盖主题自带的 hover 样式 */
+        &:hover {
+            background: rgba(79, 72, 72, 0.6) !important;
+            /* 与常态一致，或稍微深/浅一点 */
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+    }
+
+    /* 让小箭头也变成黑色 */
+    &::before,
+    &::after {
+        border-color: rgba(0, 0, 0, 0.6) transparent !important;
+    }
+}
+
+
 /* 视频背景样式 */
 .video-background {
     position: fixed;
