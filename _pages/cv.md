@@ -153,7 +153,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 
 ## Work Experience
 
-### **China Telecom Digital Intelligence Technology Co., Ltd.**, Algorithm Engineer
+### **China Telecom Digital Intelligence Technology Co., Ltd.**
 
 _2024.07 - Present_
 
