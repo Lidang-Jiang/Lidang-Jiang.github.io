@@ -7,7 +7,34 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 
 
 ## Project Experience
-### **Digital Campus System V2.0.5 (2024.12.13 - 2024.12.24)**  
+
+
+### **Project 4 : Project Platform Management System V2.6 (2025.01.13 - 2025.02.06)**
+
+- **Module**: Mobile 'Approval Center' Module Development
+- **Project Background**:  
+  This project is an internal project management platform for the company, covering multiple approval processes and management functions. Version 2.6 adds the 'Business Opportunity Approval' feature to better manage and review the company’s business opportunities.
+
+- **Technology Stack**:
+  - **Mobile**: Vue2 + Vue Router + Pinia + Vant + ESLint (EcmaScript Lint), Prettier
+
+- **Main Contributions**:
+  - **Approval Center Module Development**:
+    - Responsible for developing the mobile 'Approval Center' module, which supports viewing and managing various approval tasks, such as Business Opportunity Approval, Overtime Task Approval, and Contract Approval.
+    - Designed and implemented the query and operation functionality for approval tasks, supporting filtering approval records based on approval names, initiators, etc., improving task management efficiency.
+    - Integrated the display functionality for approval statuses, including "In Progress," "Approved," "Rejected," etc., ensuring that users can quickly understand the approval status.
+    - Developed the detailed Business Opportunity Approval page, including business opportunity number, approval status, and risk indicators (Business Opportunity Red/Green Light functionality), optimizing the business opportunity management process.
+    - Used Pinia (a lightweight state management library for Vue) to ensure real-time data updates and efficient communication between components.
+
+- **Project Outcomes**:
+  - **Improved Approval Efficiency**: The Approval Center module has made the approval process more efficient, allowing users to easily manage and view approval tasks on mobile, reducing the approval cycle.
+  - **Optimized User Experience**: By integrating the Vant component library, the UI design was optimized, making approval task viewing more intuitive and easier.
+  - **Enhanced Business Opportunity Management Functionality**: The addition of Business Opportunity Approval functionality helps users clearly understand the details of business opportunity approvals and supports approval status and risk indicators, enhancing the transparency of business opportunity approvals.
+
+---
+
+
+### **Project 3 : Digital Campus System V2.0.5 (2024.12.13 - 2024.12.24)**  
 
 - **Modules**:
   - PC End: Task Assignment
@@ -42,7 +69,7 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 ---
 
 
-### **Red Detachment of Women V1.0 (2024.11.11 - 2024.11.30)**  
+### **Project 2 : Red Detachment of Women V1.0 (2024.11.11 - 2024.11.30)**  
 
 - **Multi-terminal Front-end Module Development**
 - **Project Background**: Digital platform development for the Red Detachment of Women Memorial Park, including management backend, PC terminal, and Youth PC terminal, providing visit management, study activities, and traffic guidance services.
@@ -63,7 +90,7 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 ---
 
 
-### **Management Platform V2.5 (2024.10.22 - 2024.11.20)**  
+### **Project 1 : Project Platform Management System V2.5 (2024.10.22 - 2024.11.20)**  
 
 - **PC and Mobile Vehicle Management Function Development**
 - **Project Background**: Internal vehicle management system covering both PC and mobile platforms, mainly used for vehicle usage management and statistics, including permission management, data filtering, and export.
