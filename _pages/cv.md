@@ -29,8 +29,8 @@ author_profile: true
 **Date of Birth**: August 12, 1995  
 **Phone**: +86 15307241568  
 **Email**: 2021223075161@alu.scu.edu.cn  
-**Position**: Algorithm & Front-end Development Engineer  
-**Salary Expectation**: ¥12k-17k/month  
+**Position**: Algorithm & Frontend-Backend Full Stack Development Engineer  
+**Salary Expectation**: ¥15k-20k/month  
 **Location**: From Xianning, Hubei Province, currently living in Haikou, Hainan Province
 
 <!-- **Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/) -->
@@ -68,7 +68,7 @@ College of Chemistry and Chemical Engineering, Applied Chemistry
 
 During my graduate studies, I primarily focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I have published two papers in _Energy_ and _Applied Energy_ (both are Q1 journals in CAS and JCR rankings). Throughout these three years of master's studies, I developed the ability to independently conduct interdisciplinary research.
 
-While working as a large language model algorithm engineer, I quickly mastered a variety of large language model technologies (e.g., RAG, LangChain, fine-tuning, few-shot learning, etc.). Additionally, I expanded my skill set in front-end development, building full-stack development capabilities.
+During my work as a LLM engineer, I quickly learned technologies like RAG and Langchain. To improve coding skills, I turned to traditional development. During this time, I learned front-end and back-end technologies, accumulating full-stack development capabilities.
 
 My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
 
@@ -85,71 +85,77 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 
 ---
 
-<h2 style='margin-bottom: 0%;'>Professional Skills and Courses</h2>
 
-<table style="width: 100%; border-collapse: collapse; text-align: left; border: none;">
-  <!-- 表头 -->
-  <thead>
-    <tr style="border-bottom: 1px solid #ffffff;">
-      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Algorithm Skills</th>
-      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Front-end Skills</th>
-      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Other Skills</th>
-      <th style="padding: 8px; border: none; background-color: rgba(0, 0, 0, 0.6); color: #ffffff;">Courses and Language</th>
-    </tr>
-  </thead>
-  
-  <!-- 数据区顶部的水平线 -->
-  <tbody>
-    <tr>
-      <td colspan="4" style="border-top: 0.5px solid #ffffff; padding: 0; border-bottom: none;"></td>
-    </tr>
+
+
+
+
+<style>
+.skills-table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+.skills-table th {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 8px;
+    border: none;
+    font-weight: 600;
+    text-align: left;
+}
+.skills-table td {
+    padding: 12px 8px;
+    border: none;
+    line-height: 1.4;
+    vertical-align: top;
+}
+.divider-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 4px 0;
+}
+</style>
+
+<h2 >Professional Skills and Courses</h2>
+<table class="skills-table">
+    <!-- 表头 -->
+    <thead>
+        <tr>
+            <th>Algorithm Skills</th>
+            <th>Front-end Skills</th>
+            <th>Back-end Skills</th>
+            <th>Other Skills and Courses</th>
+        </tr>
+    </thead>
     
-    <!-- 数据行 -->
-    <tr>
-      <td style="padding: 8px; border: none;">Machine Learning, Deep Learning, GenAI</td>
-      <td style="padding: 8px; border: none;">HTML, CSS, JavaScript, Vue</td>
-      <td style="padding: 8px; border: none;">Git, Docker, Linux</td>
-      <td style="padding: 8px; border: none;">Mathematical Methods, Numerical Analysis</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: none;">RAG, Agents, LangChain</td>
-      <td style="padding: 8px; border: none;">Element-UI, Vant</td>
-      <td style="padding: 8px; border: none;">LaTeX, Data Analysis</td>
-      <td style="padding: 8px; border: none;">Stanford CS 231n, CS 224n</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: none;">Pytorch, Distributed Training, Fine-tuning</td>
-      <td style="padding: 8px; border: none;">Husky, Prettier</td>
-      <td style="padding: 8px; border: none;"></td>
-      <td style="padding: 8px; border: none;">CET-4</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: none;">Word Embedding Models, Chain of Thought, Few-shot Learning</td>
-      <td style="padding: 8px; border: none;">ESLint, Stylelint</td>
-      <td style="padding: 8px; border: none;"></td>
-      <td style="padding: 8px; border: none;"></td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: none;">Large Model Testing and Optimization</td>
-      <td style="padding: 8px; border: none;"></td>
-      <td style="padding: 8px; border: none;"></td>
-      <td style="padding: 8px; border: none;"></td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: none;">Bayesian Optimization</td>
-      <td style="padding: 8px; border: none;"></td>
-      <td style="padding: 8px; border: none;"></td>
-      <td style="padding: 8px; border: none;"></td>
-    </tr>
-    
-    <!-- 底部水平线 -->
-    <!-- <tr>
-      <td colspan="4" style="border-top: 1px solid #ffffff; padding: 0; border-bottom: none;"></td>
-    </tr> -->
-  </tbody>
+    <!-- 内容行 -->
+    <tbody>
+        <tr>
+            <td>
+                Machine Learning, Deep Learning, GenAI, RAG, Agent, Langchain,<br>
+                Pytorch, Distributed Training, Fine-tuning, Few-shot Learning,<br>
+                LLMs Testing and Optimization, Bayesian Optimization
+            </td>
+            <td>
+                HTML, CSS, JavaScript, Vue, Element-UI, Vant,<br>
+                uni-app, Husky, Prettier, ESLint, Stylelint
+            </td>
+            <td>
+                Java, SQL, Spring, SpringBoot, SpringCloud,<br>
+                Mybatis, Redis, Microservices
+            </td>
+            <td>
+                Git, Docker, Linux, LaTeX, Data Analysis,<br>
+                Mathematical Methods, Numerical Analysis,<br>
+                Stanford CS 231n, CS 224n, CET-4
+            </td>
+        </tr>
+    </tbody>
 </table>
 
----
+
+
+
 
 ## Work Experience
 
