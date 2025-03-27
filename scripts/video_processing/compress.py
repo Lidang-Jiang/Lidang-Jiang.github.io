@@ -48,7 +48,7 @@ def compress_video(input_path, output_path, target_size_mb=0.5, duration_limit=7
 
 # 使用示例
 compress_video(
-    input_path='assets/videos/sea-background.mp4',
+    input_path='files/sea-background.mp4',
     output_path='assets/videos/sea-background_compressed.mp4',
     target_size_mb=0.5,  # 目标大小设为0.5MB
     duration_limit=7     # 限制视频长度为7秒
