@@ -64,7 +64,23 @@ td,
     font-family: "Times New Roman", serif !important;
 }
 
+/* 隐藏滚动条但保留滚动功能 */
+html {
 
+    /* 适用于Chrome, Safari, Edge等Webkit内核浏览器 */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 适用于Firefox */
+    scrollbar-width: none;
+
+    /* 适用于IE和旧版Edge */
+    -ms-overflow-style: none;
+
+    /* 保持内容正常滚动 */
+    overflow-y: scroll;
+}
 
 /* 自定义出版物布局样式 */
 .publication-custom-layout {
