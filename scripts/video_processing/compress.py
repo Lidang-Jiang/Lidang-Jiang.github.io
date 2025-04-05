@@ -62,10 +62,10 @@ def compress_video(input_path, output_path, target_size_mb=0.5, clip_video=False
             
     except Exception as e:
         print(f"压缩失败: {str(e)}")
-
 # 使用示例
 compress_video(
-    input_path='files/video.mp4',
+    # input_path='files/video.mp4',
+    input_path='files/sea-background.mp4',
     output_path='assets/videos/sea-background_compressed.mp4',
     target_size_mb=0.1,  # 目标大小设为0.1MB
     clip_video=False,     # 是否截断视频
