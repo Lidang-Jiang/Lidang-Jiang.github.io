@@ -8,16 +8,51 @@ layout: compress
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
   <head>
     {% include head.html %} {% include head/custom.html %}
+    <style>
+      /* 视频容器样式 */
+      .video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        overflow: hidden;
+      }
+      
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 1s ease;
+      }
+      
+      #video2 {
+        opacity: 0; /* 第二个视频初始隐藏 */
+      }
+    </style>
   </head>
   <body>
     <!-- 视频背景 -->
-    <video autoplay muted loop class="video-background">
-      <source
-        src="{{ '/assets/videos/sea-background_compressed.mp4' | relative_url }}"
-        type="video/mp4"
-      />
-      您的浏览器不支持视频标签。
-    </video>
+    <div class="video-container">
+      <video id="video1" class="video-background" autoplay muted playsinline>
+        <source
+          src="{{ '/assets/videos/sea-background_compressed.mp4' | relative_url }}"
+          type="video/mp4"
+        />
+        您的浏览器不支持视频标签。
+      </video>
+      <video id="video2" class="video-background" muted playsinline>
+        <source
+          src="{{ '/assets/videos/sea-background_compressed.mp4' | relative_url }}"
+          type="video/mp4"
+        />
+        您的浏览器不支持视频标签。
+      </video>
+    </div>
 
     <!-- 半透明遮罩层 -->
     <div class="overlay"></div>
@@ -34,5 +69,102 @@ layout: compress
     </div>
 
     {% include scripts.html %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const video1 = document.getElementById('video1');
+        const video2 = document.getElementById('video2');
+        
+        // 确保视频已经加载元数据
+        video1.addEventListener('loadedmetadata', function() {
+          console.log("Video 1 metadata loaded, duration:", video1.duration);
+          setupVideoEvents();
+        });
+        
+        function setupVideoEvents() {
+          // 第一个视频接近结束时
+          video1.addEventListener('timeupdate', function() {
+            // 当视频剩余1秒时开始过渡
+            if (video1.currentTime >= video1.duration - 1 && video2.paused) {
+              console.log("Video 1 near end, starting video 2");
+              // 准备并播放第二个视频
+              video2.currentTime = 0;
+              video2.play().catch(e => console.error("Error playing video 2:", e));
+              
+              // 执行淡入淡出
+              fadeIn(video2);
+              fadeOut(video1);
+            }
+          });
+          
+          // 第二个视频接近结束时
+          video2.addEventListener('timeupdate', function() {
+            // 当视频剩余1秒时开始过渡
+            if (video2.currentTime >= video2.duration - 1 && video1.paused) {
+              console.log("Video 2 near end, starting video 1");
+              // 准备并播放第一个视频
+              video1.currentTime = 0;
+              video1.play().catch(e => console.error("Error playing video 1:", e));
+              
+              // 执行淡入淡出
+              fadeIn(video1);
+              fadeOut(video2);
+            }
+          });
+          
+          // 添加结束事件作为备份（以防timeupdate事件未能正确触发）
+          video1.addEventListener('ended', function() {
+            if (video2.paused) {
+              console.log("Video 1 ended, starting video 2");
+              video2.currentTime = 0;
+              video2.play().catch(e => console.error("Error playing video 2:", e));
+              fadeIn(video2);
+              video1.pause();
+            }
+          });
+          
+          video2.addEventListener('ended', function() {
+            if (video1.paused) {
+              console.log("Video 2 ended, starting video 1");
+              video1.currentTime = 0;
+              video1.play().catch(e => console.error("Error playing video 1:", e));
+              fadeIn(video1);
+              video2.pause();
+            }
+          });
+        }
+        
+        // 淡入函数 - 平滑增加不透明度
+        function fadeIn(videoElement) {
+          let opacity = 0;
+          videoElement.style.opacity = opacity;
+          
+          const fadeInInterval = setInterval(function() {
+            opacity += 0.05;
+            videoElement.style.opacity = opacity;
+            
+            if (opacity >= 1) {
+              clearInterval(fadeInInterval);
+              videoElement.style.opacity = "1";
+            }
+          }, 50);
+        }
+        
+        // 淡出函数 - 平滑减少不透明度
+        function fadeOut(videoElement) {
+          let opacity = 1;
+          
+          const fadeOutInterval = setInterval(function() {
+            opacity -= 0.05;
+            videoElement.style.opacity = opacity;
+            
+            if (opacity <= 0) {
+              clearInterval(fadeOutInterval);
+              videoElement.style.opacity = "0";
+              videoElement.pause();
+            }
+          }, 50);
+        }
+      });
+    </script>
   </body>
 </html>
