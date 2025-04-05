@@ -51,5 +51,5 @@ compress_video(
     input_path='files/sea-background.mp4',
     output_path='assets/videos/sea-background_compressed.mp4',
     target_size_mb=0.1,  # 目标大小设为0.5MB
-    duration_limit=7     # 限制视频长度为7秒
+    duration_limit=4     # 限制视频长度为7秒
 )
