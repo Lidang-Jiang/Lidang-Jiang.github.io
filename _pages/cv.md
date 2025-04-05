@@ -85,11 +85,6 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 
 ---
 
-
-
-
-
-
 <style>
 .skills-table {
     width: 100%; 
@@ -97,7 +92,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
     margin-top: 12px;
 }
 .skills-table th {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     padding: 10px 8px;
     border: none;
@@ -152,10 +147,6 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
         </tr>
     </tbody>
 </table>
-
-
-
-
 
 ## Work Experience
 

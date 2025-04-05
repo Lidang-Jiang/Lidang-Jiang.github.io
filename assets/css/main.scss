@@ -95,19 +95,19 @@ td,
 }
 
 .masthead__inner-wrap nav{
-        background-color: rgba(0, 0, 0, 0.6) !important;
-                background: rgba(0, 0, 0, 0.6) !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+                background: rgba(0, 0, 0, 0.3) !important;
 }
 /* 在 main.scss 里追加 */
 
 .masthead {
     // 如果你想让导航区域都半透明黑:
-    background: rgba(0, 0, 0, 0.6) !important;
+    background: rgba(0, 0, 0, 0.3) !important;
 
     // 或者你只想让 .masthead__inner-wrap nav 背景半透明
     .masthead__inner-wrap {
         nav {
-            background: rgba(0, 0, 0, 0.6) !important;
+            background: rgba(0, 0, 0, -0.3) !important;
 
             a {
                 color: #fff !important;
@@ -121,7 +121,7 @@ td,
     // 如果还有别的地方(如 masthead 标题之类), 你也可以单独调
 }
 .hidden-links {
-    background: rgba(0, 0, 0, 0.6) !important;
+    background: rgba(0, 0, 0, 0.3) !important;
     /* 半透明黑 */
     border: 1px solid rgba(0, 0, 0, 0.8) !important;
 
@@ -142,7 +142,7 @@ td,
     /* 让小箭头也变成黑色 */
     &::before,
     &::after {
-        border-color: rgba(0, 0, 0, 0.6) transparent !important;
+        border-color: rgba(0, 0, 0, 0.3) transparent !important;
     }
 }
 
@@ -166,7 +166,7 @@ td,
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     /* 调整透明度，0.0（完全透明）到 1.0（不透明） */
     z-index: -1;
     /* 确保在视频之上，内容之下 */
@@ -180,7 +180,7 @@ td,
 }
 
 .page__footer {
-    background: rgba(0, 0, 0, 0.6) !important;
+    background: rgba(0, 0, 0, 0.3) !important;
     color: #fff !important;
     font-weight: 700 !important;
 

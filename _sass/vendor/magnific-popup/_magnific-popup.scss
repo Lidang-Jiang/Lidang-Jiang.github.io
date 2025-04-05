@@ -33,7 +33,7 @@
 
 $mfp-overlay-color:                   #0b0b0b !default;
 $mfp-overlay-opacity:                 0.8 !default;
-$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6) !default; // shadow on image or iframe
+$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.3) !default; // shadow on image or iframe
 $mfp-popup-padding-left:              8px !default; // Padding from left and from right side
 $mfp-popup-padding-left-mobile:       6px !default; // Same as above, but is applied when width of window is less than 800px
 
@@ -586,7 +586,7 @@ button {
           width: 35px;
           height: 35px;
           line-height: 35px;
-          background: rgba(0, 0, 0, 0.6);
+          background: rgba(0, 0, 0, 0.3);
           position: fixed;
           text-align: center;
           padding: 0;
