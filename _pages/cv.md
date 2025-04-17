@@ -56,7 +56,7 @@ College of Chemistry and Chemical Engineering, Applied Chemistry
 ## Academic Performance
 
 - College entrance examination: 502 points
-- Undergraduate GPA: 2.9/5 (Ranked 45/50)
+- Undergraduate GPA: 2.9/4 (Ranked 45/50)
 - 2020 postgraduate entrance examination: 263 points
 - 2021 postgraduate entrance examination: 400 points (Ranked 8/120)
   - Mathematics II: 141 points (Ranked 1/120)
