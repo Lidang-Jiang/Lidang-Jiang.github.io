@@ -1,14 +1,11 @@
 ---
-layout: single  # 这里可换成其他Layout，比如 'splash'、'page'、'single'等
+layout: single # 这里可换成其他Layout，比如 'splash'、'page'、'single'等
 title: ""
-permalink: /projects/   # 生成网址 https://xxx.github.io/projects/
-author_profile: true    # 在页面顶部/侧边显示作者信息，视主题设置而定
+permalink: /projects/ # 生成网址 https://xxx.github.io/projects/
+author_profile: true # 在页面顶部/侧边显示作者信息，视主题设置而定
 ---
 
-
 ## Project Experience
-
-
 
 ### **Project 8: Model-based Command System for Hospital 928 V2.0 (2025.03.31 - 2025.04.09)**
 
@@ -22,7 +19,7 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
     - Built an automatic red‑flagging mechanism for overdue tasks.
   - **Interaction Implementation**:
     - Created a pagination loader (20 items/page by default, switchable to 10/20/50).
-    - Developed a progress input validator enforcing the rule $\text{New Progress} \ge \text{Historical Max Progress}$.
+    - Developed a progress input validator enforcing the rule that the new progress must be greater than or equal to the historical maximum progress.
 - **Project Outcomes**:
   - **Feature Coverage**: Restored list views and form controls as per prototype requirements.
 
@@ -43,8 +40,7 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 
 ---
 
-
-### ​**Project 6: Red Detachment of Women Memorial Park Digital Platform V1.2.0 (2025.02.25 - 2025.03.06)**  
+### ​**Project 6: Red Detachment of Women Memorial Park Digital Platform V1.2.0 (2025.02.25 - 2025.03.06)**
 
 - ​**Module (Front-end)**: Multi-terminal Collaborative Development (Official Chinese Version/Youth Version/Management Backend)
 - ​**Project Background**:  
@@ -52,14 +48,13 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 - ​**Technology Stack**: Vue2 + Vuex + Element-UI
 - ​**Main Contributions**:
   - ​**Core Feature Reconstruction**:
-    - Designed and implemented a unified reservation service system across three terminals:  
-      - Dynamic form engine: Automatically switches required fields based on user type (individual/group)  
+    - Designed and implemented a unified reservation service system across three terminals:
+      - Dynamic form engine: Automatically switches required fields based on user type (individual/group)
       - Secure document download: Implemented Word template server-side rendering
 
 ---
 
-### ​**Project 5: QianQiWanHu Platform (2025.02.21 - 2025.02.25)**  
-
+### ​**Project 5: QianQiWanHu Platform (2025.02.21 - 2025.02.25)**
 
 - ​**Module (Front-end)**: Enterprise Data Verification Module
 - ​**Project Background**:  
@@ -69,16 +64,16 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
   - Engineering: Vite + ESLint + Prettier
 - ​**Main Contributions**:
   - ​**Core Feature Development**:
-    - Implemented Excel file batch import function, supporting parsing of two data structures: 
-      - Table 1 (Basic Information Table) 
+    - Implemented Excel file batch import function, supporting parsing of two data structures:
+      - Table 1 (Basic Information Table)
       - Table 5 (Credit Information Table)
-    - Developed real-time verification progress display components including: 
-      - Progress bar 
-      - Success/failure statistics 
+    - Developed real-time verification progress display components including:
+      - Progress bar
+      - Success/failure statistics
       - Remaining API call credits display
-    - Designed verification status management logic to dynamically update table data based on API responses:  
-      - Verification success: Automatic backfilling of unified credit codes  
-      - Verification failure: Marked "Enterprise Not Found" and cleared codes  
+    - Designed verification status management logic to dynamically update table data based on API responses:
+      - Verification success: Automatic backfilling of unified credit codes
+      - Verification failure: Marked "Enterprise Not Found" and cleared codes
       - API exhaustion: Marked "API Credits Depleted" and disabled operations
 - ​**Project Outcomes**:
   - ​**Efficiency Improvement**: Daily processing capacity increased from manual 200 entries to 8,000 entries with 100% accuracy
@@ -88,11 +83,6 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 
 ---
 
-
-
-
-
-
 ### **Project 4 : Project Platform Management System V2.6 (2025.01.13 - 2025.02.06)**
 
 - **Module (Front-end)**: Mobile 'Approval Center' Module Development
@@ -100,9 +90,11 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
   This project is an internal project management platform for the company, covering multiple approval processes and management functions. Version 2.6 adds the 'Business Opportunity Approval' feature to better manage and review the company’s business opportunities.
 
 - **Technology Stack**:
+
   - **Mobile**: Vue2 + Vue Router + Pinia + Vant + ESLint (EcmaScript Lint), Prettier
 
 - **Main Contributions**:
+
   - **Approval Center Module Development**:
     - Responsible for developing the mobile 'Approval Center' module, which supports viewing and managing various approval tasks, such as Business Opportunity Approval, Overtime Task Approval, and Contract Approval.
     - Designed and implemented the query and operation functionality for approval tasks, supporting filtering approval records based on approval names, initiators, etc., improving task management efficiency.
@@ -117,10 +109,10 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 
 ---
 
-
-### **Project 3 : Digital Campus System V2.0.5 (2024.12.13 - 2024.12.24)**  
+### **Project 3 : Digital Campus System V2.0.5 (2024.12.13 - 2024.12.24)**
 
 - **Modules (Front-end)**:
+
   - PC End: Task Assignment
   - WeChat Official Account End: Delegated Verification and Notification
 
@@ -128,10 +120,12 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
   The Digital Campus System aims to provide schools with a comprehensive management and service platform to enhance the efficiency of homeroom teachers and parents, ensuring the safety and convenient management of students. The project encompasses both PC and WeChat Official Account ends, implementing class duty assignment management and student pickup delegation verification functionalities respectively.
 
 - **Technology Stack**:
+
   - Frontend: Vue2 + Vue Router + Vuex, Element-UI, uni-app
   - Tools: ESLint, Prettier, Git
 
 - **Main Contributions**:
+
   - **PC End Task Assignment Module**:
     - Designed and implemented the class selection dropdown component, supporting multiple class switching and automatic display for single classes.
     - Developed the duty assignment list, supporting ascending order display based on sorting values, and providing edit, delete, and add functionalities.
@@ -152,8 +146,7 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 
 ---
 
-
-### **Project 2 : Red Detachment of Women Memorial Park Digital Platform  V1.0 (2024.11.11 - 2024.11.30)**  
+### **Project 2 : Red Detachment of Women Memorial Park Digital Platform V1.0 (2024.11.11 - 2024.11.30)**
 
 - **Multi-terminal Front-end Module Development**
 - **Project Background**: Digital platform development for the Red Detachment of Women Memorial Park, including management backend, PC terminal, and Youth PC terminal, providing visit management, study activities, and traffic guidance services.
@@ -173,8 +166,7 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
 
 ---
 
-
-### **Project 1 : Project Platform Management System V2.5 (2024.10.22 - 2024.11.20)**  
+### **Project 1 : Project Platform Management System V2.5 (2024.10.22 - 2024.11.20)**
 
 - **PC and Mobile Vehicle Management Function Development (Front-end)**
 - **Project Background**: Internal vehicle management system covering both PC and mobile platforms, mainly used for vehicle usage management and statistics, including permission management, data filtering, and export.
@@ -200,4 +192,3 @@ author_profile: true    # 在页面顶部/侧边显示作者信息，视主题�
   - Streamlined mobile approval processes, reducing average approval time.
 
 ---
-
