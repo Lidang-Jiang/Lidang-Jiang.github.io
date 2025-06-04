@@ -5,223 +5,162 @@ permalink: /projects/ # 生成网址 https://xxx.github.io/projects/
 author_profile: true # 在页面顶部/侧边显示作者信息，视主题设置而定
 ---
 
-## Project Experience
 
+# Project Experience
 
-### Project 10: Ganqi Wanhua Platform V3.1 (May 15, 2025 – May 31, 2025)
+## **Project 11: University Researcher Profile System** (2025.05.25—2025.06.04)
 
-- **Module (Frontend)**: Smart Government Data Management Suite
+- **Module (Full-Stack)**: Front-end systems for client and admin + backend API development
+- **Project Background**: Personal portal system for university researchers, integrating academic achievements display, project management and news updates, supporting multilingual internationalization. GitHub open-source project, deployed and applied in actual research team websites.
+  
+- **Technology Stack**:
+  - Front-end: Vue 2.7 + Element UI + Vue I18n + Vue Router
+  - Admin: Vue 2.7 + Element UI + Vuex + Quill editor
+  - Build Tools: Vite 4.4 (dual repository build optimization)
+  - Backend: Java (Spring Boot) + MyBatis-Plus
 
-- **Project Background**:  
-  Added data status tracking and batch approval features to solve cross-department data collaboration challenges.
+- **Core Contributions**:
+  1. **Developed complete front-end code for client and admin systems**:
+     - Client: Implemented multilingual switching system based on Vue I18n: supporting seamless Chinese-English switching
+     - Admin: Developed unified management interface based on Element UI          
+        
+  2. **Backend API development**:
+     - Designed and implemented RESTful APIs for News and Project modules
+     - Developed universal data conversion tools: implemented bidirectional mapping between DTOs and entities based on ConvertUtils
 
-- **Technology Stack**:  
-  - Frontend: Vue2 + Element-UI  
-  - State Management: Vuex  
+- **Project Achievements**:
+  - Successfully deployed on research team's official website: https://www.hegelab.com/
+  - GitHub open-source address: https://github.com/Lidang-Jiang/UniversityResearcherProfiles
+
+## **Project 10: Government-Enterprise Platform V3.1** (2025.05.15—2025.05.31)
+
+- **Module (Front-end)**: Government Data Intelligent Management Suite
+- **Project Background**: Added data status tracking, batch approval and other features to solve cross-department data coordination challenges.
+  
+- **Technology Stack**:
+  - Front-end: Vue2 + Element-UI 
+  - State Management: Vuex
   - Build Tool: Vite
 
-- **Core Implementation**:  
-  1. **Visit Status Field Annotation**  
-  2. **Batch Approval Engine**:  
-     - Implemented multi-select operations  
-  3. **Data Status Tracking List**:  
-     - CRUD operations for the list  
+- **Core Implementation**:
+  1. **Batch Approval**:    
+  2. **Data Status Tracking List**:
+     - List CRUD operations
 
+## **Project 9: Haikou 12345 Intelligent Report System V1.0** (2025.05.13—2025.05.31)
 
-### Project 9: Haikou 12345 Intelligent Reporting System V1.0 (May 13, 2025 – May 31, 2025)
-
-- **Module (Frontend)**: Intelligent Report Editor and Template Management Center
-
-- **Project Background**:  
-  An automated government hotline reporting system that generates structured reports from ticket data, solving low efficiency in manual report preparation and inconsistent formats.
-
-- **Technology Stack**:  
-  - Frontend: Vue2 + Element-UI + Quill  
-  - State Management: Vuex  
+- **Module (Front-end)**: Intelligent Report Editor and Template Management Center
+- **Project Background**: Government hotline report automation system, enabling intelligent generation of structured reports from work order data, solving pain points of low efficiency in manual report preparation and inconsistent formats
+  
+- **Technology Stack**:
+  - Front-end: Vue2 + Element-UI + Quill
+  - State Management: Vuex
   - Build Tool: Vite
 
-- **Core Contributions**:  
-  1. **Intelligent Template Management System**:  
-     - Table CRUD operations  
-  2. **Interactive Report Template Editor**:  
-     - Developed an extensible table component supporting dynamic rows and columns with external data links  
-     - Developed an extensible deepseek directive modal component supporting insertion of deepseek directives  
-     - Implemented a data binding system: $\Delta\text{Data} \leftrightarrow \Delta\text{View}$
+- **Core Contributions**:
+  1. **Intelligent Template Management System**:
+     - Table CRUD operations
+        
+  2. **Interactive Report Template Editor**:
+     - Developed extensible table component: supporting dynamic rows and columns and linking to external data operations
+     - Developed extensible deepseek instruction dialog component: supporting deepseek instruction insertion
 
+## **Project 8: 928 Hospital - Model Command System V2.0** (2025.03.31 - 2025.04.09)
 
-
-
-
-
-### Project 8: 928 Hospital – Model-based Command System V2.0 (March 31, 2025 – April 9, 2025)
-
-- **Module (Frontend)**: To-Do Tasks Module
-
-- **Project Background**:  
-  Added a to-do tasks module to establish a closed-loop task supervision mechanism. Solved issues in V1.0 such as fragmented task management, difficult cross-department collaboration, and blind spots in progress tracking.
-
-- **Technology Stack**:  
-  - Frontend: Vue2 + Element-UI  
-  - State Management: Vuex  
+- **Module (Front-end)**: To-Do Items Module
+- **Project Background**: Added to-do items module to establish closed-loop task supervision mechanism. Solved V1.0 issues of scattered task management, cross-department collaboration difficulties, and progress tracking blind spots.
+- **Technology Stack**:
+  - Front-end: Vue2 + Element-UI 
+  - State Management: Vuex
   - Build Tool: Vite
+- **Main Contributions**:
+  - **Core Feature Development**:
+    - Implemented dual-view mode for tasks (Created by Me/Executed by Me), supporting different operation permissions for creators and executors
+    - Developed department tree selection component, supporting three-level department structure (Level 1 > Level 2 > Level 3)
 
-- **Main Contributions**:  
-  - **Core Feature Development**:  
-    - Implemented dual-view task modes (“Created by Me” / “Assigned to Me”), supporting different permissions for creators and executors  
-    - Developed a department tree selection component supporting three levels (Level 1 > Level 2 > Level 3)  
-    - Built an overdue auto-highlight mechanism
+## **Project 7: Risk Monitoring and Early Warning System Common Service Platform V1.0.1** (2025.03.10 - 2025.03.21)
 
-  - **Interaction Implementation**:  
-    - Implemented a pagination loading component with default 20 items/page and support for 10/20/50 switching  
-    - Developed a progress input validator enforcing the rule $\text{New Progress} \ge \text{Historical Max Progress}$
-
-
-### Project 7: Common Service Platform for Risk Monitoring and Early Warning System V1.0.1 (March 10, 2025 – March 21, 2025)
-
-- **Module (Frontend)**: CRUD section of the early warning model management system
-
-- **Project Background**:  
-  Refactored the core module of the government-grade risk early warning platform to establish an early warning linkage mechanism. Addressed issues in version V1.0.0 such as dispersed model management and poor multi-source data adaptability.
-
-- **Technology Stack**:  
-  - Frontend: Vue2 + Element-UI  
-  - State Management: Vuex  
+- **Module (Front-end)**: Warning Model Management System CRUD Module
+- **Project Background**: Restructured core modules of government-level risk warning platform, establishing warning linkage mechanism. Solved V1.0.0 issues of scattered model management and poor multi-source data adaptability.
+- **Technology Stack**:
+  - Front-end: Vue2 + Element-UI 
+  - State Management: Vuex
   - Build Tool: Vite
+- **Main Contributions**:
+  - **Core Feature Development**:
+    - Implemented three-state filtering mechanism, supporting dynamic switching between "All/Warned/Not Warned"
+    - Built model type-entity type linkage component, automatically populating warning names based on tree-structured data
 
-- **Main Contributions**:  
-  - **Core Feature Development**:  
-    - Implemented a tri-state filtering mechanism supporting dynamic toggling among “All / Warned / Unwarned”  
-    - Built a model-type to entity-type linkage component that auto-populates warning names based on tree-structured data
+## **Project 6: Red Detachment of Women Memorial Park Digital Platform V1.2.0** (2025.02.25 - 2025.03.06)
 
+- **Module (Front-end)**: Multi-terminal collaborative development (Official Chinese Website/Youth Version/Admin Panel)
+- **Project Background**: Experience upgrade based on V1.0, focusing on restructuring the visiting service process, achieving data intercommunication across three terminals. Solved V1.0 issues of poor compatibility and lengthy reservation process.
+- **Technology Stack**: Vue2 + Vuex + Element-UI
+- **Main Contributions**:
+  - **Core Feature Restructuring**:
+    - Designed and implemented a unified reservation service system across three terminals:
+      - Secure document download: implemented server-side rendering of Word templates
 
+## **Project 5: Government-Enterprise Platform V2** (2025.02.21 - 2025.02.25)
 
-### Project 6: Red Army Women’s Memorial Park Digital Platform V1.2.0 (February 25, 2025 – March 6, 2025)
-
-- **Module (Frontend)**: Collaborative development across multiple ends (Official Website Chinese Version / Youth Version / Admin Backend)
-
-- **Project Background**:  
-  Based on V1.0 with experience upgrades, focused on refactoring the tour services workflow and achieving data interoperability across three ends. Solved pain points in V1.0 like poor compatibility and lengthy reservation processes.
-
-- **Technology Stack**:  
-  Vue2 + Vuex + Element-UI
-
-- **Main Contributions**:  
-  - **Core Feature Refactoring**:  
-    - Designed and implemented a unified reservation service system across three ends:  
-      - Dynamic form engine: auto-switches fields based on user type (Individual / Team)  
-      - Secure document download: implemented server-side rendering for Word templates
-
-
-
-
-### Project 5: Ganqi Wanhua Platform V2 (February 21, 2025 – February 25, 2025)
-
-- **Module (Frontend)**: Enterprise data validation module
-
-- **Project Background**:  
-  A government-enterprise data verification platform providing enterprise information validation services for government bodies, banks, etc. Integrated the national market entity API for batch verification of enterprise names and unified social credit codes to solve low-efficiency manual checks.
-
-- **Technology Stack**:  
-  - Frontend: Vue2 + Element-UI + Axios  
+- **Module (Front-end)**: Enterprise Data Validation Module
+- **Project Background**: Government enterprise data verification platform, providing enterprise information verification services for government, banks and other institutions. By connecting to the National Market Entity API, it enables batch verification of enterprise names and unified credit codes, solving the pain point of inefficient manual verification.
+- **Technology Stack**:
+  - Front-end: Vue2  + Element-UI + Axios
   - Engineering: Vite + ESLint + Prettier
+- **Main Contributions**:
+  - **Core Feature Development**:
+    - Implemented batch import functionality for Excel files, supporting parsing of two data structures: Table 1 (Basic Information) and Table 5 (Credit Information)
+    - Developed real-time validation progress display component, including progress bar, success/failure data statistics, and remaining API call count display
 
-- **Main Contributions**:  
-  - **Core Feature Development**:  
-    - Implemented batch Excel import, supporting parsing of Table 1 (Basic Information) and Table 5 (Credit Information)  
-    - Developed a real-time validation progress component with progress bar, success/failure statistics, and remaining API call count display  
-    - **Designed validation status management logic** to dynamically update table data based on API responses:  
-      - Validation success: auto-fill the unified social credit code  
-      - Validation failure: mark “Enterprise not found” and clear the code  
-      - API quota exhausted: mark “API calls exhausted” and disable operations
+## **Project 4: Project Platform Management System V2.6** (2025.01.13 - 2025.02.06)
 
+- **Module (Front-end)**: Mobile "Approval Center" module development
+- **Project Background**: This project is the company's internal project management platform, covering multiple approval processes and management functions. V2.6 version added the "Business Opportunity Approval" feature to better manage and review the company's business opportunities.
+- **Technology Stack**:
+  - Mobile: Vue2 + Vue Router + Pinia + Vant + ESLint + Prettier.
+- **Main Contributions**:
+  - **Approval Center Module Development**:
+    - Responsible for developing the mobile "Approval Center" module, supporting viewing and managing various approval tasks, such as business opportunity approval, overtime task approval, contract approval, etc.
 
+## **Project 3: Digital Campus System V2.0.5** (2024.12.13 - 2024.12.24)
 
-### Project 4: Project Platform Management System V2.6 (January 13, 2025 – February 6, 2025)
-
-- **Module (Frontend)**: Mobile-end “Approval Center” module development
-
-- **Project Background**:  
-  An internal company project management platform covering multiple approval workflows and management functions. Version V2.6 added the “Business Opportunity Approval” feature to better manage and review corporate opportunities.
-
-- **Technology Stack**:  
-  - Mobile End: Vue2 + Vue Router + Pinia + Vant + ESLint + Prettier
-
-- **Main Contributions**:  
-  - **Approval Center Module Development**:  
-    - Developed the mobile-end “Approval Center” module, supporting viewing and managing various approval tasks such as business opportunity approvals, overtime task approvals, contract approvals, etc.  
-    - Designed and implemented query and action features for approval tasks, supporting filtering by approval name, initiator, etc., improving task management efficiency.  
-    - Integrated status display for approvals, including “In Progress,” “Approved,” “Rejected,” etc., ensuring users can quickly understand the approval status.  
-    - Implemented a detailed view page for business opportunity approvals, including opportunity ID, approval status, and risk indicator (Business Opportunity Red-Green Light), optimizing the business opportunity management workflow.  
-    - Used Pinia for state management to ensure real-time data updates and efficient communication between components.
-
-
-
-
-
-### Project 3: Digital Campus System V2.0.5 (December 13, 2024 – December 24, 2024)
-
-- **Module (Frontend)**: Development of PC-end duty assignment settings and WeChat Official Account delegation verification and push modules
-
-- **Project Background**:  
-  The Digital Campus System is designed to provide schools with a comprehensive management and service platform, improving efficiency for homeroom teachers and parents, and ensuring student safety and convenient management. The project covers both the PC end and the WeChat Official Account end, implementing class duty assignment management and student pickup delegation verification functions respectively.
-
-- **Technology Stack**:  
-  - Frontend: Vue2 + Vue Router + Vuex, Element-UI, uni-app  
+- **Module (Front-end)**: PC-side work assignment settings and WeChat public account delegation verification and push module development
+- **Project Background**: The Digital Campus System aims to provide schools with a comprehensive management and service platform to improve the work efficiency of head teachers and parents, ensuring student safety and management convenience. The project covers both PC and WeChat public account platforms, implementing class duty management and student pickup delegation verification functions respectively.
+- **Technology Stack**:
+  - Front-end: Vue2 + Vue Router + Vuex, Element-UI, uni-app
   - Tools: ESLint, Prettier, Git
+- **Main Contributions**:
+  - **PC-side "Work Assignment Settings" Module**:
+    - Table management CRUD
+  - **WeChat Public Account "Delegation Verification and Push" Module**:
+    - Implemented QR code verification function, allowing delegates to enter the verification page by scanning QR codes.
+    - Designed and developed delegation verification form, including student name, delegate name, phone number and SMS verification code, ensuring accurate submission of information.
 
-- **Main Contributions**:  
-  - **PC-end “Duty Assignment Settings” Module**:  
-    - Designed and implemented a class selection dropdown component, supporting multiple class switching and automatic display of a single class.  
-    - Developed a duty assignment list with ascending order sorting, providing edit, delete, and add functions.  
-    - Implemented filter and search functionality with keyword fuzzy search for assignment names.  
-    - Designed and implemented add/edit modals, including form validation for assignment name and sort order to ensure data accuracy.  
-    - Added permission checks for delete operations to enhance system security.
+## **Project 2: Red Detachment of Women Memorial Park Digital Platform V1.0** (2024.11.11 - 2024.11.30)
 
-  - **WeChat Official Account “Delegation Verification and Push” Module**:  
-    - Implemented QR code scanning verification, allowing delegates to enter the verification page by scanning a QR code.  
-    - Designed and developed a delegation verification form, including student name, delegate name, phone number, and SMS verification code, ensuring accurate information submission.  
-    - Implemented a delegation details page to display verified information and provide a completion button for pick-up operations.  
-    - Integrated WeChat template message API to automatically send pick-up status notifications to parents or homeroom teachers, ensuring timely information delivery.
+- **Module (Front-end)**: Multi-terminal front-end module development
+- **Project Background**: Development of Red Detachment of Women Memorial Park digital platform, including admin panel, PC client and youth PC client, providing visit services, study tour activity management, transportation guides and other functions to enhance users' online interaction and service experience.
+- **Technology Stack**: Vue2 + Vue Router, Element-UI, Vant, ESLint, Prettier.
+- **Main Contributions**:
+  - **Admin Panel**:
+    - Responsible for "Study Tour Registration Management" module development, including add, edit, publish and other functions.
+    - Implemented dynamic form functionality for study tour activities, supporting rich text editing and attachment upload for title, remarks, and content.
+  - **Youth PC Client**:
+    - Responsible for "Visit Services" section development, displaying visit guidelines, reservation visits and other module content.
 
+## **Project 1: Project Operation Management Platform V2.5** (2024.10.22 - 2024.11.20)
 
-
-### Project 2: Red Army Women’s Memorial Park Digital Platform V1.0 (November 11, 2024 – November 30, 2024)
-
-- **Module (Frontend)**: Multi-end frontend module development
-
-- **Project Background**:  
-  Development of the Red Army Women’s Memorial Park digital platform, including an administration backend, PC end, and youth PC end, providing tour services, study program management, transportation guides, and more to enhance online interaction and user experience.
-
-- **Technology Stack**:  
-  - Vue2 + Vue Router, Element-UI, Vant, ESLint, Prettier
-
-- **Main Contributions**:  
-  - **Administration Backend**:  
-    - Developed the “Study Program Enrollment Management” module, including create, edit, and publish functions.  
-    - Implemented dynamic forms for study programs, supporting title, notes, rich-text content editing, and attachment upload.
-
-  - **Youth PC End**:  
-    - Developed the “Tour Services” section, displaying visitor guidelines and reservation modules.
-
-
-
-### Project 1: Project Operation Management Platform V2.5 (October 22, 2024 – November 20, 2024)
-
-- **Module (Frontend)**: PC-end and mobile-end vehicle management feature development
-
-- **Project Background**:  
-  An internal enterprise vehicle management system covering both PC and mobile platforms. It is used for vehicle usage management and statistics, including permission management, data filtering, and exporting functions.
-
-- **Technology Stack**:  
-  - PC End: Vite + Vue2 + Vue Router + Pinia + Element-UI + Husky + ESLint + Stylelint + Prettier  
-  - Mobile End: Vue2 + Vue Router + Pinia + Vant + ESLint + Prettier
-
-- **Main Contributions**:  
-  - **PC End**:  
-    - Developed the “Vehicle Reports” module.
-
-  - **Mobile End**:  
-    - Developed the “Dashboard,” “Approval Center,” and “Vehicle Management” modules:  
-      - **Dashboard**: Implemented data overview and quick access on the mobile user homepage, optimizing load time and interaction.  
-      - **Approval Center**: Built task query and action features, supporting filtering, status updates, and instant feedback to improve approval efficiency.  
-      - **Vehicle Management**: Completed the full workflow for vehicle requests and approvals, including request records and status monitoring.
+- **Module (Front-end)**: PC and mobile vehicle management functionality development
+- **Project Background**: Internal enterprise vehicle management system, covering both PC and mobile platforms. Mainly used for vehicle usage management and statistics, including permission management, data filtering and export functions.
+- **Technology Stack**:
+  - PC: Vite + Vue2 + Vue Router + Pinia + Element-UI + Husky + ESLint + Stylelint + Prettier.
+  - Mobile: Vue2 + Vue Router + Pinia + Vant + ESLint + Prettier.
+- **Main Contributions**:
+  - **PC Platform**:
+    - Responsible for "Vehicle Reports" module development:        
+  - **Mobile Platform**:
+    - Responsible for "Workbench", "Approval Center", and "Vehicle Management" module development:
+      - **Workbench**: Implemented mobile user homepage with data overview and common function entries, optimized page loading speed and interaction experience.
+      - **Approval Center**: Developed query and operation functions for approval tasks, supporting task filtering, status updates and instant feedback, improving approval efficiency.
+      - **Vehicle Management**: Implemented the complete process of vehicle application and approval, covering vehicle application records, vehicle usage status monitoring and other functions.
