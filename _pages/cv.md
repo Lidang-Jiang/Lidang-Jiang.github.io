@@ -133,7 +133,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
             </td>
             <td>
                 HTML, CSS, JavaScript, Vue, Element-UI, Vant,<br>
-                uni-app, Husky, Prettier, ESLint, Stylelint
+                uni-app, Husky, Prettier, ESLint, Stylelint，Quill，ECharts，Nginx 
             </td>
             <td>
                 Java, SQL, Spring, SpringBoot, SpringCloud,<br>
