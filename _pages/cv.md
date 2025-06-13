@@ -127,21 +127,21 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
     <tbody>
         <tr>
             <td>
-                Machine Learning, Deep Learning, GenAI, RAG, Agent, Langchain,<br>
-                Pytorch, Distributed Training, Fine-tuning, Few-shot Learning,<br>
+                Machine Learning, Deep Learning, GenAI, RAG, Agent, Langchain,
+                Pytorch, Distributed Training, Fine-tuning, Few-shot Learning,
                 LLMs Testing and Optimization, Bayesian Optimization
             </td>
             <td>
-                HTML, CSS, JavaScript, Vue, Element-UI, Vant,<br>
+                HTML, CSS, JavaScript, Vue, Element-UI, Vant,
                 uni-app, Husky, Prettier, ESLint, Stylelint，Quill，ECharts，Nginx 
             </td>
             <td>
-                Java, SQL, Spring, SpringBoot, SpringCloud,<br>
+                Java, SQL, Spring, SpringBoot, SpringCloud,
                 Mybatis, Redis, Microservices
             </td>
             <td>
-                Git, Docker, Linux, LaTeX, Data Analysis,<br>
-                Mathematical Methods, Numerical Analysis,<br>
+                Git, Docker, Linux, LaTeX, Data Analysis,
+                Mathematical Methods, Numerical Analysis,
                 Stanford CS 231n, CS 224n, CET-4
             </td>
         </tr>
