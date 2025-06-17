@@ -152,11 +152,11 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 
 ### **China Telecom Digital Intelligence Technology Co., Ltd.**
 
-_2024.07 - Present_
+_2024.07 - 2025.06_
 
 - Hainan Branch (Labor Dispatch)
 - Large Language Model Algorithm Engineer (2024.07 - 2024.09)
-- Front-end Development Engineer (2024.09 - Present)
+- Front-end Development Engineer (2024.09 - 2025.06)
 
 ### **Wenjia Education, etc.**, Graduate Entrance Exam Subject Tutor
 
