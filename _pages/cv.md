@@ -30,7 +30,7 @@ author_profile: true
 **Phone**: +86 15307241568  
 **Email**: 2021223075161@alu.scu.edu.cn  
 **Position**: Algorithm & Frontend-Backend Full Stack Development Engineer  
-**Salary Expectation**: ¥15k-20k/month  
+**Salary Expectation**: ¥12k-17k/month  
 **Location**: From Xianning, Hubei Province, currently living in Haikou, Hainan Province
 
 <!-- **Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/) -->
