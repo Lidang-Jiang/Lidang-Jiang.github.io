@@ -150,7 +150,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 
 ## Work Experience
 ### **Baidu (Labor Dispatch)**, AI Computing - Python Backend Developer
-_August 2025 - Present_
+_2025.08 - Present_
 
 ### **China Telecom Digital Intelligence Technology Co., Ltd.**
 
