@@ -11,7 +11,8 @@ locale                   : "en-US"
 title                    : "Lidang Jiang"
 title_separator          : "-"
 name                     : &name "Lidang Jiang"
-description              : &description "Lidang Jiang's personal academic website."
+description: "Lidang Jiang's academic website featuring research in AI, LiBs, and materials science. Specializing in interdisciplinary AI applications and full-stack development."
+keywords: "AI4Science, Lithium-ion Batteries, Machine Learning, Materials Science, Full-stack Development"
 url                      : https://lidang-jiang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Lidang-Jiang/Lidang-Jiang.github.io"
@@ -110,13 +111,11 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
-
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider: "google-analytics-4"  # 修改为google-analytics-4
   google:
-    tracking_id          :
-
+    tracking_id: "G-QD3Z5S371D"  # 使用您的实际GA4 ID
 
 # Reading Files
 include:
