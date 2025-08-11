@@ -68,7 +68,7 @@ College of Chemistry and Chemical Engineering, Applied Chemistry
 
 During my graduate studies, I primarily focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I have published two papers in _Energy_ and _Applied Energy_ (both are Q1 journals in CAS and JCR rankings). Throughout these three years of master's studies, I developed the ability to independently conduct interdisciplinary research.
 
-During my work as a LLM engineer, I quickly learned technologies like RAG and Langchain. To improve coding skills, I turned to traditional development. During this time, I learned front-end and back-end technologies, accumulating full-stack development capabilities.
+During my work as a LLM engineer, I quickly learned technologies like RAG and Langchain. To improve coding skills, I turned to  development. During this time, I learned front-end and back-end technologies, accumulating full-stack development capabilities.
 
 My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
 

@@ -19,3 +19,20 @@ author_profile: true
 ## Research Interests
 
 My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
+
+
+---
+
+## Collaboration Opportunities
+
+I am currently seeking collaborations in the following areas:
+
+<ul>
+  <li><strong>Web Development Projects</strong>: Frontend (Vue) and Backend (Java, Python) development services.</li>
+
+  <li><strong>AI Application Development</strong>: Machine learning model development, LLM fine-tuning, RAG implementation, and AI system integration.</li>
+  
+  <li><strong>Technical Consulting</strong>: Advisory services for interdisciplinary AI applications, particularly in LiBs (Lithium-ion Batteries).</li>
+</ul>
+
+If you are interested in collaboration, please reach out to me via email at: <strong>765984881@qq.com</strong>
