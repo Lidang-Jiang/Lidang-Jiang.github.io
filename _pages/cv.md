@@ -30,7 +30,7 @@ author_profile: true
 **Phone**: +86 15307241568  
 **Email**: 2021223075161@alu.scu.edu.cn  
 **Position**: Algorithm & Frontend-Backend Full Stack Development Engineer  
-**Salary Expectation**: 20k-25k/mo      
+**Salary Expectation**: 22k-27k/mo      
 **Location**: From Xianning, Hubei Province, currently living in Shenzhen, Guangdong Province
 
 <!-- **Homepage**: [https://lidang-jiang.github.io/](https://lidang-jiang.github.io/) -->
@@ -136,8 +136,7 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
                 uni-app, Husky, Prettier, ESLint, Stylelint，Quill，ECharts，Nginx 
             </td>
             <td>
-                Java, SQL, Spring, SpringBoot, SpringCloud,
-                Mybatis, Redis, Microservices
+                Java, SQL, Spring, SpringBoot, Mybatis                
             </td>
             <td>
                 Git, Docker, Linux, LaTeX, Data Analysis,
