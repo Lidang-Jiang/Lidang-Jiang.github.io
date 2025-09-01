@@ -35,4 +35,4 @@ I am currently seeking collaborations in the following areas:
   <li><strong>Technical Consulting</strong>: Advisory services for interdisciplinary AI applications, particularly in LiBs (Lithium-ion Batteries).</li>
 </ul>
 
-If you are interested in collaboration, please reach out to me via email at: <strong>765984881@qq.com</strong>
+If you are interested in collaboration, please reach out to me via email at: <strong>2021223075161@alu.scu.edu.cn</strong>
