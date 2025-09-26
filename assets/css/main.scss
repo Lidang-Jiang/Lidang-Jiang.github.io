@@ -1,0 +1,262 @@
+---
+---
+
+/*
+ *    Minimal Mistakes Jekyll Theme
+ *
+ *  - Michael Rose
+ *  - mademistakes.com
+ *  - https://twitter.com/mmistakes
+ *
+*/
+
+@import "vendor/breakpoint/breakpoint"; // media query mixins
+@import "variables";
+@import "mixins";
+@import "vendor/susy/susy";
+
+@import "reset";
+@import "base";
+
+
+@import "utilities";
+@import "animations";
+@import "tables";
+@import "buttons";
+@import "notices";
+@import "masthead";
+@import "navigation";
+@import "footer";
+@import "syntax";
+
+@import "forms";
+
+@import "page";
+@import "archive";
+@import "sidebar";
+
+@import "vendor/font-awesome/fontawesome";
+@import "vendor/font-awesome/solid";
+@import "vendor/font-awesome/brands";
+@import "vendor/magnific-popup/magnific-popup";
+@import "print";
+
+
+
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+a,
+blockquote,
+table,
+th,
+td,
+.page__footer-copyright {
+    font-family: "Times New Roman", serif !important;
+}
+
+/* 隐藏滚动条但保留滚动功能 */
+html {
+
+    /* 适用于Chrome, Safari, Edge等Webkit内核浏览器 */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 适用于Firefox */
+    scrollbar-width: none;
+
+    /* 适用于IE和旧版Edge */
+    -ms-overflow-style: none;
+
+    /* 保持内容正常滚动 */
+    overflow-y: scroll;
+}
+
+/* 自定义出版物布局样式 */
+.publication-custom-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* 修改为垂直居中对齐 */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.publication-image {
+    flex: 1 1 300px;
+    max-width: 300px;
+}
+
+.publication-image img {
+    width: 100%;
+    height: auto;
+    /* 如果需要，添加 max-height 来限制图片高度 */
+    /* max-height: 200px; */
+}
+
+.publication-text {
+    flex: 2 1 60%;
+    max-width: 70%;
+}
+
+.masthead__inner-wrap nav{
+        background-color: rgba(0, 0, 0, 0.3) !important;
+                background: rgba(0, 0, 0, 0.3) !important;
+}
+/* 在 main.scss 里追加 */
+
+.masthead {
+    // 如果你想让导航区域都半透明黑:
+    background: rgba(0, 0, 0, 0.3) !important;
+
+    // 或者你只想让 .masthead__inner-wrap nav 背景半透明
+    .masthead__inner-wrap {
+        nav {
+            background: rgba(0, 0, 0, -0.3) !important;
+
+            a {
+                color: #fff !important;
+                /* 文字白色 */
+                font-weight: 700 !important;
+                /* 加粗 */
+            }
+        }
+    }
+
+    // 如果还有别的地方(如 masthead 标题之类), 你也可以单独调
+}
+.hidden-links {
+    background: rgba(0, 0, 0, 0.3) !important;
+    /* 半透明黑 */
+    border: 1px solid rgba(0, 0, 0, 0.8) !important;
+
+    a {
+        color: #fff !important;
+        font-weight: 700;
+        text-decoration: none;
+
+        /* 关键：覆盖主题自带的 hover 样式 */
+        &:hover {
+            background: rgba(79, 72, 72, 0.6) !important;
+            /* 与常态一致，或稍微深/浅一点 */
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+    }
+
+    /* 让小箭头也变成黑色 */
+    &::before,
+    &::after {
+        border-color: rgba(0, 0, 0, 0.3) transparent !important;
+    }
+}
+
+
+/* 视频背景样式 */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    /* 调整 z-index 值 */
+}
+
+/* 半透明遮罩层样式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* 调整透明度，0.0（完全透明）到 1.0（不透明） */
+    z-index: -1;
+    /* 确保在视频之上，内容之下 */
+}
+
+/* 内容容器样式 */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.page__footer {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+
+    a {
+        color: #fff !important;
+        font-weight: 700 !important;
+    }
+}
+
+
+
+
+.download-button {
+    display: inline-flex;
+    /* 使按钮宽度自适应内容 */
+    align-items: center;
+    /* 图标和文本垂直居中 */
+    padding: 8px 12px;
+    /* 内边距 */
+    font-size: 14px;
+    border-radius: 4px;
+    /* 适当的圆角半径 */
+    text-decoration: none !important;
+        /* 去除下划线 */    /* 移除下划线 */
+    color: #fff;
+    /* 文字颜色 */
+    border: 1px solid #fff;
+    /* 白色边框，保持简洁 */
+    background-color: transparent;
+    /* 透明背景 */
+    transition: all 0.3s ease;
+    /* 添加过渡效果 */
+    margin-top: 6px;
+    /* 悬停效果 */
+    &:hover {
+        color: #333;
+        /* 悬停时文字颜色变深 */
+        background-color: #fff;
+        /* 悬停时背景色为白色 */
+    }
+
+    /* 图标样式 */
+    .download-icon {
+        margin-right: 8px;
+        /* 图标与文字之间的间距 */
+        width: 20px;
+        height: auto;
+    }
+}
+
+
+
+
+/* 移动设备适配 */
+// @media only screen and (max-width: 768px) {
+//     .video-background {
+//         display: none;
+//     }
+
+//     .content {
+//         background-color: #0077be;
+//     }
+// }
