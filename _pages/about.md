@@ -28,6 +28,8 @@ My current research interests include AI4Science, Agents, Generative AI, Deep Le
 I am currently seeking collaborations in the following areas:
 
 <ul>
+  <li><strong>AI Infrastructure & System Optimization</strong>: High-performance inference engine optimization (based on <strong>vLLM</strong>), custom operator implementation (<strong>C++/CUDA</strong>), and heterogeneous hardware adaptation (NVIDIA/Kunlun XPU).</li>
+
   <li><strong>Web Development Projects</strong>: Frontend (Vue) and Backend (Java, Python) development services.</li>
 
   <li><strong>AI Application Development</strong>: Machine learning model development, LLM fine-tuning, RAG implementation, and AI system integration.</li>
