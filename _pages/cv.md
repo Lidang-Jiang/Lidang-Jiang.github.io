@@ -58,9 +58,7 @@ Scored 502 in College Entrance Exam. Undergraduate GPA: 2.9/4, ranked 45/50. Gra
 
 During my graduate studies, I primarily focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I published two papers in _Energy_ and _Applied Energy_ (both are Q1 journals in CAS and JCR rankings). Throughout my master's studies, I developed the ability to independently conduct interdisciplinary research.
 
-During my work as a LLM Algorithm Engineer, I quickly mastered various large language model technologies (such as RAG, Langchain, Fine-tuning, Few-shot learning, etc.). To develop solid coding skills, I then transitioned to the development direction. During this period, I expanded my learning to front-end and back-end development technologies, accumulating full-stack development capabilities.
-
-My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
+After completing my master's degree, I have built hands-on engineering skills in both AI and full-stack web development (using frameworks like Vue and Spring Boot). My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
 
 ---
 
