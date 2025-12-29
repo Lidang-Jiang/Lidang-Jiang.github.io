@@ -11,17 +11,10 @@ author_profile: true
 
   <li>From September 2021 to July 2024, I pursued my Master's degree in Materials and Chemical Engineering at Sichuan University, where I was awarded the second-class academic scholarship for three consecutive years. During my graduate studies, I focused on interdisciplinary research at the intersection of AI and LiBs (Lithium-ion Batteries). As the first author, I published two papers in <em>Energy</em> and <em>Applied Energy</em>, both ranked as Q1 in the Chinese Academy of Sciences and JCR. Over these three years of Master's study, I developed the ability to independently conduct interdisciplinary research.</li>
 
-  <li>During my work as a LLM engineer, I quickly learned technologies like RAG and Langchain. To improve coding skills, I turned to traditional development. During this time, I learned front-end and back-end technologies, accumulating full-stack development capabilities.</li>
+  <li>After completing my master's degree, I have built hands-on engineering skills in both AI and full-stack web development (using frameworks like Vue and Spring Boot). My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
+</li>
 </ul>
 
----
-
-## Research Interests
-
-My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.
-
-
----
 
 ## Collaboration Opportunities
 
