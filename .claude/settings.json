@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "(tool == \"Edit\" || tool == \"Write\") && tool_input.file_path matches \"(node_modules|target|dist|\\.idea)/\"",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"console.error('[Hook] BLOCKED: 禁止编辑构建产物/依赖目录 (node_modules, target, dist, .idea)');process.exit(2)\""
+          }
+        ],
+        "description": "阻止编辑 node_modules/、target/、dist/、.idea/ 目录"
+      },
+      {
+        "matcher": "(tool == \"Edit\" || tool == \"Write\") && tool_input.file_path matches \"\\.(jar|class|min\\.js|min\\.css|map)$\"",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"console.error('[Hook] BLOCKED: 禁止编辑二进制/压缩文件 (.jar, .class, .min.js, .min.css, .map)');process.exit(2)\""
+          }
+        ],
+        "description": "阻止编辑 .jar, .class, .min.js, .min.css, .map 文件"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "(tool == \"Edit\" || tool == \"Write\") && tool_input.file_path matches \"\\.vue$\"",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"console.error('[Hook] REMINDER: .vue 文件已修改 → 请检查 i18n 键值完整性，确保无硬编码文本')\""
+          }
+        ],
+        "description": "编辑 .vue 文件后提醒检查 i18n 键值"
+      },
+      {
+        "matcher": "(tool == \"Edit\" || tool == \"Write\") && tool_input.file_path matches \"Controller\\.java$\"",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"console.error('[Hook] REMINDER: Controller 已修改 → 请同步更新 API 文档和前端调用代码')\""
+          }
+        ],
+        "description": "编辑 Controller.java 文件后提醒更新 API 文档和前端调用"
+      }
+    ]
+  }
+}

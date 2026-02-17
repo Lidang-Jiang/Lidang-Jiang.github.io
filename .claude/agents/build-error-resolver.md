@@ -1,0 +1,1 @@
+/home/devuser/everything-claude-code/agents/web-fullstack/build-error-resolver.md

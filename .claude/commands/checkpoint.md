@@ -1,0 +1,1 @@
+/home/devuser/everything-claude-code/commands/web-fullstack/checkpoint.md

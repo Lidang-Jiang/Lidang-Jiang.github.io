@@ -1,0 +1,1 @@
+/home/devuser/everything-claude-code/rules/_shared/security.md

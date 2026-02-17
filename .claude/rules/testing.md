@@ -1,0 +1,1 @@
+/home/devuser/everything-claude-code/rules/web-fullstack/testing.md
