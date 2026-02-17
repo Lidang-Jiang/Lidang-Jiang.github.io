@@ -7,6 +7,7 @@ export interface Publication {
   year: number
   doi: string
   impactFactor: number
+  issn?: string
   pdf: string
   image: string
   abstract: {
