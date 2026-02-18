@@ -9,8 +9,19 @@ import WorkTimeline from '@/components/cv/WorkTimeline.vue'
 import SkillsSection from '@/components/cv/SkillsSection.vue'
 import { profile } from '@/data/profile'
 import { publications } from '@/data/publications'
+import { useImpactFactors } from '@/composables/useImpactFactors'
 
 const { t, locale } = useI18n()
+
+const issns = publications.map(p => p.issn).filter(Boolean) as string[]
+const { impactFactors } = useImpactFactors(issns)
+
+const enrichedPublications = computed(() =>
+  publications.map(pub => ({
+    ...pub,
+    impactFactor: (pub.issn && impactFactors.value.get(pub.issn)) ?? pub.impactFactor,
+  }))
+)
 
 const lang = computed(() => locale.value as 'en' | 'zh')
 
@@ -101,7 +112,7 @@ const basicInfoItems = computed(() => [
         <SectionTitle :title="t('cv.publications.title')" />
         <ol class="space-y-4">
           <li
-            v-for="pub in publications"
+            v-for="pub in enrichedPublications"
             :key="pub.id"
             class="rounded-xl border border-gray-100 bg-white p-5 dark:border-gray-800 dark:bg-gray-900/50"
           >
