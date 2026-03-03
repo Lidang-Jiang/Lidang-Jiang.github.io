@@ -99,3 +99,35 @@
 
 - 项目根目录的 CLAUDE.md（如果存在）包含更具体的指导，以其为准
 - 本配置仅补充 ECC 工作流相关设置
+
+---
+
+## Impact Factors 自动更新
+
+### 触发方式
+
+| 触发方式 | 说明 |
+|---------|------|
+| 自动定时 | 每周一 UTC 0:00（北京时间周一 08:00）自动运行 |
+| 手动触发 | GitHub 仓库 → Actions → "Update Impact Factors" → Run workflow |
+
+### 运行流程
+
+```
+cron / 手动触发
+  → checkout 代码
+  → node scripts/fetch-impact-factors.mjs（爬取 LetPub）
+  → 更新 src/data/impact-factors.json
+  → 若 JSON 有变化 → git commit + push 到 main
+  → push 到 main 触发 deploy.yml → 自动构建并部署到 GitHub Pages
+```
+
+### 是否自动部署？
+
+是。`update-impact-factors.yml` push 到 main 后，`deploy.yml`（`on: push to main`）会自动触发构建和部署。整个链路全自动。
+
+### 日常需要操作什么？
+
+什么都不需要。数据爬取、提交、部署全自动。
+
+唯一需要手动的场景：**新增期刊**时，编辑 `scripts/fetch-impact-factors.mjs` 中的 `JOURNALS` 数组。
