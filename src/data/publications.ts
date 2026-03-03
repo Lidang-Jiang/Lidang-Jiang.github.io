@@ -10,7 +10,7 @@ export const publications: Publication[] = [
     volume: '308:132840',
     year: 2024,
     doi: 'https://doi.org/10.1016/j.energy.2024.132840',
-    impactFactor: 8.8,
+    impactFactor: 9.4,
     pdf: '/files/paper1.pdf',
     image: '/images/paper1.jpg',
     abstract: {
@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     volume: '377:124604',
     year: 2025,
     doi: 'https://doi.org/10.1016/j.apenergy.2024.124604',
-    impactFactor: 11.2,
+    impactFactor: 11.0,
     pdf: '/files/paper2.pdf',
     image: '/images/paper2.jpg',
     abstract: {

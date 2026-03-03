@@ -1,39 +1,27 @@
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
+import impactFactorData from '@/data/impact-factors.json'
 
-interface OpenAlexResponse {
-  results: Array<{
-    issn_l: string
-    summary_stats: { '2yr_mean_citedness': number }
-  }>
+interface ImpactFactorEntry {
+  realtimeIF: number | null
+  jcrIF: number | null
+  updatedAt: string
 }
 
-export function useImpactFactors(issns: string[]) {
-  const impactFactors = ref<Map<string, number>>(new Map())
-  const loading = ref(false)
+const data = impactFactorData as Record<string, ImpactFactorEntry>
 
-  async function fetchOne(issn: string): Promise<[string, number] | null> {
-    const url = `https://api.openalex.org/sources?filter=issn:${issn}&select=issn_l,summary_stats`
-    const res = await fetch(url)
-    if (!res.ok) return null
-    const data: OpenAlexResponse = await res.json()
-    if (!data.results?.length) return null
-    const val = data.results[0].summary_stats['2yr_mean_citedness']
-    return [issn, Math.round(val * 10) / 10]
+export function useImpactFactors(issns: string[]) {
+  const map = new Map<string, number>()
+
+  for (const issn of issns) {
+    const entry = data[issn]
+    if (!entry) continue
+    const value = entry.realtimeIF ?? entry.jcrIF
+    if (value !== null) {
+      map.set(issn, value)
+    }
   }
 
-  onMounted(async () => {
-    const unique = [...new Set(issns)]
-    if (unique.length === 0) return
+  const impactFactors = ref(map)
 
-    loading.value = true
-    const results = await Promise.allSettled(unique.map(fetchOne))
-    for (const r of results) {
-      if (r.status === 'fulfilled' && r.value) {
-        impactFactors.value.set(r.value[0], r.value[1])
-      }
-    }
-    loading.value = false
-  })
-
-  return { impactFactors, loading }
+  return { impactFactors }
 }
