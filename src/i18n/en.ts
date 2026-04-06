@@ -18,24 +18,24 @@ export default {
   },
   collaboration: {
     title: 'Collaboration Opportunities',
-    subtitle: 'I\'m open to collaboration in the following areas. Feel free to reach out!',
+    subtitle: 'Open to collaboration across AI infrastructure, embodied AI, systems engineering, and web engineering.',
     contactPrompt: 'Feel free to reach out at',
     items: {
-      ai: {
-        title: 'AI Infrastructure & System Optimization',
-        description: 'High-performance inference engine optimization based on vLLM, custom C++/CUDA operator implementation, and NVIDIA/Kunlun XPU heterogeneous hardware adaptation.',
+      aiInfra: {
+        title: 'AI Infrastructure & Inference Systems',
+        description: 'Inference system optimization around vLLM and vLLM-Kunlun, custom C++/CUDA operators, heterogeneous hardware adaptation, and performance tuning.',
+      },
+      embodiedAi: {
+        title: 'Embodied AI & Robotics',
+        description: 'Robotics simulation, embodied AI task prototyping, multimodal agents, and engineering collaboration from simulation to working systems.',
+      },
+      systemsEngineering: {
+        title: 'Systems Engineering & Developer Tooling',
+        description: 'Engineering work in Python, Go, and TypeScript, including automation workflows, developer tooling, and open-source collaboration.',
       },
       web: {
-        title: 'Web Development Projects',
-        description: 'Frontend (Vue) and backend (Java, Python) development services.',
-      },
-      aiApp: {
-        title: 'AI Application Development',
-        description: 'Machine learning model development, LLM fine-tuning, RAG implementation, and AI system integration.',
-      },
-      consulting: {
-        title: 'Technical Consulting',
-        description: 'Interdisciplinary AI application consulting, especially in the lithium-ion battery domain.',
+        title: 'Web Engineering & Full-Stack Development',
+        description: 'Vue frontend work, Java or Python backend development, and end-to-end delivery of admin and business systems.',
       },
     },
   },

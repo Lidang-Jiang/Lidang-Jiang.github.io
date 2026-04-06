@@ -13,6 +13,7 @@ export const profile = {
     zh: "中国 深圳",
   },
   birthday: "1995-08-12",
+  publicEmail: "lidangjiang@gmail.com",
   emails: ["765984881@qq.com", "2021223075161@alu.scu.edu.cn"],
   position: {
     en: "MLsys - Embodied Intelligence - AI - Robotics Engineer",

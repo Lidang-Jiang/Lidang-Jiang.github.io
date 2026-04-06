@@ -1,34 +1,43 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { Cpu, Globe, BrainCircuit, MessageSquare, Mail } from 'lucide-vue-next'
+import { Cpu, Globe, Bot, Wrench, Mail } from 'lucide-vue-next'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
+import {
+  collaborationItemKeys,
+  type CollaborationItemKey,
+} from '@/data/collaboration'
+import { profile } from '@/data/profile'
 
 const { t } = useI18n()
 
-const items = [
-  {
-    key: 'ai',
+const itemMeta = {
+  aiInfra: {
     icon: Cpu,
     color: 'text-blue-500 bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400',
   },
-  {
-    key: 'web',
+  embodiedAi: {
+    icon: Bot,
+    color:
+      'text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400',
+  },
+  systemsEngineering: {
+    icon: Wrench,
+    color:
+      'text-amber-500 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400',
+  },
+  web: {
     icon: Globe,
-    color: 'text-green-500 bg-green-100 dark:bg-green-900/30 dark:text-green-400',
+    color:
+      'text-indigo-500 bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400',
   },
-  {
-    key: 'aiApp',
-    icon: BrainCircuit,
-    color: 'text-purple-500 bg-purple-100 dark:bg-purple-900/30 dark:text-purple-400',
-  },
-  {
-    key: 'consulting',
-    icon: MessageSquare,
-    color: 'text-amber-500 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400',
-  },
-]
+} satisfies Record<CollaborationItemKey, { icon: typeof Cpu; color: string }>
 
-const contactEmail = '2021223075161@alu.scu.edu.cn'
+const items = collaborationItemKeys.map((key) => ({
+  key,
+  ...itemMeta[key],
+}))
+
+const contactEmail = profile.publicEmail
 </script>
 
 <template>

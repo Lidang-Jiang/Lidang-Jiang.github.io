@@ -18,25 +18,28 @@ export default {
   },
   collaboration: {
     title: "合作机会",
-    subtitle: "我乐于在以下领域开展合作，欢迎联系！",
+    subtitle: "围绕 AI 基础设施、具身智能、系统工程与 Web 工程开展合作，欢迎联系。",
     contactPrompt: "欢迎通过以下邮箱联系我",
     items: {
-      ai: {
-        title: "AI 基础设施与系统优化",
+      aiInfra: {
+        title: "AI 基础设施与推理系统",
         description:
-          "基于vLLM的高性能推理引擎优化、C++/CUDA自定义算子实现、NVIDIA/昆仑XPU异构硬件适配。",
+          "vLLM / vLLM-Kunlun 推理系统优化、C++/CUDA 自定义算子、异构硬件适配与性能调优。",
+      },
+      embodiedAi: {
+        title: "具身智能与机器人",
+        description:
+          "机器人仿真、具身智能任务原型、多模态智能体与从仿真到系统落地的工程协作。",
+      },
+      systemsEngineering: {
+        title: "系统工程与开发工具",
+        description:
+          "Python / Go / TypeScript 工程化、自动化流程、开发工具链与开源项目协作。",
       },
       web: {
-        title: "Web 开发项目",
-        description: "前端（Vue）和后端（Java, Python）开发服务。",
-      },
-      aiApp: {
-        title: "AI 应用开发",
-        description: "机器学习模型开发、LLM微调、RAG实现、AI系统集成。",
-      },
-      consulting: {
-        title: "技术咨询",
-        description: "跨学科AI应用咨询，特别是锂离子电池领域。",
+        title: "Web 工程与全栈开发",
+        description:
+          "Vue 前端、Java 或 Python 后端、管理后台与业务系统的全栈交付。",
       },
     },
   },
