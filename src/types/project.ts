@@ -5,6 +5,10 @@ export interface Project {
     zh: string
   }
   period: string
+  category?: {
+    en: string
+    zh: string
+  }
   role?: {
     en: string
     zh: string

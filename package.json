@@ -4,10 +4,13 @@
   "version": "1.0.0",
   "type": "module",
   "pnpm": {
-    "ignoredBuiltDependencies": ["esbuild"]
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "scripts": {
     "dev": "vite",
+    "test": "vitest run",
     "build": "vite-ssg build",
     "preview": "vite preview"
   },
@@ -25,6 +28,7 @@
     "typescript": "~5.7.0",
     "vite": "^6.1.0",
     "vite-ssg": "^28.3.0",
+    "vitest": "^4.1.2",
     "vue-tsc": "^2.2.0"
   }
 }

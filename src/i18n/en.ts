@@ -7,14 +7,14 @@ export default {
   },
   hero: {
     name: 'Lidang Jiang',
-    title: 'Algorithm Engineer & Full-Stack Developer',
+    title: 'MLsys - Embodied Intelligence - AI - Robotics Engineer',
     location: 'Shenzhen, China',
   },
   about: {
     title: 'About Me',
     p1: 'From September 2014 to July 2018, I studied Applied Chemistry at Jinzhong University. After graduating and working for a year, I took the National Graduate Entrance Examination twice — scoring 263 in 2020 and 400 in 2021. After passing the exam and interview, I spent some time working in the education and training industry.',
     p2: 'From September 2021 to July 2024, I pursued my master\'s degree at the School of Materials and Chemical Engineering, Sichuan University, where I received the university\'s Second-Class Academic Scholarship for three consecutive years. During my graduate studies, I focused on research at the intersection of AI and Lithium-ion Batteries (LiBs). I published one first-author paper each in Energy and Applied Energy (both CAS and JCR Q1 journals).',
-    p3: 'After completing my master\'s, I gained practical engineering experience in AI and full-stack web development (Vue, Spring Boot). My current research interests include AI4Science, Agents, Generative AI, Deep Learning, LLMs, and MLsys.',
+    p3: 'After completing my master\'s degree, I have continued to build hands-on experience in AI systems engineering and open-source collaboration. I am passionate about using AI to build everything from inference systems to embodied robots, and my current interests include embodied AI, robotics, inference acceleration, AI infrastructure, and C++.',
   },
   collaboration: {
     title: 'Collaboration Opportunities',

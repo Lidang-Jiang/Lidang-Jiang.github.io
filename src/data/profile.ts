@@ -4,8 +4,8 @@ export const profile = {
     zh: "江李当",
   },
   title: {
-    en: "Algorithm Engineer & Full-Stack Developer",
-    zh: "算法工程师 & 全栈开发工程师",
+    en: "MLsys - Embodied Intelligence - AI - Robotics Engineer",
+    zh: "MLsys-具身智能-AI-机器人工程师",
   },
   avatar: "/images/profile.jpeg",
   location: {
@@ -15,8 +15,8 @@ export const profile = {
   birthday: "1995-08-12",
   emails: ["765984881@qq.com", "2021223075161@alu.scu.edu.cn"],
   position: {
-    en: "Algorithm Engineer & Full-Stack Developer",
-    zh: "算法工程师 & 前后端全栈开发工程师",
+    en: "MLsys - Embodied Intelligence - AI - Robotics Engineer",
+    zh: "MLsys-具身智能-AI-机器人工程师",
   },
   salary: {
     en: "25k-30k/month",
