@@ -2,8 +2,15 @@ import { describe, expect, it } from 'vitest'
 
 import { projects } from '@/data/projects'
 import {
+  PROJECT_CATEGORY_NAV_ITEMS,
   PROJECT_CATEGORY_ORDER,
+  PROJECTS_OVERVIEW_PATH,
+  getProjectCategoryBySlug,
+  getProjectCategoryPath,
+  getProjectGroupBySlug,
   getProjectGroups,
+  getProjectStaticPaths,
+  isProjectCategorySlug,
 } from '@/utils/project-groups'
 
 describe('project grouping', () => {
@@ -48,6 +55,47 @@ describe('project grouping', () => {
     ])
     expect(groups[3]?.projects.map((project) => project.id)).toEqual([
       12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2,
+    ])
+  })
+
+  it('defines stable category navigation metadata', () => {
+    expect(PROJECT_CATEGORY_NAV_ITEMS.map((item) => item.slug)).toEqual([
+      'ai-infra',
+      'embodied-ai',
+      'systems-engineering',
+      'web-development',
+    ])
+
+    expect(PROJECT_CATEGORY_NAV_ITEMS.map((item) => item.category.en)).toEqual(
+      PROJECT_CATEGORY_ORDER,
+    )
+  })
+
+  it('resolves category slugs and filters groups from them', () => {
+    expect(isProjectCategorySlug('ai-infra')).toBe(true)
+    expect(isProjectCategorySlug('unknown')).toBe(false)
+
+    expect(getProjectCategoryBySlug('web-development')?.category.en).toBe(
+      'Web Application Development',
+    )
+    expect(getProjectCategoryBySlug('unknown')).toBeNull()
+
+    expect(getProjectCategoryPath('systems-engineering')).toBe(
+      '/projects/systems-engineering',
+    )
+    expect(getProjectGroupBySlug(projects, 'embodied-ai')?.projects.length).toBe(
+      3,
+    )
+    expect(getProjectGroupBySlug(projects, 'unknown')).toBeNull()
+  })
+
+  it('exposes the expected static project paths for ssg', () => {
+    expect(getProjectStaticPaths()).toEqual([
+      PROJECTS_OVERVIEW_PATH,
+      '/projects/ai-infra',
+      '/projects/embodied-ai',
+      '/projects/systems-engineering',
+      '/projects/web-development',
     ])
   })
 })

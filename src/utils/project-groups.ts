@@ -7,6 +7,14 @@ export interface ProjectGroup {
   projects: Project[]
 }
 
+export interface ProjectCategoryNavItem {
+  key: string
+  slug: string
+  category: ProjectCategory
+}
+
+export const PROJECTS_OVERVIEW_PATH = '/projects'
+
 export const PROJECT_CATEGORIES = {
   aiInfra: {
     en: 'AI Infrastructure and LLM Inference',
@@ -26,12 +34,65 @@ export const PROJECT_CATEGORIES = {
   },
 } satisfies Record<string, ProjectCategory>
 
-export const PROJECT_CATEGORY_ORDER = [
-  PROJECT_CATEGORIES.aiInfra.en,
-  PROJECT_CATEGORIES.embodiedAi.en,
-  PROJECT_CATEGORIES.systemsEngineering.en,
-  PROJECT_CATEGORIES.webApp.en,
-]
+export const PROJECT_CATEGORY_NAV_ITEMS = [
+  {
+    key: 'aiInfra',
+    slug: 'ai-infra',
+    category: PROJECT_CATEGORIES.aiInfra,
+  },
+  {
+    key: 'embodiedAi',
+    slug: 'embodied-ai',
+    category: PROJECT_CATEGORIES.embodiedAi,
+  },
+  {
+    key: 'systemsEngineering',
+    slug: 'systems-engineering',
+    category: PROJECT_CATEGORIES.systemsEngineering,
+  },
+  {
+    key: 'webApp',
+    slug: 'web-development',
+    category: PROJECT_CATEGORIES.webApp,
+  },
+] as const satisfies readonly ProjectCategoryNavItem[]
+
+export type ProjectCategorySlug =
+  (typeof PROJECT_CATEGORY_NAV_ITEMS)[number]['slug']
+
+export const PROJECT_CATEGORY_ORDER = PROJECT_CATEGORY_NAV_ITEMS.map(
+  (item) => item.category.en,
+)
+
+const PROJECT_CATEGORY_BY_SLUG = new Map<string, ProjectCategoryNavItem>(
+  PROJECT_CATEGORY_NAV_ITEMS.map((item) => [item.slug, item]),
+)
+
+export function isProjectCategorySlug(
+  value: string,
+): value is ProjectCategorySlug {
+  return PROJECT_CATEGORY_BY_SLUG.has(value)
+}
+
+export function getProjectCategoryBySlug(
+  slug: string,
+): ProjectCategoryNavItem | null {
+  return PROJECT_CATEGORY_BY_SLUG.get(slug) ?? null
+}
+
+export function getProjectCategoryPath(slug: ProjectCategorySlug): string {
+  return `${PROJECTS_OVERVIEW_PATH}/${slug}`
+}
+
+export function getProjectCategoryPaths(): string[] {
+  return PROJECT_CATEGORY_NAV_ITEMS.map((item) =>
+    getProjectCategoryPath(item.slug),
+  )
+}
+
+export function getProjectStaticPaths(): string[] {
+  return [PROJECTS_OVERVIEW_PATH, ...getProjectCategoryPaths()]
+}
 
 export function getProjectGroups(projects: Project[]): ProjectGroup[] {
   const groups = new Map<string, ProjectGroup>()
@@ -58,4 +119,21 @@ export function getProjectGroups(projects: Project[]): ProjectGroup[] {
     const group = groups.get(categoryEn)
     return group ? [group] : []
   })
+}
+
+export function getProjectGroupBySlug(
+  projects: Project[],
+  slug: string,
+): ProjectGroup | null {
+  const category = getProjectCategoryBySlug(slug)
+
+  if (!category) {
+    return null
+  }
+
+  return (
+    getProjectGroups(projects).find(
+      (group) => group.category.en === category.category.en,
+    ) ?? null
+  )
 }

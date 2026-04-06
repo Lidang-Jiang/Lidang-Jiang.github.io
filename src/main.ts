@@ -2,6 +2,7 @@ import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
 import { routes } from './router'
 import { i18n } from './i18n'
+import { getProjectCategoryPaths } from './utils/project-groups'
 import './assets/styles/main.css'
 
 export const createApp = ViteSSG(
@@ -28,3 +29,13 @@ export const createApp = ViteSSG(
     }
   },
 )
+
+export function includedRoutes(paths: string[], routes: { name?: unknown; path: string }[]) {
+  return routes.flatMap((route) => {
+    if (route.name === 'project-category') {
+      return getProjectCategoryPaths()
+    }
+
+    return route.path
+  })
+}
