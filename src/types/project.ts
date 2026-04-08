@@ -9,6 +9,10 @@ export interface Project {
     en: string
     zh: string
   }
+  projectType?: {
+    en: string
+    zh: string
+  }
   role?: {
     en: string
     zh: string
@@ -31,5 +35,6 @@ export interface Project {
     zh: string
   }
   github?: string
+  githubStars?: string
   demo?: string
 }

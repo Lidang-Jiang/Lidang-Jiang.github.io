@@ -18,6 +18,7 @@ export const skills: SkillCategory[] = [
     items: [
       { name: 'Python' },
       { name: 'PyTorch' },
+      { name: 'SGLang' },
       { name: 'vLLM / vLLM-Kunlun' },
       { name: 'CUDA' },
       { name: 'Inference Debugging' },
@@ -38,7 +39,7 @@ export const skills: SkillCategory[] = [
   },
   {
     category: {
-      en: 'Infrastructure & Engineering',
+      en: 'Infrastructure and Engineering',
       zh: '基础设施与工程化',
     },
     items: [

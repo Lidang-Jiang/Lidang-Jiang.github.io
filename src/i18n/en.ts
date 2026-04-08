@@ -8,7 +8,7 @@ export default {
   hero: {
     name: 'Lidang Jiang',
     title: 'MLsys - Embodied Intelligence - AI - Robotics Engineer',
-    location: 'Shenzhen, China',
+    location: 'Shenzhen, Guangdong, China',
   },
   about: {
     title: 'About Me',
@@ -77,8 +77,8 @@ export default {
     downloadPdf: 'PDF',
   },
   projects: {
-    title: 'Projects & Open Source Contributions',
-    subtitle: 'Browse selected work by AI infrastructure, embodied AI, systems engineering, and web development',
+    title: 'Projects and Engineering Portfolio',
+    subtitle: 'Browse selected work across AI infrastructure, embodied AI, systems engineering, and digital applications',
     browseByType: 'Browse by Type',
     allCategories: 'All Categories',
     categoryOverview: 'Category Overview',
@@ -86,8 +86,10 @@ export default {
     projectCount: '{count} projects',
     showMore: 'Show Details',
     showLess: 'Hide Details',
+    projectType: 'Type',
     techStack: 'Tech Stack',
     role: 'Role',
+    githubStars: 'GitHub Stars',
     period: 'Period',
     present: 'Present',
     contributions: 'Key Contributions',

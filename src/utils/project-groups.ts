@@ -21,16 +21,16 @@ export const PROJECT_CATEGORIES = {
     zh: 'AI 基础设施与大模型推理',
   },
   embodiedAi: {
-    en: 'Embodied AI and Robotics Simulation',
-    zh: '具身智能与机器人仿真',
+    en: 'Embodied AI, Robotics, and Reinforcement Learning',
+    zh: '具身智能、机器人与强化学习',
   },
   systemsEngineering: {
-    en: 'Systems Engineering and Developer Tooling',
-    zh: '系统工程与开发工具',
+    en: 'Systems Engineering, Model Optimization, and Developer Tooling',
+    zh: '系统工程、模型优化与开发工具',
   },
   webApp: {
-    en: 'Web Application Development',
-    zh: 'Web 应用开发',
+    en: 'Web, Government, and Industry Digitalization',
+    zh: 'Web、政务与行业数字化应用',
   },
 } satisfies Record<string, ProjectCategory>
 

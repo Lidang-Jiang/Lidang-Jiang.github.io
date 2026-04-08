@@ -8,7 +8,7 @@ export default {
   hero: {
     name: "江李当",
     title: "MLsys-具身智能-AI-机器人工程师",
-    location: "中国 深圳",
+    location: "中国，广东深圳",
   },
   about: {
     title: "关于我",
@@ -82,8 +82,8 @@ export default {
     downloadPdf: "PDF",
   },
   projects: {
-    title: "项目与开源贡献",
-    subtitle: "按 AI 基础设施、具身智能、系统工程与 Web 开发分类浏览",
+    title: "项目与工程经历",
+    subtitle: "按 AI 基础设施、具身智能、系统工程与数字化应用分类浏览",
     browseByType: "按类型浏览",
     allCategories: "全部分类",
     categoryOverview: "分类总览",
@@ -91,8 +91,10 @@ export default {
     projectCount: "共 {count} 个项目",
     showMore: "展开详情",
     showLess: "收起详情",
+    projectType: "类型",
     techStack: "技术栈",
     role: "角色",
+    githubStars: "GitHub Stars",
     period: "时间段",
     present: "至今",
     contributions: "核心贡献",

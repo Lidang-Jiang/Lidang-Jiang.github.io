@@ -9,18 +9,18 @@ export const profile = {
   },
   avatar: "/images/profile.jpeg",
   location: {
-    en: "Shenzhen, China",
-    zh: "中国 深圳",
+    en: "Shenzhen, Guangdong, China",
+    zh: "中国，广东深圳",
   },
   birthday: "1995-08-12",
   publicEmail: "lidangjiang@gmail.com",
-  emails: ["765984881@qq.com", "2021223075161@alu.scu.edu.cn"],
+  emails: ["2021223075161@alu.scu.edu.cn", "765984881@qq.com"],
   position: {
     en: "MLsys - Embodied Intelligence - AI - Robotics Engineer",
     zh: "MLsys-具身智能-AI-机器人工程师",
   },
   salary: {
-    en: "25k-30k/month",
+    en: "25k-30k/mo",
     zh: "25k-30k/月",
   },
   hometown: {

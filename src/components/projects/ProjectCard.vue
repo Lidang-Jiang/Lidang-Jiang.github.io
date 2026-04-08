@@ -1,7 +1,16 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ChevronDown, ChevronUp, Github, ExternalLink, Calendar, User } from 'lucide-vue-next'
+import {
+  ChevronDown,
+  ChevronUp,
+  Github,
+  ExternalLink,
+  Calendar,
+  User,
+  Tag,
+  Star,
+} from 'lucide-vue-next'
 import Badge from '@/components/ui/Badge.vue'
 import type { Project } from '@/types/project'
 
@@ -18,6 +27,7 @@ const title = computed(() => props.project.title[lang.value])
 const background = computed(() => props.project.background[lang.value])
 const contributions = computed(() => props.project.contributions[lang.value])
 const achievements = computed(() => props.project.achievements?.[lang.value])
+const projectType = computed(() => props.project.projectType?.[lang.value])
 const role = computed(() => props.project.role?.[lang.value])
 const module = computed(() => props.project.module?.[lang.value])
 </script>
@@ -31,9 +41,23 @@ const module = computed(() => props.project.module?.[lang.value])
           <Calendar :size="14" />
           {{ project.period }}
         </div>
+        <div
+          v-if="projectType"
+          class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400"
+        >
+          <Tag :size="14" />
+          {{ t('projects.projectType') }}: {{ projectType }}
+        </div>
         <div v-if="role" class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
           <User :size="14" />
-          {{ role }}
+          {{ t('projects.role') }}: {{ role }}
+        </div>
+        <div
+          v-if="project.githubStars"
+          class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400"
+        >
+          <Star :size="14" />
+          {{ t('projects.githubStars') }}: {{ project.githubStars }}
         </div>
       </div>
 

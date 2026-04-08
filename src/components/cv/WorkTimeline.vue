@@ -37,7 +37,10 @@ const lang = computed(() => locale.value as 'en' | 'zh')
           <h3 class="mt-1 text-lg font-semibold text-gray-900 dark:text-white">
             {{ work.company[lang] }}
           </h3>
-          <p class="mt-0.5 text-sm text-gray-600 dark:text-gray-400">
+          <p
+            v-if="work.position?.[lang]"
+            class="mt-0.5 text-sm text-gray-600 dark:text-gray-400"
+          >
             {{ work.position[lang] }}
           </p>
           <p v-if="work.description" class="mt-2 text-sm text-gray-500 dark:text-gray-500">
