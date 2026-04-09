@@ -31,7 +31,7 @@ export const profile = {
     en: "Shenzhen, Guangdong",
     zh: "广东深圳",
   },
-  website: "https://lidang-jiang.pages.dev/",
+  website: "https://lidang-jiang.pages.dev",
   social: {
     github: "https://github.com/Lidang-Jiang",
     scholar: "https://scholar.google.com/citations?user=SvUCAeQAAAAJ&hl=en",
