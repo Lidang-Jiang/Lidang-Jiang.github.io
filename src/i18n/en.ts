@@ -8,12 +8,12 @@ export default {
   hero: {
     name: 'Lidang Jiang',
     title: 'MLsys - Embodied Intelligence - AI - Robotics Engineer',
-    location: 'Shenzhen, Guangdong, China',
+    location: 'Xianning, Hubei; based in Shenzhen, Guangdong',
   },
   about: {
     title: 'About Me',
-    p1: 'From September 2014 to July 2018, I studied Applied Chemistry at Jinzhong University. After graduating and working for a year, I took the National Graduate Entrance Examination twice — scoring 263 in 2020 and 400 in 2021. After passing the exam and interview, I spent some time working in the education and training industry.',
-    p2: 'From September 2021 to July 2024, I pursued my master\'s degree at the School of Materials and Chemical Engineering, Sichuan University, where I received the university\'s Second-Class Academic Scholarship for three consecutive years. During my graduate studies, I focused on research at the intersection of AI and Lithium-ion Batteries (LiBs). I published one first-author paper each in Energy and Applied Energy (both CAS and JCR Q1 journals).',
+    p1: 'Scored 502 in the college entrance exam. Undergraduate GPA: 2.9/4, ranked 45/50. Graduate entrance exam: 263 in 2020 and 400 in 2021 (8th/120), with Mathematics II scoring 141 (1st/120). Graduate GPA: 3.5/4, top 30%.',
+    p2: 'During my graduate studies, I focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I published two papers in Energy and Applied Energy, both ranked Q1 in CAS and JCR. Those three years trained me to independently conduct interdisciplinary research.',
     p3: 'After completing my master\'s degree, I have continued to build hands-on experience in AI systems engineering and open-source collaboration. I am passionate about using AI to build everything from inference systems to embodied robots, and my current interests include embodied AI, robotics, inference acceleration, AI infrastructure, and C++.',
   },
   collaboration: {
@@ -63,7 +63,7 @@ export default {
     },
     selfEvaluation: {
       title: 'Self-Evaluation',
-      content: 'College entrance exam score: 502. Undergraduate GPA: 2.9/4, ranked 45/50. Graduate entrance exam: 263 in 2020, 400 in 2021 (ranked 8th/120), Mathematics II score: 141 (ranked 1st/120). Graduate GPA: 3.5/4, top 30%.',
+      content: 'Scored 502 in the College Entrance Exam. Undergraduate GPA: 2.9/4, ranked 45/50. Graduate Entrance Exam: 263 in 2020 and 400 in 2021 (8th/120), Mathematics II: 141 (1st/120). Graduate GPA: 3.5/4, top 30%.\n\nDuring my graduate studies, I primarily focused on research at the intersection of AI and lithium-ion batteries (LiBs). As the first author, I published two papers in Energy and Applied Energy, both Q1 journals in CAS and JCR. Throughout my master\'s studies, I developed the ability to independently conduct interdisciplinary research.\n\nAfter completing my master\'s degree, I have continued to build hands-on experience in AI systems engineering and open-source collaboration. I am passionate about using AI to build everything from inference systems to embodied robots, and my current interests include embodied AI, robotics, inference acceleration, AI infrastructure, and C++.',
     },
     publications: {
       title: 'Publications',

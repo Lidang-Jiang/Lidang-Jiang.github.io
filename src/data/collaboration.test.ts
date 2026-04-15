@@ -7,7 +7,7 @@ import zh from '@/i18n/zh'
 
 describe('collaboration section content', () => {
   it('uses a public email for the homepage contact cta', () => {
-    expect(profile.publicEmail).toBe('lidangjiang@gmail.com')
+    expect(profile.publicEmail).toBe('765984881@qq.com')
   })
 
   it('keeps homepage collaboration keys aligned with both locales', () => {

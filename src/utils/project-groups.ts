@@ -17,16 +17,16 @@ export const PROJECTS_OVERVIEW_PATH = '/projects'
 
 export const PROJECT_CATEGORIES = {
   aiInfra: {
-    en: 'AI Infrastructure and LLM Inference',
-    zh: 'AI 基础设施与大模型推理',
+    en: 'AI Infrastructure, Model Serving, and Training Optimization',
+    zh: 'AI 基础设施、模型服务与训练优化',
   },
   embodiedAi: {
     en: 'Embodied AI, Robotics, and Reinforcement Learning',
     zh: '具身智能、机器人与强化学习',
   },
   systemsEngineering: {
-    en: 'Systems Engineering, Model Optimization, and Developer Tooling',
-    zh: '系统工程、模型优化与开发工具',
+    en: 'Systems Engineering, Developer Tooling, and Industrial Integration',
+    zh: '系统工程、开发工具与工业集成',
   },
   webApp: {
     en: 'Web, Government, and Industry Digitalization',

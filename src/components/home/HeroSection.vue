@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { MapPin, Github, BookOpen, FileText } from 'lucide-vue-next'
 import { profile } from '@/data/profile'
 
-const { t } = useI18n()
+const { locale } = useI18n()
+
+const lang = computed(() => locale.value as 'en' | 'zh')
 
 const socialLinks = [
   {
@@ -36,25 +39,25 @@ const socialLinks = [
         <div class="mb-6 h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-xl ring-2 ring-primary-100 sm:h-40 sm:w-40 dark:border-gray-800 dark:ring-primary-900/50">
           <img
             :src="profile.avatar"
-            :alt="t('hero.name')"
+            :alt="profile.name[lang]"
             class="h-full w-full object-cover"
           />
         </div>
 
         <!-- Name -->
         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-          {{ t('hero.name') }}
+          {{ profile.name[lang] }}
         </h1>
 
         <!-- Title -->
         <p class="mt-3 text-lg font-medium text-primary-600 sm:text-xl dark:text-primary-400">
-          {{ t('hero.title') }}
+          {{ profile.title[lang] }}
         </p>
 
         <!-- Location -->
         <div class="mt-3 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
           <MapPin :size="16" />
-          <span>{{ t('hero.location') }}</span>
+          <span>{{ profile.location[lang] }}</span>
         </div>
 
         <!-- Social Links -->

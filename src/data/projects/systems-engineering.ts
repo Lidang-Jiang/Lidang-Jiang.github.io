@@ -3,12 +3,12 @@ import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const systemsEngineeringProjects: Project[] = [
   {
-    id: 28,
+    id: 33,
     title: {
-      en: 'PyTorch AO',
-      zh: 'PyTorch AO',
+      en: 'crawlee-python',
+      zh: 'crawlee-python',
     },
-    period: '2026.04.08',
+    period: '2026.04.14',
     category: PROJECT_CATEGORIES.systemsEngineering,
     projectType: {
       en: 'Open-Source Contribution',
@@ -19,20 +19,16 @@ export const systemsEngineeringProjects: Project[] = [
       zh: '贡献者',
     },
     background: {
-      en: 'Model optimization, quantization, and compiler tooling in the PyTorch ecosystem.',
-      zh: 'PyTorch 生态中的模型优化、量化与编译工具库。',
+      en: 'Python crawling and browser-automation library maintained by Apify.',
+      zh: 'Apify 维护的 Python 爬虫与浏览器自动化库。',
     },
-    techStack: ['Python', 'PyTorch', 'Quantization', 'PT2E'],
+    techStack: ['Python', 'Crawlee', 'Testing', 'CI Stability'],
     contributions: {
-      en: [
-        'Skipped linear+bn fusion for inputs with rank greater than 2 in PT2E flows, avoiding invalid graph rewrites.',
-      ],
-      zh: [
-        '在 PT2E 场景下为高于 2 维输入跳过 linear+bn 融合，避免错误图优化。',
-      ],
+      en: ['Replaced fixed sleeps with poll-based assertions in a flaky autoscaling test to improve CI stability.'],
+      zh: ['将 flaky 的 test_autoscales 改为轮询断言，提升 CI 稳定性。'],
     },
-    github: 'https://github.com/pytorch/ao',
-    githubStars: '2,763',
+    github: 'https://github.com/apify/crawlee-python',
+    githubStars: '8,778',
   },
   {
     id: 22,
@@ -57,16 +53,16 @@ export const systemsEngineeringProjects: Project[] = [
     techStack: ['Python', 'asyncio', 'OPC UA', 'Industrial Protocol'],
     contributions: {
       en: [
-        'Widened NodeId typing for reference methods and fixed PubSub UdpSettings key-name casing plus TTL validation.',
-        'Fixed uint16 sequence-number overflow in DataSetWriter and respected explicit format arguments in certificate-loading helpers.',
+        'Fixed explicit certificate-format handling, uint16 sequence-number overflow, and NodeId typing issues.',
+        'Fixed PubSub TTL validation and key-name handling for UdpSettings.',
       ],
       zh: [
-        '拓宽 reference 方法的 NodeId 类型标注，并修复 PubSub UdpSettings key name 大小写与 TTL 类型检查。',
-        '修复 DataSetWriter sequence number 的 uint16 overflow，并修复证书加载函数忽略显式 format 参数的问题。',
+        '修复显式证书格式参数、uint16 sequence number overflow 与 NodeId 类型标注问题。',
+        '修复 PubSub TTL 校验与 UdpSettings key name 的兼容性问题。',
       ],
     },
     github: 'https://github.com/FreeOpcUa/opcua-asyncio',
-    githubStars: '1,398',
+    githubStars: '1,402',
   },
   {
     id: 23,
@@ -90,15 +86,11 @@ export const systemsEngineeringProjects: Project[] = [
     },
     techStack: ['Go', 'Docker', 'Containers', 'Tar'],
     contributions: {
-      en: [
-        'Returned non-ErrNotExist stat failures from Tar.Sync() instead of swallowing them silently.',
-      ],
-      zh: [
-        '在 Tar.Sync() 中返回非 ErrNotExist 的 stat 错误，避免异常被静默吞掉。',
-      ],
+      en: ['Returned non-ErrNotExist stat failures from Tar.Sync() instead of swallowing them silently.'],
+      zh: ['在 Tar.Sync() 中返回非 ErrNotExist 的 stat 错误，避免异常被静默吞掉。'],
     },
     github: 'https://github.com/docker/compose',
-    githubStars: '37,218',
+    githubStars: '37,275',
   },
   {
     id: 24,
@@ -117,23 +109,21 @@ export const systemsEngineeringProjects: Project[] = [
       zh: '贡献者',
     },
     background: {
-      en: 'Agent configuration, hooks, and automation toolkit for Claude Code and Codex workflows.',
-      zh: '面向 Claude Code / Codex 的 agents、hooks 与配置自动化项目。',
+      en: 'Agent configuration and hooks automation toolkit for Claude Code and Codex workflows.',
+      zh: '面向 Claude Code 与 Codex 工作流的 agents、hooks 与配置自动化项目。',
     },
     techStack: ['TypeScript', 'Node.js', 'Agents', 'Hooks', 'Codex'],
     contributions: {
       en: [
-        'Ported the doc-file-warning denylist to the current hooks runtime and improved Windows compatibility around observer temp files and the Haiku prompt.',
-        'Added an os.homedir() fallback for Windows, introduced persistent_instructions to the Codex baseline, and relaxed the sanity check.',
-        'Added startup_timeout_sec to MCP servers to avoid first-run timeouts.',
+        'Improved Windows compatibility around paths, temp files, and persistent instructions.',
+        'Added MCP startup_timeout_sec support and completed related hooks/runtime fixes.',
       ],
       zh: [
-        '将 doc-file-warning denylist 迁移到当前 hooks runtime，并改进 observer 临时文件与 Haiku prompt 的 Windows 兼容性。',
-        '为 Windows 增加 os.homedir() fallback，为 Codex baseline 补充 persistent_instructions，并放宽 sanity check。',
-        '为 MCP server 增加 startup_timeout_sec，避免首次启动超时。',
+        '改进 Windows 路径、临时文件与 persistent_instructions 相关兼容性。',
+        '为 MCP server 增加 startup_timeout_sec，并完成相关 hooks/runtime 修复。',
       ],
     },
     github: 'https://github.com/affaan-m/everything-claude-code',
-    githubStars: '144,987',
+    githubStars: '156,478',
   },
 ]

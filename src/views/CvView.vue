@@ -100,7 +100,7 @@ const basicInfoItems = computed(() => [
       <section class="mb-16">
         <SectionTitle :title="t('cv.selfEvaluation.title')" />
         <div class="rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-800 dark:bg-gray-900/50">
-          <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+          <p class="whitespace-pre-line text-sm leading-relaxed text-gray-600 dark:text-gray-400">
             {{ t('cv.selfEvaluation.content') }}
           </p>
         </div>

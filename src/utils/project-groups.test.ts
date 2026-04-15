@@ -15,7 +15,7 @@ import {
 
 describe('project grouping', () => {
   it('keeps all projects categorized', () => {
-    expect(projects).toHaveLength(28)
+    expect(projects).toHaveLength(31)
 
     for (const project of projects) {
       expect(project.category).toBeDefined()
@@ -26,9 +26,9 @@ describe('project grouping', () => {
 
   it('groups projects in the expected category order', () => {
     expect(PROJECT_CATEGORY_ORDER).toEqual([
-      'AI Infrastructure and LLM Inference',
+      'AI Infrastructure, Model Serving, and Training Optimization',
       'Embodied AI, Robotics, and Reinforcement Learning',
-      'Systems Engineering, Model Optimization, and Developer Tooling',
+      'Systems Engineering, Developer Tooling, and Industrial Integration',
       'Web, Government, and Industry Digitalization',
     ])
 
@@ -38,47 +38,50 @@ describe('project grouping', () => {
       PROJECT_CATEGORY_ORDER,
     )
     expect(groups.map((group) => group.projects)).toHaveLength(4)
-    expect(groups.map((group) => group.projects.length)).toEqual([9, 4, 4, 11])
+    expect(groups.map((group) => group.projects.length)).toEqual([12, 5, 4, 10])
   })
 
   it('preserves the resume order inside each category', () => {
     const groups = getProjectGroups(projects)
 
     expect(groups[0]?.projects.map((project) => project.title.en)).toEqual([
-      'vLLM-Kunlun (Baidu Kunlun Chip LLM Inference Framework)',
+      'vLLM-Kunlun (Baidu Kunlun Chip Inference Framework)',
+      'ExecuTorch',
       'LitServe',
+      'Olive',
+      'anomalib',
+      'PyTorch AO',
       'SGLang',
       'RLLM',
       'vLLM-Omni',
       'OpenRLHF',
-      'Baidu AIAK-SGLang DeepSeek / GLM5 PD Deployment and Performance Debugging',
+      'Baidu AIAK-SGLang DeepSeek / GLM5 PD Deployment',
       'Transformers',
-      'Haikou Police Administrative Knowledge Base',
     ])
     expect(groups[1]?.projects.map((project) => project.title.en)).toEqual([
+      'Gymnasium',
       'HighwayEnv',
       'Genesis',
       'PyTorch RL',
       'ManiSkill',
     ])
     expect(groups[2]?.projects.map((project) => project.title.en)).toEqual([
-      'PyTorch AO',
+      'crawlee-python',
       'opcua-asyncio',
       'Docker Compose',
       'Everything Claude Code',
     ])
     expect(groups[3]?.projects.map((project) => project.title.en)).toEqual([
       'University Researcher Profile System',
-      'Government-Enterprise Platform V3.1',
       'Haikou 12345 Intelligent Report System V1.0',
-      '928 Hospital - Model Command System V2.0',
+      'Government-Enterprise Platform (V2 / V3.1)',
+      '928 Hospital Model Command System V2.0',
       'Risk Monitoring and Early Warning System Common Service Platform V1.0.1',
-      'Red Detachment of Women Memorial Park Digital Platform V1.2.0',
-      'Government-Enterprise Platform V2',
+      'Red Detachment of Women Memorial Park Digital Platform (V1.0 / V1.2.0)',
       'Project Platform Management System V2.6',
       'Digital Campus System V2.0.5',
-      'Red Detachment of Women Memorial Park Digital Platform V1.0',
       'Project Operation Management Platform V2.5',
+      'Haikou Police Administrative Knowledge Base',
     ])
   })
 
@@ -86,17 +89,19 @@ describe('project grouping', () => {
     const vllmKunlun = projects.find(
       (project) =>
         project.title.en ===
-        'vLLM-Kunlun (Baidu Kunlun Chip LLM Inference Framework)',
+        'vLLM-Kunlun (Baidu Kunlun Chip Inference Framework)',
     )
     const aiak = projects.find(
       (project) =>
         project.title.en ===
-        'Baidu AIAK-SGLang DeepSeek / GLM5 PD Deployment and Performance Debugging',
+        'Baidu AIAK-SGLang DeepSeek / GLM5 PD Deployment',
     )
 
-    expect(vllmKunlun?.projectType?.en).toBe('Open-Source Contribution')
-    expect(vllmKunlun?.githubStars).toBe('388')
-    expect(aiak?.projectType?.zh).toBe('百度闭源 AI 推理系统项目')
+    expect(vllmKunlun?.projectType?.en).toBe(
+      'Open-Source Contribution + Product Delivery',
+    )
+    expect(vllmKunlun?.githubStars).toBe('397')
+    expect(aiak?.projectType?.zh).toBe('百度闭源 AI 推理系统')
     expect(aiak?.github).toBeUndefined()
   })
 
@@ -125,9 +130,7 @@ describe('project grouping', () => {
     expect(getProjectCategoryPath('systems-engineering')).toBe(
       '/projects/systems-engineering',
     )
-    expect(getProjectGroupBySlug(projects, 'embodied-ai')?.projects.length).toBe(
-      4,
-    )
+    expect(getProjectGroupBySlug(projects, 'embodied-ai')?.projects.length).toBe(5)
     expect(getProjectGroupBySlug(projects, 'unknown')).toBeNull()
   })
 
