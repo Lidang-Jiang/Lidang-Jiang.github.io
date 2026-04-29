@@ -30,6 +30,7 @@ const achievements = computed(() => props.project.achievements?.[lang.value])
 const projectType = computed(() => props.project.projectType?.[lang.value])
 const role = computed(() => props.project.role?.[lang.value])
 const module = computed(() => props.project.module?.[lang.value])
+const pullRequests = computed(() => props.project.pullRequests ?? [])
 </script>
 
 <template>
@@ -151,6 +152,26 @@ const module = computed(() => props.project.module?.[lang.value])
             <p class="text-sm text-gray-600 dark:text-gray-400">
               {{ achievements }}
             </p>
+          </div>
+
+          <!-- Pull Requests -->
+          <div v-if="pullRequests.length">
+            <h4 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
+              {{ t('projects.pullRequests') }}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <a
+                v-for="pullRequest in pullRequests"
+                :key="pullRequest.url"
+                :href="pullRequest.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-2.5 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-primary-200 hover:text-primary-600 dark:border-gray-700 dark:text-gray-400 dark:hover:border-primary-800/60 dark:hover:text-primary-400"
+              >
+                <ExternalLink :size="12" />
+                PR #{{ pullRequest.number }}
+              </a>
+            </div>
           </div>
         </div>
       </div>

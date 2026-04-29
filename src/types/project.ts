@@ -1,3 +1,8 @@
+export interface ProjectPullRequest {
+  number: number
+  url: string
+}
+
 export interface Project {
   id: number
   title: {
@@ -36,5 +41,6 @@ export interface Project {
   }
   github?: string
   githubStars?: string
+  pullRequests?: ProjectPullRequest[]
   demo?: string
 }

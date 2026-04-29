@@ -12,10 +12,16 @@ const issns = publications.map(p => p.issn).filter(Boolean) as string[]
 const { impactFactors } = useImpactFactors(issns)
 
 const enrichedPublications = computed(() =>
-  publications.map(pub => ({
-    ...pub,
-    impactFactor: (pub.issn && impactFactors.value.get(pub.issn)) ?? pub.impactFactor,
-  }))
+  publications.map((pub) => {
+    const impactFactor = pub.issn
+      ? impactFactors.value.get(pub.issn)
+      : undefined
+
+    return {
+      ...pub,
+      impactFactor: impactFactor ?? pub.impactFactor,
+    }
+  }),
 )
 </script>
 

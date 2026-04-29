@@ -94,6 +94,7 @@ export default {
     present: 'Present',
     contributions: 'Key Contributions',
     achievements: 'Achievements',
+    pullRequests: 'Open-Source PRs',
     viewSource: 'Source Code',
     viewDemo: 'Live Demo',
   },

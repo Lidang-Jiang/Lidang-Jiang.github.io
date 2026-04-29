@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project'
+import { pullRequests } from '@/data/project-prs'
 import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const aiInfraProjects: Project[] = [
@@ -26,19 +27,62 @@ export const aiInfraProjects: Project[] = [
     contributions: {
       en: [
         'Helped narrow a Qwen2.5-7B Attention failure on P800 Float16 before open-sourcing.',
-        'Landed 6 merged PRs spanning InternVL KeyError fixes, collect_env.py diagnostics, 0.15.1 release alignment, and documentation cleanup.',
+        'Landed 8 merged PRs across InternVL inference fixes, installation/tutorial docs, collect_env.py diagnostics, release alignment, Read the Docs cleanup, and Docker documentation maintenance.',
       ],
       zh: [
         '在开源前协助定位 Qwen2.5-7B 在 P800 Float16 下的 Attention 故障。',
-        '开源后累计合入 6 个 PR，覆盖 InternVL KeyError、collect_env.py 环境诊断、0.15.1 版本治理与文档清理。',
+        '开源后累计合入 8 个 PR，覆盖 InternVL 推理修复、安装与教程文档、collect_env.py 环境诊断、版本治理、Read the Docs 修复与 Docker 文档维护。',
       ],
     },
     achievements: {
-      en: 'Credited in the official acknowledgments after landing 6 merged PRs.',
-      zh: '名字被收录进官方致谢，并已有 6 个已合并 PR。',
+      en: 'Credited in the official acknowledgments after landing 8 merged PRs.',
+      zh: '名字被收录进官方致谢，并已有 8 个已合并 PR。',
     },
     github: 'https://github.com/baidu/vLLM-Kunlun',
     githubStars: '397',
+    pullRequests: pullRequests('https://github.com/baidu/vLLM-Kunlun', [
+      108,
+      136,
+      218,
+      249,
+      251,
+      253,
+      327,
+      328,
+    ]),
+  },
+  {
+    id: 34,
+    title: {
+      en: 'OpenClaw',
+      zh: 'OpenClaw',
+    },
+    period: '2026.04.28',
+    category: PROJECT_CATEGORIES.aiInfra,
+    projectType: {
+      en: 'Open-Source Contribution',
+      zh: '开源贡献',
+    },
+    role: {
+      en: 'Contributor',
+      zh: '贡献者',
+    },
+    background: {
+      en: 'Cross-platform personal AI assistant with active-memory configuration and runtime execution paths.',
+      zh: '跨平台个人 AI 助手，覆盖 active-memory 配置与运行时执行路径。',
+    },
+    techStack: ['TypeScript', 'AI Assistant', 'Schema', 'Testing'],
+    contributions: {
+      en: [
+        'Added explicit chat type support for active-memory configuration and runtime gating with schema and execution regression coverage.',
+      ],
+      zh: [
+        '支持 active-memory 的 explicit chat type 配置与运行时判定，并补充 schema 与执行路径回归测试。',
+      ],
+    },
+    github: 'https://github.com/openclaw/openclaw',
+    githubStars: '365,938',
+    pullRequests: pullRequests('https://github.com/openclaw/openclaw', [66285]),
   },
   {
     id: 29,
@@ -62,11 +106,19 @@ export const aiInfraProjects: Project[] = [
     },
     techStack: ['PyTorch', 'ExecuTorch', 'XNNPACK', 'Dynamic Shapes', 'Testing'],
     contributions: {
-      en: ['Added dynamic-shape tests for xnnpack to improve on-device regression coverage.'],
-      zh: ['为 xnnpack 新增动态 shape 测试，补齐端侧推理回归覆盖。'],
+      en: [
+        'Landed 2 merged PRs adding dynamic-shape tests for xnnpack models and Linux Python runtime end-to-end XNNPACK tests.',
+      ],
+      zh: [
+        '已合并 2 个 PR，新增 xnnpack 动态 shape 测试，并补充 Linux 下 XNNPACK Python runtime 端到端测试。',
+      ],
     },
     github: 'https://github.com/pytorch/executorch',
     githubStars: '4,509',
+    pullRequests: pullRequests('https://github.com/pytorch/executorch', [
+      18701,
+      18703,
+    ]),
   },
   {
     id: 25,
@@ -101,6 +153,10 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/Lightning-AI/LitServe',
     githubStars: '3,857',
+    pullRequests: pullRequests('https://github.com/Lightning-AI/LitServe', [
+      674,
+      673,
+    ]),
   },
   {
     id: 30,
@@ -129,6 +185,7 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/microsoft/Olive',
     githubStars: '2,296',
+    pullRequests: pullRequests('https://github.com/microsoft/Olive', [2380]),
   },
   {
     id: 31,
@@ -152,11 +209,20 @@ export const aiInfraProjects: Project[] = [
     },
     techStack: ['Python', 'anomalib', 'Pandas', 'DataFrame', 'Vision'],
     contributions: {
-      en: ['Fixed pandas>=3.0 DataFrame compatibility by switching enum serialization to .value semantics.'],
-      zh: ['修复 pandas>=3.0 下的 DataFrame 兼容性问题，避免枚举值写入异常。'],
+      en: [
+        'Landed 3 merged PRs fixing pandas>=3.0 DataFrame enum compatibility, PatchCore coreset initial random point handling, and deprecated API / resource leak issues.',
+      ],
+      zh: [
+        '已合并 3 个 PR，修复 pandas>=3.0 DataFrame 兼容、PatchCore coreset 初始随机点遗漏，以及弃用 API / 资源泄漏问题。',
+      ],
     },
     github: 'https://github.com/open-edge-platform/anomalib',
     githubStars: '5,636',
+    pullRequests: pullRequests('https://github.com/open-edge-platform/anomalib', [
+      3512,
+      3509,
+      3508,
+    ]),
   },
   {
     id: 28,
@@ -185,6 +251,7 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/pytorch/ao',
     githubStars: '2,775',
+    pullRequests: pullRequests('https://github.com/pytorch/ao', [4242]),
   },
   {
     id: 14,
@@ -219,6 +286,10 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/sgl-project/sglang',
     githubStars: '25,831',
+    pullRequests: pullRequests('https://github.com/sgl-project/sglang', [
+      21400,
+      21399,
+    ]),
   },
   {
     id: 15,
@@ -247,6 +318,7 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/rllm-org/rllm',
     githubStars: '5,426',
+    pullRequests: pullRequests('https://github.com/rllm-org/rllm', [480]),
   },
   {
     id: 16,
@@ -281,6 +353,11 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/vllm-project/vllm-omni',
     githubStars: '4,302',
+    pullRequests: pullRequests('https://github.com/vllm-project/vllm-omni', [
+      1687,
+      2221,
+      2228,
+    ]),
   },
   {
     id: 17,
@@ -309,6 +386,7 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/OpenRLHF/OpenRLHF',
     githubStars: '9,347',
+    pullRequests: pullRequests('https://github.com/OpenRLHF/OpenRLHF', [1212]),
   },
   {
     id: 26,
@@ -375,5 +453,8 @@ export const aiInfraProjects: Project[] = [
     },
     github: 'https://github.com/huggingface/transformers',
     githubStars: '159,387',
+    pullRequests: pullRequests('https://github.com/huggingface/transformers', [
+      45045,
+    ]),
   },
 ]

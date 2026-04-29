@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project'
+import { pullRequests } from '@/data/project-prs'
 import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const systemsEngineeringProjects: Project[] = [
@@ -29,6 +30,9 @@ export const systemsEngineeringProjects: Project[] = [
     },
     github: 'https://github.com/apify/crawlee-python',
     githubStars: '8,778',
+    pullRequests: pullRequests('https://github.com/apify/crawlee-python', [
+      1835,
+    ]),
   },
   {
     id: 22,
@@ -63,6 +67,12 @@ export const systemsEngineeringProjects: Project[] = [
     },
     github: 'https://github.com/FreeOpcUa/opcua-asyncio',
     githubStars: '1,402',
+    pullRequests: pullRequests('https://github.com/FreeOpcUa/opcua-asyncio', [
+      1954,
+      1955,
+      1956,
+      1957,
+    ]),
   },
   {
     id: 23,
@@ -91,6 +101,7 @@ export const systemsEngineeringProjects: Project[] = [
     },
     github: 'https://github.com/docker/compose',
     githubStars: '37,275',
+    pullRequests: pullRequests('https://github.com/docker/compose', [13684]),
   },
   {
     id: 24,
@@ -125,5 +136,9 @@ export const systemsEngineeringProjects: Project[] = [
     },
     github: 'https://github.com/affaan-m/everything-claude-code',
     githubStars: '156,478',
+    pullRequests: pullRequests(
+      'https://github.com/affaan-m/everything-claude-code',
+      [971, 972, 974, 977, 992],
+    ),
   },
 ]

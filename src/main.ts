@@ -30,7 +30,7 @@ export const createApp = ViteSSG(
   },
 )
 
-export function includedRoutes(paths: string[], routes: { name?: unknown; path: string }[]) {
+export function includedRoutes(_paths: string[], routes: { name?: unknown; path: string }[]) {
   return routes.flatMap((route) => {
     if (route.name === 'project-category') {
       return getProjectCategoryPaths()

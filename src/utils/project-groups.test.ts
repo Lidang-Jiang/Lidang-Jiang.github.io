@@ -15,7 +15,7 @@ import {
 
 describe('project grouping', () => {
   it('keeps all projects categorized', () => {
-    expect(projects).toHaveLength(31)
+    expect(projects).toHaveLength(32)
 
     for (const project of projects) {
       expect(project.category).toBeDefined()
@@ -38,7 +38,7 @@ describe('project grouping', () => {
       PROJECT_CATEGORY_ORDER,
     )
     expect(groups.map((group) => group.projects)).toHaveLength(4)
-    expect(groups.map((group) => group.projects.length)).toEqual([12, 5, 4, 10])
+    expect(groups.map((group) => group.projects.length)).toEqual([13, 5, 4, 10])
   })
 
   it('preserves the resume order inside each category', () => {
@@ -46,6 +46,7 @@ describe('project grouping', () => {
 
     expect(groups[0]?.projects.map((project) => project.title.en)).toEqual([
       'vLLM-Kunlun (Baidu Kunlun Chip Inference Framework)',
+      'OpenClaw',
       'ExecuTorch',
       'LitServe',
       'Olive',
@@ -101,8 +102,51 @@ describe('project grouping', () => {
       'Open-Source Contribution + Product Delivery',
     )
     expect(vllmKunlun?.githubStars).toBe('397')
+    expect(vllmKunlun?.contributions.en).toContain(
+      'Landed 8 merged PRs across InternVL inference fixes, installation/tutorial docs, collect_env.py diagnostics, release alignment, Read the Docs cleanup, and Docker documentation maintenance.',
+    )
     expect(aiak?.projectType?.zh).toBe('百度闭源 AI 推理系统')
     expect(aiak?.github).toBeUndefined()
+  })
+
+  it('keeps open-source contribution pull requests linked', () => {
+    const expectedPullRequests = new Map<string, number[]>([
+      [
+        'vLLM-Kunlun (Baidu Kunlun Chip Inference Framework)',
+        [108, 136, 218, 249, 251, 253, 327, 328],
+      ],
+      ['OpenClaw', [66285]],
+      ['ExecuTorch', [18701, 18703]],
+      ['LitServe', [674, 673]],
+      ['Olive', [2380]],
+      ['anomalib', [3512, 3509, 3508]],
+      ['PyTorch AO', [4242]],
+      ['SGLang', [21400, 21399]],
+      ['RLLM', [480]],
+      ['vLLM-Omni', [1687, 2221, 2228]],
+      ['OpenRLHF', [1212]],
+      ['Transformers', [45045]],
+      ['Gymnasium', [1553]],
+      ['HighwayEnv', [668]],
+      ['Genesis', [2609, 2610, 2612, 2613, 2614, 2653]],
+      ['PyTorch RL', [3593]],
+      ['ManiSkill', [1402, 1403]],
+      ['crawlee-python', [1835]],
+      ['opcua-asyncio', [1954, 1955, 1956, 1957]],
+      ['Docker Compose', [13684]],
+      ['Everything Claude Code', [971, 972, 974, 977, 992]],
+    ])
+
+    for (const [title, numbers] of expectedPullRequests) {
+      const project = projects.find((item) => item.title.en === title)
+
+      expect(project?.pullRequests?.map((pullRequest) => pullRequest.number)).toEqual(
+        numbers,
+      )
+      expect(project?.pullRequests?.map((pullRequest) => pullRequest.url)).toEqual(
+        numbers.map((number) => `${project?.github}/pull/${number}`),
+      )
+    }
   })
 
   it('defines stable category navigation metadata', () => {

@@ -99,6 +99,7 @@ export default {
     present: "至今",
     contributions: "核心贡献",
     achievements: "成果",
+    pullRequests: "开源 PR",
     viewSource: "源代码",
     viewDemo: "在线演示",
   },

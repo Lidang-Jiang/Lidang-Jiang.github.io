@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project'
+import { pullRequests } from '@/data/project-prs'
 import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const embodiedAiProjects: Project[] = [
@@ -29,6 +30,9 @@ export const embodiedAiProjects: Project[] = [
     },
     github: 'https://github.com/Farama-Foundation/Gymnasium',
     githubStars: '11,713',
+    pullRequests: pullRequests('https://github.com/Farama-Foundation/Gymnasium', [
+      1553,
+    ]),
   },
   {
     id: 27,
@@ -57,6 +61,9 @@ export const embodiedAiProjects: Project[] = [
     },
     github: 'https://github.com/Farama-Foundation/HighwayEnv',
     githubStars: '3,229',
+    pullRequests: pullRequests('https://github.com/Farama-Foundation/HighwayEnv', [
+      668,
+    ]),
   },
   {
     id: 19,
@@ -91,6 +98,14 @@ export const embodiedAiProjects: Project[] = [
     },
     github: 'https://github.com/Genesis-Embodied-AI/Genesis',
     githubStars: '28,501',
+    pullRequests: pullRequests('https://github.com/Genesis-Embodied-AI/Genesis', [
+      2609,
+      2610,
+      2612,
+      2613,
+      2614,
+      2653,
+    ]),
   },
   {
     id: 20,
@@ -119,6 +134,7 @@ export const embodiedAiProjects: Project[] = [
     },
     github: 'https://github.com/pytorch/rl',
     githubStars: '3,392',
+    pullRequests: pullRequests('https://github.com/pytorch/rl', [3593]),
   },
   {
     id: 21,
@@ -153,5 +169,9 @@ export const embodiedAiProjects: Project[] = [
     },
     github: 'https://github.com/haosulab/ManiSkill',
     githubStars: '2,779',
+    pullRequests: pullRequests('https://github.com/haosulab/ManiSkill', [
+      1402,
+      1403,
+    ]),
   },
 ]
