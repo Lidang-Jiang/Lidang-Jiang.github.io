@@ -27,19 +27,19 @@ export const aiInfraProjects: Project[] = [
     contributions: {
       en: [
         'Helped narrow a Qwen2.5-7B Attention failure on P800 Float16 before open-sourcing.',
-        'Landed 8 merged PRs across InternVL inference fixes, installation/tutorial docs, collect_env.py diagnostics, release alignment, Read the Docs cleanup, and Docker documentation maintenance.',
+        'Landed 9 merged PRs spanning InternVL KeyError fixes, installation docs, collect_env.py diagnostics, 0.15.1 release alignment, Read the Docs cleanup, Docker documentation, and XProfiler benchmark docs.',
       ],
       zh: [
         '在开源前协助定位 Qwen2.5-7B 在 P800 Float16 下的 Attention 故障。',
-        '开源后累计合入 8 个 PR，覆盖 InternVL 推理修复、安装与教程文档、collect_env.py 环境诊断、版本治理、Read the Docs 修复与 Docker 文档维护。',
+        '开源后累计合入 9 个 PR，覆盖 InternVL KeyError、安装教程、collect_env.py 环境诊断、0.15.1 版本治理、Read the Docs、Docker 文档与 XProfiler benchmark 文档修复。',
       ],
     },
     achievements: {
-      en: 'Credited in the official acknowledgments after landing 8 merged PRs.',
-      zh: '名字被收录进官方致谢，并已有 8 个已合并 PR。',
+      en: 'Credited in the official acknowledgments after landing 9 merged PRs.',
+      zh: '名字被收录进官方致谢，并已有 9 个已合并 PR。',
     },
     github: 'https://github.com/baidu/vLLM-Kunlun',
-    githubStars: '397',
+    githubStars: '412',
     pullRequests: pullRequests('https://github.com/baidu/vLLM-Kunlun', [
       108,
       136,
@@ -49,10 +49,44 @@ export const aiInfraProjects: Project[] = [
       253,
       327,
       328,
+      341,
     ]),
   },
   {
-    id: 34,
+    id: 35,
+    title: {
+      en: 'vLLM',
+      zh: 'vLLM',
+    },
+    period: '2026.05.05',
+    category: PROJECT_CATEGORIES.aiInfra,
+    projectType: {
+      en: 'Open-Source Contribution',
+      zh: '开源贡献',
+    },
+    role: {
+      en: 'Contributor',
+      zh: '贡献者',
+    },
+    background: {
+      en: 'High-throughput LLM inference and serving engine for production model deployments.',
+      zh: '面向生产部署的高吞吐大模型推理与服务框架。',
+    },
+    techStack: ['Python', 'vLLM', 'Transformers', 'Tokenizer', 'LLM Serving'],
+    contributions: {
+      en: [
+        'Improved tokenizer-class error handling by recommending Transformers upgrades when model tokenizers require newer library support.',
+      ],
+      zh: [
+        '改进 tokenizer class 错误处理，当模型 tokenizer 需要新版库支持时提示用户升级 Transformers。',
+      ],
+    },
+    github: 'https://github.com/vllm-project/vllm',
+    githubStars: '79,993',
+    pullRequests: pullRequests('https://github.com/vllm-project/vllm', [38099]),
+  },
+  {
+    id: 36,
     title: {
       en: 'OpenClaw',
       zh: 'OpenClaw',
@@ -68,10 +102,10 @@ export const aiInfraProjects: Project[] = [
       zh: '贡献者',
     },
     background: {
-      en: 'Cross-platform personal AI assistant with active-memory configuration and runtime execution paths.',
-      zh: '跨平台个人 AI 助手，覆盖 active-memory 配置与运行时执行路径。',
+      en: 'Cross-platform personal AI assistant with active-memory configuration and runtime gating.',
+      zh: '跨平台个人 AI 助手，支持 active-memory 配置与运行时判定。',
     },
-    techStack: ['TypeScript', 'AI Assistant', 'Schema', 'Testing'],
+    techStack: ['TypeScript', 'OpenClaw', 'Active Memory', 'Schema', 'Testing'],
     contributions: {
       en: [
         'Added explicit chat type support for active-memory configuration and runtime gating with schema and execution regression coverage.',
@@ -81,7 +115,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/openclaw/openclaw',
-    githubStars: '365,938',
+    githubStars: '371,796',
     pullRequests: pullRequests('https://github.com/openclaw/openclaw', [66285]),
   },
   {
@@ -90,7 +124,7 @@ export const aiInfraProjects: Project[] = [
       en: 'ExecuTorch',
       zh: 'ExecuTorch',
     },
-    period: '2026.04.10',
+    period: '2026.04.10 — 2026.05.08',
     category: PROJECT_CATEGORIES.aiInfra,
     projectType: {
       en: 'Open-Source Contribution',
@@ -107,17 +141,18 @@ export const aiInfraProjects: Project[] = [
     techStack: ['PyTorch', 'ExecuTorch', 'XNNPACK', 'Dynamic Shapes', 'Testing'],
     contributions: {
       en: [
-        'Landed 2 merged PRs adding dynamic-shape tests for xnnpack models and Linux Python runtime end-to-end XNNPACK tests.',
+        'Landed 3 merged PRs adding dynamic-shape tests for xnnpack models, Linux Python runtime end-to-end XNNPACK tests, and a torch.split export fix for alias annotations.',
       ],
       zh: [
-        '已合并 2 个 PR，新增 xnnpack 动态 shape 测试，并补充 Linux 下 XNNPACK Python runtime 端到端测试。',
+        '已合并 3 个 PR，新增 xnnpack 动态 shape 测试，补充 Linux 下 XNNPACK Python runtime 端到端测试，并修复 alias annotations 场景下 torch.split 导出失败。',
       ],
     },
     github: 'https://github.com/pytorch/executorch',
-    githubStars: '4,509',
+    githubStars: '4,605',
     pullRequests: pullRequests('https://github.com/pytorch/executorch', [
       18701,
       18703,
+      18700,
     ]),
   },
   {
@@ -152,7 +187,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/Lightning-AI/LitServe',
-    githubStars: '3,857',
+    githubStars: '3,882',
     pullRequests: pullRequests('https://github.com/Lightning-AI/LitServe', [
       674,
       673,
@@ -184,7 +219,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['修复 HQQ 与 RTN 量化流程对外部数据文件的加载问题。'],
     },
     github: 'https://github.com/microsoft/Olive',
-    githubStars: '2,296',
+    githubStars: '2,313',
     pullRequests: pullRequests('https://github.com/microsoft/Olive', [2380]),
   },
   {
@@ -217,7 +252,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/open-edge-platform/anomalib',
-    githubStars: '5,636',
+    githubStars: '5,738',
     pullRequests: pullRequests('https://github.com/open-edge-platform/anomalib', [
       3512,
       3509,
@@ -250,7 +285,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['在 PT2E 场景下为高于 2 维输入跳过 linear+bn 融合，避免错误图优化。'],
     },
     github: 'https://github.com/pytorch/ao',
-    githubStars: '2,775',
+    githubStars: '2,825',
     pullRequests: pullRequests('https://github.com/pytorch/ao', [4242]),
   },
   {
@@ -285,7 +320,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/sgl-project/sglang',
-    githubStars: '25,831',
+    githubStars: '27,798',
     pullRequests: pullRequests('https://github.com/sgl-project/sglang', [
       21400,
       21399,
@@ -317,7 +352,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['更新 verl 0.7.1+ 的 import path 兼容逻辑，修复上游路径变更导致的导入失败。'],
     },
     github: 'https://github.com/rllm-org/rllm',
-    githubStars: '5,426',
+    githubStars: '5,511',
     pullRequests: pullRequests('https://github.com/rllm-org/rllm', [480]),
   },
   {
@@ -326,7 +361,7 @@ export const aiInfraProjects: Project[] = [
       en: 'vLLM-Omni',
       zh: 'vLLM-Omni',
     },
-    period: '2026.03.05 — 2026.04.03',
+    period: '2026.03.05 — 2026.05.06',
     category: PROJECT_CATEGORIES.aiInfra,
     projectType: {
       en: 'Open-Source Contribution',
@@ -344,17 +379,18 @@ export const aiInfraProjects: Project[] = [
     contributions: {
       en: [
         'Fixed error-response HTTP status handling for create_speech.',
-        'Made gradio optional and replaced bare print calls with structured logging.',
+        'Fixed missing ANSI colors in piped CLI logo output, made gradio optional, and replaced bare print calls with structured logging.',
       ],
       zh: [
         '修复 create_speech 错误响应的 HTTP 状态码处理。',
-        '将 gradio 调整为可选依赖，并用结构化 logger 替换 bare print。',
+        '修复 piped output 下 CLI logo ANSI 颜色缺失，将 gradio 调整为可选依赖，并用结构化 logger 替换 bare print。',
       ],
     },
     github: 'https://github.com/vllm-project/vllm-omni',
-    githubStars: '4,302',
+    githubStars: '4,746',
     pullRequests: pullRequests('https://github.com/vllm-project/vllm-omni', [
       1687,
+      1636,
       2221,
       2228,
     ]),
@@ -385,7 +421,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['在 Ray runtime 中尊重用户显式设置的 NCCL_DEBUG 环境变量，避免配置被覆盖。'],
     },
     github: 'https://github.com/OpenRLHF/OpenRLHF',
-    githubStars: '9,347',
+    githubStars: '9,503',
     pullRequests: pullRequests('https://github.com/OpenRLHF/OpenRLHF', [1212]),
   },
   {
@@ -452,7 +488,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['移除 PIL backend image processor 对 torchvision 的错误依赖，减少不必要安装与运行失败。'],
     },
     github: 'https://github.com/huggingface/transformers',
-    githubStars: '159,387',
+    githubStars: '160,604',
     pullRequests: pullRequests('https://github.com/huggingface/transformers', [
       45045,
     ]),

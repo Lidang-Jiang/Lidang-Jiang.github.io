@@ -4,6 +4,39 @@ import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const embodiedAiProjects: Project[] = [
   {
+    id: 37,
+    title: {
+      en: 'Launch ROS',
+      zh: 'launch_ros',
+    },
+    period: '2026.05.10',
+    category: PROJECT_CATEGORIES.embodiedAi,
+    projectType: {
+      en: 'Open-Source Contribution',
+      zh: '开源贡献',
+    },
+    role: {
+      en: 'Contributor',
+      zh: '贡献者',
+    },
+    background: {
+      en: 'ROS 2 launch tooling for starting and testing ROS nodes.',
+      zh: 'ROS 2 节点启动与测试工具。',
+    },
+    techStack: ['Python', 'ROS 2', 'Launch', 'Testing'],
+    contributions: {
+      en: [
+        'Rejected the deprecated node-name frontend key to keep launch descriptions aligned with current ROS 2 node naming behavior.',
+      ],
+      zh: [
+        '拒绝 deprecated node-name frontend key，使 launch 描述与当前 ROS 2 节点命名行为保持一致。',
+      ],
+    },
+    github: 'https://github.com/ros2/launch_ros',
+    githubStars: '79',
+    pullRequests: pullRequests('https://github.com/ros2/launch_ros', [538]),
+  },
+  {
     id: 32,
     title: {
       en: 'Gymnasium',
@@ -29,7 +62,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['新增 RepeatAction wrapper，补充动作重复封装能力。'],
     },
     github: 'https://github.com/Farama-Foundation/Gymnasium',
-    githubStars: '11,713',
+    githubStars: '11,885',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/Gymnasium', [
       1553,
     ]),
@@ -60,7 +93,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['修复 SubprocVecEnv 在 forkserver 与 spawn 模式下的 ConnectionResetError。'],
     },
     github: 'https://github.com/Farama-Foundation/HighwayEnv',
-    githubStars: '3,229',
+    githubStars: '3,251',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/HighwayEnv', [
       668,
     ]),
@@ -96,9 +129,9 @@ export const embodiedAiProjects: Project[] = [
         '新增刚体动能与势能公开 API，并修复 WSL2 GPU 检测与 propeller API 相关问题。',
       ],
     },
-    github: 'https://github.com/Genesis-Embodied-AI/Genesis',
-    githubStars: '28,501',
-    pullRequests: pullRequests('https://github.com/Genesis-Embodied-AI/Genesis', [
+    github: 'https://github.com/Genesis-Embodied-AI/genesis-world',
+    githubStars: '28,777',
+    pullRequests: pullRequests('https://github.com/Genesis-Embodied-AI/genesis-world', [
       2609,
       2610,
       2612,
@@ -133,7 +166,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['为 QValueModule 新增 strict_shape 参数，强化 action shape 校验。'],
     },
     github: 'https://github.com/pytorch/rl',
-    githubStars: '3,392',
+    githubStars: '3,425',
     pullRequests: pullRequests('https://github.com/pytorch/rl', [3593]),
   },
   {
@@ -168,7 +201,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/haosulab/ManiSkill',
-    githubStars: '2,779',
+    githubStars: '2,870',
     pullRequests: pullRequests('https://github.com/haosulab/ManiSkill', [
       1402,
       1403,

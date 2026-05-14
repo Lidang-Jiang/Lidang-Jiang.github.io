@@ -29,7 +29,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['将 flaky 的 test_autoscales 改为轮询断言，提升 CI 稳定性。'],
     },
     github: 'https://github.com/apify/crawlee-python',
-    githubStars: '8,778',
+    githubStars: '9,043',
     pullRequests: pullRequests('https://github.com/apify/crawlee-python', [
       1835,
     ]),
@@ -66,7 +66,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/FreeOpcUa/opcua-asyncio',
-    githubStars: '1,402',
+    githubStars: '1,418',
     pullRequests: pullRequests('https://github.com/FreeOpcUa/opcua-asyncio', [
       1954,
       1955,
@@ -100,7 +100,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['在 Tar.Sync() 中返回非 ErrNotExist 的 stat 错误，避免异常被静默吞掉。'],
     },
     github: 'https://github.com/docker/compose',
-    githubStars: '37,275',
+    githubStars: '37,384',
     pullRequests: pullRequests('https://github.com/docker/compose', [13684]),
   },
   {
@@ -135,7 +135,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/affaan-m/everything-claude-code',
-    githubStars: '156,478',
+    githubStars: '181,923',
     pullRequests: pullRequests(
       'https://github.com/affaan-m/everything-claude-code',
       [971, 972, 974, 977, 992],
