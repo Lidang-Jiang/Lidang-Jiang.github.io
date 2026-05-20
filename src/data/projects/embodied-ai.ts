@@ -62,7 +62,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['新增 RepeatAction wrapper，补充动作重复封装能力。'],
     },
     github: 'https://github.com/Farama-Foundation/Gymnasium',
-    githubStars: '11,885',
+    githubStars: '11,912',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/Gymnasium', [
       1553,
     ]),
@@ -93,7 +93,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['修复 SubprocVecEnv 在 forkserver 与 spawn 模式下的 ConnectionResetError。'],
     },
     github: 'https://github.com/Farama-Foundation/HighwayEnv',
-    githubStars: '3,251',
+    githubStars: '3,254',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/HighwayEnv', [
       668,
     ]),
@@ -115,8 +115,8 @@ export const embodiedAiProjects: Project[] = [
       zh: '贡献者',
     },
     background: {
-      en: 'General-purpose embodied-AI and robotics simulation platform.',
-      zh: '面向具身智能与机器人任务的通用物理仿真平台。',
+      en: 'General-purpose embodied-AI simulation platform.',
+      zh: '通用具身智能仿真平台。',
     },
     techStack: ['Python', 'C++', 'Physics Simulation', 'Robotics', 'WSL2'],
     contributions: {
@@ -130,7 +130,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/Genesis-Embodied-AI/genesis-world',
-    githubStars: '28,777',
+    githubStars: '28,814',
     pullRequests: pullRequests('https://github.com/Genesis-Embodied-AI/genesis-world', [
       2609,
       2610,
@@ -166,7 +166,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['为 QValueModule 新增 strict_shape 参数，强化 action shape 校验。'],
     },
     github: 'https://github.com/pytorch/rl',
-    githubStars: '3,425',
+    githubStars: '3,434',
     pullRequests: pullRequests('https://github.com/pytorch/rl', [3593]),
   },
   {
@@ -201,7 +201,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/haosulab/ManiSkill',
-    githubStars: '2,870',
+    githubStars: '2,893',
     pullRequests: pullRequests('https://github.com/haosulab/ManiSkill', [
       1402,
       1403,

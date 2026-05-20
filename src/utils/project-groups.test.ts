@@ -15,7 +15,7 @@ import {
 
 describe('project grouping', () => {
   it('keeps all projects categorized', () => {
-    expect(projects).toHaveLength(34)
+    expect(projects).toHaveLength(35)
 
     for (const project of projects) {
       expect(project.category).toBeDefined()
@@ -38,7 +38,7 @@ describe('project grouping', () => {
       PROJECT_CATEGORY_ORDER,
     )
     expect(groups.map((group) => group.projects)).toHaveLength(4)
-    expect(groups.map((group) => group.projects.length)).toEqual([14, 6, 4, 10])
+    expect(groups.map((group) => group.projects.length)).toEqual([15, 6, 4, 10])
   })
 
   it('preserves the resume order inside each category', () => {
@@ -46,6 +46,7 @@ describe('project grouping', () => {
 
     expect(groups[0]?.projects.map((project) => project.title.en)).toEqual([
       'vLLM-Kunlun (Baidu Kunlun Chip Inference Framework)',
+      'FunASR',
       'vLLM',
       'OpenClaw',
       'ExecuTorch',
@@ -103,9 +104,9 @@ describe('project grouping', () => {
     expect(vllmKunlun?.projectType?.en).toBe(
       'Open-Source Contribution + Product Delivery',
     )
-    expect(vllmKunlun?.githubStars).toBe('412')
+    expect(vllmKunlun?.githubStars).toBe('416')
     expect(vllmKunlun?.contributions.en).toContain(
-      'Landed 9 merged PRs spanning InternVL KeyError fixes, installation docs, collect_env.py diagnostics, 0.15.1 release alignment, Read the Docs cleanup, Docker documentation, and XProfiler benchmark docs.',
+      'Landed 9 merged PRs across InternVL inference fixes, installation/tutorial docs, collect_env.py diagnostics, release alignment, Read the Docs cleanup, Docker documentation maintenance, and XProfiler benchmark documentation fixes.',
     )
     expect(aiak?.projectType?.zh).toBe('百度闭源 AI 推理系统')
     expect(aiak?.github).toBeUndefined()
@@ -117,6 +118,7 @@ describe('project grouping', () => {
         'vLLM-Kunlun (Baidu Kunlun Chip Inference Framework)',
         [108, 136, 218, 249, 251, 253, 327, 328, 341],
       ],
+      ['FunASR', [2840]],
       ['vLLM', [38099]],
       ['OpenClaw', [66285]],
       ['ExecuTorch', [18701, 18703, 18700]],

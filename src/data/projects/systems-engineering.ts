@@ -29,7 +29,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['将 flaky 的 test_autoscales 改为轮询断言，提升 CI 稳定性。'],
     },
     github: 'https://github.com/apify/crawlee-python',
-    githubStars: '9,043',
+    githubStars: '9,063',
     pullRequests: pullRequests('https://github.com/apify/crawlee-python', [
       1835,
     ]),
@@ -66,7 +66,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/FreeOpcUa/opcua-asyncio',
-    githubStars: '1,418',
+    githubStars: '1,421',
     pullRequests: pullRequests('https://github.com/FreeOpcUa/opcua-asyncio', [
       1954,
       1955,
@@ -100,7 +100,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['在 Tar.Sync() 中返回非 ErrNotExist 的 stat 错误，避免异常被静默吞掉。'],
     },
     github: 'https://github.com/docker/compose',
-    githubStars: '37,384',
+    githubStars: '37,394',
     pullRequests: pullRequests('https://github.com/docker/compose', [13684]),
   },
   {
@@ -120,24 +120,22 @@ export const systemsEngineeringProjects: Project[] = [
       zh: '贡献者',
     },
     background: {
-      en: 'Agent configuration and hooks automation toolkit for Claude Code and Codex workflows.',
-      zh: '面向 Claude Code 与 Codex 工作流的 agents、hooks 与配置自动化项目。',
+      en: 'Agent configuration and hooks automation toolkit.',
+      zh: 'AI agent 配置与 hooks 自动化项目。',
     },
     techStack: ['TypeScript', 'Node.js', 'Agents', 'Hooks', 'Codex'],
     contributions: {
       en: [
-        'Improved Windows compatibility around paths, temp files, and persistent instructions.',
-        'Added MCP startup_timeout_sec support and completed related hooks/runtime fixes.',
+        'Landed 5 merged PRs covering Windows path compatibility, Codex persistent_instructions, MCP startup_timeout_sec, observer temp-file handling, and hooks denylist migration.',
       ],
       zh: [
-        '改进 Windows 路径、临时文件与 persistent_instructions 相关兼容性。',
-        '为 MCP server 增加 startup_timeout_sec，并完成相关 hooks/runtime 修复。',
+        '已合并 5 个 PR，覆盖 Windows 路径兼容、Codex baseline 的 persistent_instructions、MCP startup_timeout_sec、observer 临时文件兼容与 hooks denylist 迁移。',
       ],
     },
-    github: 'https://github.com/affaan-m/everything-claude-code',
-    githubStars: '181,923',
+    github: 'https://github.com/affaan-m/ECC',
+    githubStars: '187,259',
     pullRequests: pullRequests(
-      'https://github.com/affaan-m/everything-claude-code',
+      'https://github.com/affaan-m/ECC',
       [971, 972, 974, 977, 992],
     ),
   },

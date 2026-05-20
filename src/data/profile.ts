@@ -4,8 +4,8 @@ export const profile = {
     zh: '江李当',
   },
   title: {
-    en: 'MLsys - Embodied Intelligence - AI - Robotics Engineer',
-    zh: 'MLsys-具身智能-AI-机器人工程师',
+    en: 'MLsys - Embodied Intelligence - AI - Robotics - Embedded Software Engineer',
+    zh: 'MLsys-具身智能-AI-机器人-嵌入式软件工程师',
   },
   avatar: '/images/profile.jpeg',
   location: {
@@ -16,8 +16,8 @@ export const profile = {
   publicEmail: '765984881@qq.com',
   emails: ['765984881@qq.com', '2021223075161@alu.scu.edu.cn'],
   position: {
-    en: 'MLsys - Embodied Intelligence - AI - Robotics Engineer',
-    zh: 'MLsys-具身智能-AI-机器人工程师',
+    en: 'MLsys - Embodied Intelligence - AI - Robotics - Embedded Software Engineer',
+    zh: 'MLsys-具身智能-AI-机器人-嵌入式软件工程师',
   },
   salary: {
     en: '25k-30k/mo',
