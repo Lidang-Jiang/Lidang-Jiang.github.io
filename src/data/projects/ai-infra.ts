@@ -39,7 +39,7 @@ export const aiInfraProjects: Project[] = [
       zh: '名字被收录进官方致谢，并已有 9 个已合并 PR。',
     },
     github: 'https://github.com/baidu/vLLM-Kunlun',
-    githubStars: '416',
+    githubStars: '431',
     pullRequests: pullRequests('https://github.com/baidu/vLLM-Kunlun', [
       108,
       136,
@@ -84,7 +84,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/modelscope/FunASR',
-    githubStars: '16,139',
+    githubStars: '18,054',
     pullRequests: pullRequests('https://github.com/modelscope/FunASR', [2840]),
   },
   {
@@ -117,7 +117,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/vllm-project/vllm',
-    githubStars: '80,503',
+    githubStars: '83,002',
     pullRequests: pullRequests('https://github.com/vllm-project/vllm', [38099]),
   },
   {
@@ -150,7 +150,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/openclaw/openclaw',
-    githubStars: '373,294',
+    githubStars: '378,924',
     pullRequests: pullRequests('https://github.com/openclaw/openclaw', [66285]),
   },
   {
@@ -183,7 +183,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/pytorch/executorch',
-    githubStars: '4,636',
+    githubStars: '4,732',
     pullRequests: pullRequests('https://github.com/pytorch/executorch', [
       18701,
       18703,
@@ -222,7 +222,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/Lightning-AI/LitServe',
-    githubStars: '3,882',
+    githubStars: '3,893',
     pullRequests: pullRequests('https://github.com/Lightning-AI/LitServe', [
       674,
       673,
@@ -254,7 +254,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['修复 HQQ 与 RTN 量化流程对外部数据文件的加载问题。'],
     },
     github: 'https://github.com/microsoft/Olive',
-    githubStars: '2,316',
+    githubStars: '2,333',
     pullRequests: pullRequests('https://github.com/microsoft/Olive', [2380]),
   },
   {
@@ -287,7 +287,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/open-edge-platform/anomalib',
-    githubStars: '5,755',
+    githubStars: '5,839',
     pullRequests: pullRequests('https://github.com/open-edge-platform/anomalib', [
       3512,
       3509,
@@ -320,7 +320,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['在 PT2E 场景下为高于 2 维输入跳过 linear+bn 融合，避免错误图优化。'],
     },
     github: 'https://github.com/pytorch/ao',
-    githubStars: '2,828',
+    githubStars: '2,860',
     pullRequests: pullRequests('https://github.com/pytorch/ao', [4242]),
   },
   {
@@ -355,7 +355,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/sgl-project/sglang',
-    githubStars: '28,032',
+    githubStars: '29,064',
     pullRequests: pullRequests('https://github.com/sgl-project/sglang', [
       21400,
       21399,
@@ -387,7 +387,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['更新 verl 0.7.1+ 的 import path 兼容逻辑，修复上游路径变更导致的导入失败。'],
     },
     github: 'https://github.com/rllm-org/rllm',
-    githubStars: '5,544',
+    githubStars: '5,618',
     pullRequests: pullRequests('https://github.com/rllm-org/rllm', [480]),
   },
   {
@@ -420,7 +420,7 @@ export const aiInfraProjects: Project[] = [
       ],
     },
     github: 'https://github.com/vllm-project/vllm-omni',
-    githubStars: '4,815',
+    githubStars: '5,155',
     pullRequests: pullRequests('https://github.com/vllm-project/vllm-omni', [
       1687,
       1636,
@@ -454,7 +454,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['在 Ray runtime 中尊重用户显式设置的 NCCL_DEBUG 环境变量，避免配置被覆盖。'],
     },
     github: 'https://github.com/OpenRLHF/OpenRLHF',
-    githubStars: '9,525',
+    githubStars: '9,646',
     pullRequests: pullRequests('https://github.com/OpenRLHF/OpenRLHF', [1212]),
   },
   {
@@ -463,7 +463,7 @@ export const aiInfraProjects: Project[] = [
       en: 'Baidu AIAK-SGLang DeepSeek / GLM5 PD Deployment',
       zh: '百度 AIAK-SGLang DeepSeek / GLM5 PD 分离部署',
     },
-    period: '2026.03.17 — 2026.04.02',
+    period: '2026.03.17 — 2026.06.11',
     category: PROJECT_CATEGORIES.aiInfra,
     projectType: {
       en: 'Closed-Source Baidu AI Inference System',
@@ -478,20 +478,20 @@ export const aiInfraProjects: Project[] = [
       zh: 'PD 分离部署、性能压测与算子级性能排查',
     },
     background: {
-      en: 'Built Prefill/Decode-disaggregated deployments for DeepSeek-V3.2 and GLM5 on Kunlun P800 clusters with the AIAK-customized SGLang stack.',
-      zh: '基于 AIAK 定制版 SGLang，在昆仑 P800 集群上推进 DeepSeek-V3.2 与 GLM5 的 Prefill/Decode 分离部署。',
+      en: 'Built Prefill/Decode-disaggregated deployments for DeepSeek-V3.2, DeepSeek-V4-Flash, and GLM5 on Kunlun P800 clusters with the AIAK-customized SGLang stack.',
+      zh: '基于 AIAK 定制版 SGLang，在昆仑 P800 集群上推进 DeepSeek-V3.2、DeepSeek-V4-Flash 与 GLM5 的 Prefill/Decode 分离部署。',
     },
     techStack: ['SGLang', 'AIAK', 'Kunlun P800', 'Kubernetes', 'aiakperf'],
     contributions: {
       en: [
-        'Completed TP/DP/EP tuning plus multi-node deployment bring-up for DeepSeek and GLM5.',
-        'Ran aiakperf benchmarking while tracking TTFT, TPOT, and running-queue metrics.',
-        'Maintained dump pipelines to support operator-level performance investigations.',
+        'Completed multi-node TP/DP/EP tuning and deployment bring-up for DeepSeek-V3.2, DeepSeek-V4-Flash, and GLM5.',
+        'Ran aiakperf benchmarking while tracking TTFT, TPOT, and running-queue metrics, and maintained dump pipelines for operator-level investigations.',
+        'Added DS V4 Flash profiling with XPU profiler tracing, per-rank profiler devices, and bench_serving --profile --pd-separated runs for isolated Prefill/Decode traces.',
       ],
       zh: [
-        '完成 DeepSeek 与 GLM5 的多机多卡 TP/DP/EP 参数调优与部署联调。',
-        '使用 aiakperf 压测并持续跟踪 TTFT、TPOT 与 running queue 等指标。',
-        '维护 dump 脚本链路，为算子级性能排查提供定位基础。',
+        '完成 DeepSeek-V3.2、DeepSeek-V4-Flash 与 GLM5 的多机多卡 TP/DP/EP 参数调优与部署联调。',
+        '使用 aiakperf 压测并持续跟踪 TTFT、TPOT 与 running queue 等指标，同时维护 dump 脚本链路用于算子级性能排查。',
+        '补充 DS V4 Flash profiling，启用 XPU profiler tracing，按 rank 注入 profiler device，并通过 bench_serving --profile --pd-separated 对 Prefill/Decode 单独采样。',
       ],
     },
   },
@@ -521,7 +521,7 @@ export const aiInfraProjects: Project[] = [
       zh: ['移除 PIL backend image processor 对 torchvision 的错误依赖，减少不必要安装与运行失败。'],
     },
     github: 'https://github.com/huggingface/transformers',
-    githubStars: '160,788',
+    githubStars: '161,620',
     pullRequests: pullRequests('https://github.com/huggingface/transformers', [
       45045,
     ]),

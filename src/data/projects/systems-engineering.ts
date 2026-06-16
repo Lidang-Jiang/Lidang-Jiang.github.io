@@ -4,6 +4,41 @@ import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const systemsEngineeringProjects: Project[] = [
   {
+    id: 39,
+    title: {
+      en: 'Kubernetes',
+      zh: 'Kubernetes',
+    },
+    period: '2026.06.15',
+    category: PROJECT_CATEGORIES.systemsEngineering,
+    projectType: {
+      en: 'Open-Source Contribution',
+      zh: '开源贡献',
+    },
+    role: {
+      en: 'Contributor',
+      zh: '贡献者',
+    },
+    background: {
+      en: 'Production-grade container orchestration system.',
+      zh: '生产级容器编排系统。',
+    },
+    techStack: ['Go', 'Kubernetes', 'StatefulSet', 'Declarative Validation'],
+    contributions: {
+      en: [
+        'Migrated StatefulSet immutable-field validation to the declarative validation path across apps/v1, v1beta1, and v1beta2, with equivalence coverage and generated validation updates.',
+      ],
+      zh: [
+        '将 StatefulSet 不可变字段迁移到 declarative validation，并补充 apps/v1、v1beta1、v1beta2 等价验证和生成代码。',
+      ],
+    },
+    github: 'https://github.com/kubernetes/kubernetes',
+    githubStars: '123,039',
+    pullRequests: pullRequests('https://github.com/kubernetes/kubernetes', [
+      138080,
+    ]),
+  },
+  {
     id: 33,
     title: {
       en: 'crawlee-python',
@@ -29,7 +64,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['将 flaky 的 test_autoscales 改为轮询断言，提升 CI 稳定性。'],
     },
     github: 'https://github.com/apify/crawlee-python',
-    githubStars: '9,063',
+    githubStars: '9,198',
     pullRequests: pullRequests('https://github.com/apify/crawlee-python', [
       1835,
     ]),
@@ -66,7 +101,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/FreeOpcUa/opcua-asyncio',
-    githubStars: '1,421',
+    githubStars: '1,432',
     pullRequests: pullRequests('https://github.com/FreeOpcUa/opcua-asyncio', [
       1954,
       1955,
@@ -100,7 +135,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['在 Tar.Sync() 中返回非 ErrNotExist 的 stat 错误，避免异常被静默吞掉。'],
     },
     github: 'https://github.com/docker/compose',
-    githubStars: '37,394',
+    githubStars: '37,526',
     pullRequests: pullRequests('https://github.com/docker/compose', [13684]),
   },
   {
@@ -133,7 +168,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/affaan-m/ECC',
-    githubStars: '187,259',
+    githubStars: '216,302',
     pullRequests: pullRequests(
       'https://github.com/affaan-m/ECC',
       [971, 972, 974, 977, 992],

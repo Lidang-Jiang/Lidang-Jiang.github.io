@@ -15,7 +15,7 @@ import {
 
 describe('project grouping', () => {
   it('keeps all projects categorized', () => {
-    expect(projects).toHaveLength(35)
+    expect(projects).toHaveLength(37)
 
     for (const project of projects) {
       expect(project.category).toBeDefined()
@@ -38,7 +38,7 @@ describe('project grouping', () => {
       PROJECT_CATEGORY_ORDER,
     )
     expect(groups.map((group) => group.projects)).toHaveLength(4)
-    expect(groups.map((group) => group.projects.length)).toEqual([15, 6, 4, 10])
+    expect(groups.map((group) => group.projects.length)).toEqual([15, 7, 5, 10])
   })
 
   it('preserves the resume order inside each category', () => {
@@ -62,6 +62,7 @@ describe('project grouping', () => {
       'Transformers',
     ])
     expect(groups[1]?.projects.map((project) => project.title.en)).toEqual([
+      'rclcpp',
       'Launch ROS',
       'Gymnasium',
       'HighwayEnv',
@@ -70,6 +71,7 @@ describe('project grouping', () => {
       'ManiSkill',
     ])
     expect(groups[2]?.projects.map((project) => project.title.en)).toEqual([
+      'Kubernetes',
       'crawlee-python',
       'opcua-asyncio',
       'Docker Compose',
@@ -104,11 +106,15 @@ describe('project grouping', () => {
     expect(vllmKunlun?.projectType?.en).toBe(
       'Open-Source Contribution + Product Delivery',
     )
-    expect(vllmKunlun?.githubStars).toBe('416')
+    expect(vllmKunlun?.githubStars).toBe('431')
     expect(vllmKunlun?.contributions.en).toContain(
       'Landed 9 merged PRs across InternVL inference fixes, installation/tutorial docs, collect_env.py diagnostics, release alignment, Read the Docs cleanup, Docker documentation maintenance, and XProfiler benchmark documentation fixes.',
     )
     expect(aiak?.projectType?.zh).toBe('百度闭源 AI 推理系统')
+    expect(aiak?.period).toBe('2026.03.17 — 2026.06.11')
+    expect(aiak?.contributions.en).toContain(
+      'Added DS V4 Flash profiling with XPU profiler tracing, per-rank profiler devices, and bench_serving --profile --pd-separated runs for isolated Prefill/Decode traces.',
+    )
     expect(aiak?.github).toBeUndefined()
   })
 
@@ -131,12 +137,14 @@ describe('project grouping', () => {
       ['vLLM-Omni', [1687, 1636, 2221, 2228]],
       ['OpenRLHF', [1212]],
       ['Transformers', [45045]],
+      ['rclcpp', [3139]],
       ['Launch ROS', [538]],
       ['Gymnasium', [1553]],
       ['HighwayEnv', [668]],
       ['Genesis', [2609, 2610, 2612, 2613, 2614, 2653]],
       ['PyTorch RL', [3593]],
       ['ManiSkill', [1402, 1403]],
+      ['Kubernetes', [138080]],
       ['crawlee-python', [1835]],
       ['opcua-asyncio', [1954, 1955, 1956, 1957]],
       ['Docker Compose', [13684]],
@@ -180,7 +188,7 @@ describe('project grouping', () => {
     expect(getProjectCategoryPath('systems-engineering')).toBe(
       '/projects/systems-engineering',
     )
-    expect(getProjectGroupBySlug(projects, 'embodied-ai')?.projects.length).toBe(6)
+    expect(getProjectGroupBySlug(projects, 'embodied-ai')?.projects.length).toBe(7)
     expect(getProjectGroupBySlug(projects, 'unknown')).toBeNull()
   })
 

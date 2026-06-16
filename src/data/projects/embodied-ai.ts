@@ -4,6 +4,39 @@ import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const embodiedAiProjects: Project[] = [
   {
+    id: 38,
+    title: {
+      en: 'rclcpp',
+      zh: 'rclcpp',
+    },
+    period: '2026.06.08',
+    category: PROJECT_CATEGORIES.embodiedAi,
+    projectType: {
+      en: 'Open-Source Contribution',
+      zh: '开源贡献',
+    },
+    role: {
+      en: 'Contributor',
+      zh: '贡献者',
+    },
+    background: {
+      en: 'ROS 2 C++ client library.',
+      zh: 'ROS 2 C++ 客户端库。',
+    },
+    techStack: ['C++', 'ROS 2', 'rclcpp', 'Client Library'],
+    contributions: {
+      en: [
+        'Backported the already-merged rolling/kilted fix to Jazzy by initializing GenericClient result response offsets, reducing uninitialized-offset build and runtime risk.',
+      ],
+      zh: [
+        '将 rolling/kilted 已合并修复 backport 到 Jazzy，初始化 GenericClient result response offsets，降低未初始化 offset 带来的编译与运行风险。',
+      ],
+    },
+    github: 'https://github.com/ros2/rclcpp',
+    githubStars: '764',
+    pullRequests: pullRequests('https://github.com/ros2/rclcpp', [3139]),
+  },
+  {
     id: 37,
     title: {
       en: 'Launch ROS',
@@ -33,7 +66,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/ros2/launch_ros',
-    githubStars: '79',
+    githubStars: '80',
     pullRequests: pullRequests('https://github.com/ros2/launch_ros', [538]),
   },
   {
@@ -62,7 +95,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['新增 RepeatAction wrapper，补充动作重复封装能力。'],
     },
     github: 'https://github.com/Farama-Foundation/Gymnasium',
-    githubStars: '11,912',
+    githubStars: '12,048',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/Gymnasium', [
       1553,
     ]),
@@ -93,7 +126,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['修复 SubprocVecEnv 在 forkserver 与 spawn 模式下的 ConnectionResetError。'],
     },
     github: 'https://github.com/Farama-Foundation/HighwayEnv',
-    githubStars: '3,254',
+    githubStars: '3,276',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/HighwayEnv', [
       668,
     ]),
@@ -130,7 +163,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/Genesis-Embodied-AI/genesis-world',
-    githubStars: '28,814',
+    githubStars: '29,350',
     pullRequests: pullRequests('https://github.com/Genesis-Embodied-AI/genesis-world', [
       2609,
       2610,
@@ -166,7 +199,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['为 QValueModule 新增 strict_shape 参数，强化 action shape 校验。'],
     },
     github: 'https://github.com/pytorch/rl',
-    githubStars: '3,434',
+    githubStars: '3,463',
     pullRequests: pullRequests('https://github.com/pytorch/rl', [3593]),
   },
   {
@@ -200,9 +233,9 @@ export const embodiedAiProjects: Project[] = [
         '修正文档中的 PlugCharger-v1 dense reward 标签。',
       ],
     },
-    github: 'https://github.com/haosulab/ManiSkill',
-    githubStars: '2,893',
-    pullRequests: pullRequests('https://github.com/haosulab/ManiSkill', [
+    github: 'https://github.com/mani-skill/ManiSkill',
+    githubStars: '3,005',
+    pullRequests: pullRequests('https://github.com/mani-skill/ManiSkill', [
       1402,
       1403,
     ]),
