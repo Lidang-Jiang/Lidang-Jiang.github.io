@@ -1,12 +1,12 @@
 {
   "0360-5442": {
     "realtimeIF": 10,
-    "jcrIF": 9.4,
-    "updatedAt": "2026-06-15"
+    "jcrIF": null,
+    "updatedAt": "2026-06-22"
   },
   "0306-2619": {
     "realtimeIF": 12.16,
-    "jcrIF": 11,
-    "updatedAt": "2026-06-15"
+    "jcrIF": null,
+    "updatedAt": "2026-06-22"
   }
 }
