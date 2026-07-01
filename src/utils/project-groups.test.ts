@@ -106,14 +106,14 @@ describe('project grouping', () => {
     expect(vllmKunlun?.projectType?.en).toBe(
       'Open-Source Contribution + Product Delivery',
     )
-    expect(vllmKunlun?.githubStars).toBe('431')
+    expect(vllmKunlun?.githubStars).toBe('442')
     expect(vllmKunlun?.contributions.en).toContain(
       'Landed 9 merged PRs across InternVL inference fixes, installation/tutorial docs, collect_env.py diagnostics, release alignment, Read the Docs cleanup, Docker documentation maintenance, and XProfiler benchmark documentation fixes.',
     )
     expect(aiak?.projectType?.zh).toBe('百度闭源 AI 推理系统')
-    expect(aiak?.period).toBe('2026.03.17 — 2026.06.11')
+    expect(aiak?.period).toBe('2026.03.17 — 2026.06.24')
     expect(aiak?.contributions.en).toContain(
-      'Added DS V4 Flash profiling with XPU profiler tracing, per-rank profiler devices, and bench_serving --profile --pd-separated runs for isolated Prefill/Decode traces.',
+      'Added XPU profiler / CPU-affinity runtime patching, per-rank profiler-device injection, bench_serving --pd-separated profiling, and aiakperf long-context benchmark scripts.',
     )
     expect(aiak?.github).toBeUndefined()
   })
@@ -140,11 +140,11 @@ describe('project grouping', () => {
       ['rclcpp', [3139]],
       ['Launch ROS', [538]],
       ['Gymnasium', [1553]],
-      ['HighwayEnv', [668]],
+      ['HighwayEnv', [668, 667]],
       ['Genesis', [2609, 2610, 2612, 2613, 2614, 2653]],
       ['PyTorch RL', [3593]],
       ['ManiSkill', [1402, 1403]],
-      ['Kubernetes', [138080]],
+      ['Kubernetes', [138080, 138077]],
       ['crawlee-python', [1835]],
       ['opcua-asyncio', [1954, 1955, 1956, 1957]],
       ['Docker Compose', [13684]],

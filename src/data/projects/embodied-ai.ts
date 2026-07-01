@@ -33,7 +33,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/ros2/rclcpp',
-    githubStars: '764',
+    githubStars: '770',
     pullRequests: pullRequests('https://github.com/ros2/rclcpp', [3139]),
   },
   {
@@ -95,7 +95,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['新增 RepeatAction wrapper，补充动作重复封装能力。'],
     },
     github: 'https://github.com/Farama-Foundation/Gymnasium',
-    githubStars: '12,048',
+    githubStars: '12,107',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/Gymnasium', [
       1553,
     ]),
@@ -106,7 +106,7 @@ export const embodiedAiProjects: Project[] = [
       en: 'HighwayEnv',
       zh: 'HighwayEnv',
     },
-    period: '2026.04.07',
+    period: '2026.04.07 — 2026.06.20',
     category: PROJECT_CATEGORIES.embodiedAi,
     projectType: {
       en: 'Open-Source Contribution',
@@ -120,15 +120,26 @@ export const embodiedAiProjects: Project[] = [
       en: 'Autonomous-driving reinforcement-learning environment library.',
       zh: '面向自动驾驶场景的强化学习环境库。',
     },
-    techStack: ['Python', 'Reinforcement Learning', 'SubprocVecEnv', 'Multiprocessing'],
+    techStack: [
+      'Python',
+      'Reinforcement Learning',
+      'SubprocVecEnv',
+      'Multiprocessing',
+      'Connected Lanes',
+    ],
     contributions: {
-      en: ['Fixed SubprocVecEnv ConnectionResetError failures under forkserver and spawn start methods.'],
-      zh: ['修复 SubprocVecEnv 在 forkserver 与 spawn 模式下的 ConnectionResetError。'],
+      en: [
+        'Landed 2 merged PRs fixing SubprocVecEnv ConnectionResetError failures under forkserver/spawn start methods and neighbour_vehicles misses on connected lanes.',
+      ],
+      zh: [
+        '已合并 2 个 PR，修复 SubprocVecEnv 在 forkserver/spawn 模式下的 ConnectionResetError，并修复 connected lanes 场景下 neighbour_vehicles 漏检相邻车辆的问题。',
+      ],
     },
     github: 'https://github.com/Farama-Foundation/HighwayEnv',
-    githubStars: '3,276',
+    githubStars: '3,283',
     pullRequests: pullRequests('https://github.com/Farama-Foundation/HighwayEnv', [
       668,
+      667,
     ]),
   },
   {
@@ -163,7 +174,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/Genesis-Embodied-AI/genesis-world',
-    githubStars: '29,350',
+    githubStars: '29,466',
     pullRequests: pullRequests('https://github.com/Genesis-Embodied-AI/genesis-world', [
       2609,
       2610,
@@ -199,7 +210,7 @@ export const embodiedAiProjects: Project[] = [
       zh: ['为 QValueModule 新增 strict_shape 参数，强化 action shape 校验。'],
     },
     github: 'https://github.com/pytorch/rl',
-    githubStars: '3,463',
+    githubStars: '3,476',
     pullRequests: pullRequests('https://github.com/pytorch/rl', [3593]),
   },
   {
@@ -234,7 +245,7 @@ export const embodiedAiProjects: Project[] = [
       ],
     },
     github: 'https://github.com/mani-skill/ManiSkill',
-    githubStars: '3,005',
+    githubStars: '3,056',
     pullRequests: pullRequests('https://github.com/mani-skill/ManiSkill', [
       1402,
       1403,

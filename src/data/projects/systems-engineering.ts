@@ -9,7 +9,7 @@ export const systemsEngineeringProjects: Project[] = [
       en: 'Kubernetes',
       zh: 'Kubernetes',
     },
-    period: '2026.06.15',
+    period: '2026.06.15 — 2026.06.26',
     category: PROJECT_CATEGORIES.systemsEngineering,
     projectType: {
       en: 'Open-Source Contribution',
@@ -23,19 +23,26 @@ export const systemsEngineeringProjects: Project[] = [
       en: 'Production-grade container orchestration system.',
       zh: '生产级容器编排系统。',
     },
-    techStack: ['Go', 'Kubernetes', 'StatefulSet', 'Declarative Validation'],
+    techStack: [
+      'Go',
+      'Kubernetes',
+      'StatefulSet',
+      'HPA',
+      'Declarative Validation',
+    ],
     contributions: {
       en: [
-        'Migrated StatefulSet immutable-field validation to the declarative validation path across apps/v1, v1beta1, and v1beta2, with equivalence coverage and generated validation updates.',
+        'Landed 2 merged PRs migrating StatefulSet immutable-field validation and HPA CrossVersionObjectReference Kind/Name validation to the declarative validation path, with equivalence coverage and generated validation updates.',
       ],
       zh: [
-        '将 StatefulSet 不可变字段迁移到 declarative validation，并补充 apps/v1、v1beta1、v1beta2 等价验证和生成代码。',
+        '已合并 2 个 PR，将 StatefulSet 核心不可变字段，以及 HPA 引用对象的 Kind/Name 校验迁移到 declarative validation，并补充等价验证和生成代码。',
       ],
     },
     github: 'https://github.com/kubernetes/kubernetes',
-    githubStars: '123,039',
+    githubStars: '123,298',
     pullRequests: pullRequests('https://github.com/kubernetes/kubernetes', [
       138080,
+      138077,
     ]),
   },
   {
@@ -64,7 +71,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['将 flaky 的 test_autoscales 改为轮询断言，提升 CI 稳定性。'],
     },
     github: 'https://github.com/apify/crawlee-python',
-    githubStars: '9,198',
+    githubStars: '9,272',
     pullRequests: pullRequests('https://github.com/apify/crawlee-python', [
       1835,
     ]),
@@ -101,7 +108,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/FreeOpcUa/opcua-asyncio',
-    githubStars: '1,432',
+    githubStars: '1,439',
     pullRequests: pullRequests('https://github.com/FreeOpcUa/opcua-asyncio', [
       1954,
       1955,
@@ -135,7 +142,7 @@ export const systemsEngineeringProjects: Project[] = [
       zh: ['在 Tar.Sync() 中返回非 ErrNotExist 的 stat 错误，避免异常被静默吞掉。'],
     },
     github: 'https://github.com/docker/compose',
-    githubStars: '37,526',
+    githubStars: '37,691',
     pullRequests: pullRequests('https://github.com/docker/compose', [13684]),
   },
   {
@@ -168,7 +175,7 @@ export const systemsEngineeringProjects: Project[] = [
       ],
     },
     github: 'https://github.com/affaan-m/ECC',
-    githubStars: '216,302',
+    githubStars: '224,299',
     pullRequests: pullRequests(
       'https://github.com/affaan-m/ECC',
       [971, 972, 974, 977, 992],
