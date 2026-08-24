@@ -49,6 +49,7 @@ export const profile = {
   website: 'https://lidang-jiang.pages.dev',
   social: {
     github: 'https://github.com/Lidang-Jiang',
+    gitcode: 'https://gitcode.com/Lidang-Jiang',
     scholar: 'https://scholar.google.com/citations?user=SvUCAeQAAAAJ&hl=en',
     orcid: 'https://orcid.org/0009-0000-6592-4077',
   },

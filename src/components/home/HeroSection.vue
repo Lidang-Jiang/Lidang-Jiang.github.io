@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MapPin, Github, BookOpen, FileText, ArrowRight } from 'lucide-vue-next'
+import { MapPin, Github, GitFork, BookOpen, FileText, ArrowRight } from 'lucide-vue-next'
 import { profile } from '@/data/profile'
 
 const { t, locale } = useI18n()
@@ -13,6 +13,11 @@ const socialLinks = [
     icon: Github,
     href: profile.social.github,
     label: 'GitHub',
+  },
+  {
+    icon: GitFork,
+    href: profile.social.gitcode,
+    label: 'GitCode',
   },
   {
     icon: BookOpen,
@@ -70,18 +75,19 @@ const socialLinks = [
             </router-link>
           </div>
 
-          <nav class="mt-8 flex items-center gap-2" :aria-label="t('hero.socialLinks')">
+          <nav class="mt-8 flex flex-wrap items-center gap-2" :aria-label="t('hero.socialLinks')">
             <a
               v-for="link in socialLinks"
               :key="link.label"
               :href="link.href"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line text-muted transition-colors duration-200 hover:border-accent hover:text-accent"
+              class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-medium text-muted transition-colors duration-200 hover:border-accent hover:text-accent"
               :aria-label="link.label"
               :title="link.label"
             >
               <component :is="link.icon" :size="18" aria-hidden="true" />
+              <span>{{ link.label }}</span>
             </a>
           </nav>
         </div>
