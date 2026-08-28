@@ -100,8 +100,8 @@ describe('resume website synchronization', () => {
         zh: '2026.07 - 至今',
       },
       description: {
-        en: 'Department: OpenHarmony Enablement Department (Device BG); base: Bantian, Shenzhen; compensation: (CNY 16,500 + 3,000 + 1,500 overtime pay) per month | 14–16 monthly salaries',
-        zh: '部门：OpenHarmony使能部（终端BG）；工作地点：深圳坂田；薪资：（16,500 + 3,000 + 1,500（加班工资））元/月 | （14–16）薪',
+        en: 'Department: OpenHarmony Enablement Department (Device BG); base: Bantian, Shenzhen; compensation: CNY 19,500/month | 14–16 monthly salaries',
+        zh: '部门：OpenHarmony使能部（终端BG）；工作地点：深圳坂田；薪资：19,500 元/月 | （14–16）薪',
       },
     })
 
