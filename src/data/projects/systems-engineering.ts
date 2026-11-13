@@ -38,17 +38,21 @@ export const systemsEngineeringProjects: Project[] = [
       en: [
         'Fixed GPU black-screen rendering by completing the declaration, loading, and forwarding of the missing glBlendFuncSeparate entry point in the GLES integration layer.',
         'Implemented GPU drawing for rounded progress bars with solid and gradient colors, retaining CPU fallback and per-context GPU resource cleanup.',
-        'Developed and evaluated prototype font texture caching, atlas batching, and GPU optimization for image-sequence animation through staged performance validation.',
+        'Developed and evaluated prototype font texture caching, atlas batching, and GPU optimization for image-sequence animation, including per-stage timing, texture-upload overhead analysis, and validation of existing final-frame cache behavior.',
+        'Contributed to analysis of the L1 CPU rendering and composition pipeline and its cross-process synchronization.',
+        'Investigating redundant drawing in UI_ROOT_VIEW and UI_VIEW_GROUP, including the impact of skipping draw operations and differences from L0.',
       ],
       zh: [
         '补齐 GLES 适配层缺失的 glBlendFuncSeparate 声明、加载与转发，修复 GPU 渲染黑屏问题。',
         '实现圆头纯色与渐变进度条的 GPU 绘制，保留 CPU 回退路径，并完善按 context 管理的 GPU 资源清理。',
-        '开展字体纹理缓存、图集批处理及序列帧动画 GPU 优化的原型开发与阶段验证。',
+        '开展字体纹理缓存、图集批处理及序列帧动画 GPU 优化的原型开发与阶段验证，分析分段耗时及纹理上传开销，并对既有实现进行末帧缓存场景验证。',
+        '参与 L1 CPU 渲染与合成跨进程同步的流程梳理和分析。',
+        '正在分析 UI_ROOT_VIEW 与 UI_VIEW_GROUP 的冗余绘制原因、跳过绘制的影响，以及与 L0 的差异。',
       ],
     },
     achievements: {
-      en: 'The GLES black-screen fix and progress-bar GPU optimization are merged into the product branch. Font and image-sequence optimization remain staged research work; the earlier font-cache implementation was reverted after its initial merge.',
-      zh: 'GLES 黑屏修复与进度条 GPU 绘制优化已合入产品分支。字体及序列帧优化属于阶段研发，其中早期字体缓存实现在首次合入后已回退。',
+      en: 'The GLES black-screen fix and progress-bar GPU optimization are merged into the product branch. Font and image-sequence optimization remain staged research work; the earlier font-cache implementation was reverted after its initial merge. Analysis of UI_ROOT_VIEW/UI_VIEW_GROUP drawing remains in progress.',
+      zh: 'GLES 黑屏修复与进度条 GPU 绘制优化已合入产品分支。字体及序列帧优化属于阶段研发，其中早期字体缓存实现在首次合入后已回退。UI_ROOT_VIEW/UI_VIEW_GROUP 绘制分析仍在进行中。',
     },
   },
   {
