@@ -1,4 +1,4 @@
-import { renderToString } from '@vue/server-renderer'
+import { renderToString } from 'vue/server-renderer'
 import { createSSRApp, defineComponent, h } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { describe, expect, it } from 'vitest'
@@ -37,7 +37,7 @@ function escapeRegExp(value: string) {
 }
 
 function getVisibleLinkText(html: string, href: string) {
-  const encodedHref = href.replaceAll('&', '&amp;')
+  const encodedHref = href.replace(/&/g, '&amp;')
   const anchorPattern = new RegExp(
     `<a[^>]*href="${escapeRegExp(encodedHref)}"[^>]*>([\\s\\S]*?)<\\/a>`,
   )

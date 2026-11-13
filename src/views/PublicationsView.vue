@@ -27,14 +27,14 @@ const enrichedPublications = computed(() =>
 
 <template>
   <div class="py-14 sm:py-20">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="site-shell">
       <SectionTitle
         :title="t('publications.title')"
         :subtitle="t('publications.subtitle')"
         as="h1"
       />
 
-      <div>
+      <div class="mt-12 border-b border-line sm:mt-16">
         <PublicationCard
           v-for="pub in enrichedPublications"
           :key="pub.id"

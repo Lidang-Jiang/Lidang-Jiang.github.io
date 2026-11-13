@@ -1,95 +1,58 @@
-# Lidang Jiang Website Design System
+# Lidang Jiang 网站设计规范
 
-## Visual Theme and Atmosphere
+## 视觉方向
 
-Quiet technical editorial design for a personal ML systems portfolio. The site should feel precise, spacious, and deliberately understated: generous whitespace, strong type hierarchy, hairline dividers, and restrained motion. It may borrow the discipline of premium hardware and software product pages, but it must remain an original personal identity rather than reproduce another company's brand.
+以简约、大方的个人技术作品集为目标。用银灰与白色分区、清晰的文字层级、宽松留白和克制的蓝色交互建立质感。内容面向招聘者、研究同行和开源合作伙伴，真实姓名、职业方向、项目、论文和简历应容易找到。
 
-The audience is split between recruiters and open-source peers. The interface should make the resume, projects, publications, and contact paths immediately legible without turning the homepage into a metrics dashboard.
+首页维持人物介绍、关于我、合作方向三个区域。使用真实肖像和已有事实内容，不添加无依据的数字、营销文案或装饰性技术场景。
 
-## Color Palette and Roles
+## 主题色
 
-Light theme:
+所有组件使用语义 token，避免单独硬编码亮色或暗色背景。
 
-- `canvas`: `#F5F5F3` — page background.
-- `surface`: `#FFFFFF` — navigation, repeated content surfaces, and elevated controls.
-- `ink`: `#1D1F23` — headings and primary text.
-- `muted`: `#656A73` — descriptions, metadata, and secondary labels.
-- `line`: `#D9DDE3` — hairline dividers and component boundaries.
-- `accent`: `#315F8C` — links, focus, active navigation, and primary actions only.
-- `accent-soft`: `#E8EEF4` — selected filters and quiet action backgrounds.
+| Token | 亮色 | 暗色 | 用途 |
+| --- | --- | --- | --- |
+| canvas | #F5F5F7 | #101012 | 页面底色 |
+| surface | #FFFFFF | #1B1B1E | 首屏、内容表面和控件 |
+| ink | #1D1D1F | #F5F5F7 | 标题与主要文字 |
+| muted | #616169 | #A6A6AF | 正文、日期与辅助说明 |
+| line | #D6D6DB | #35353B | 细分隔线和控件边界 |
+| accent | #0066CC | #8BC4FF | 链接、主操作、焦点与选中状态 |
+| accent-soft | #EAF2FA | #182C42 | 选中控件与轻量悬停背景 |
 
-Dark theme:
+普通文字达到 WCAG AA 对比度。状态同时通过文字、形状或位置表达，不只依赖颜色。蓝色主按钮在亮色模式使用白字，在暗色模式使用深色字；悬停保持足够对比度。
 
-- `canvas`: `#0D0F12`.
-- `surface`: `#15181C`.
-- `ink`: `#F4F5F7`.
-- `muted`: `#A8ADB5`.
-- `line`: `#2B3037`.
-- `accent`: `#8EB8DC`.
-- `accent-soft`: `#1B2A38`.
+## 排版与布局
 
-Normal text must meet WCAG AA contrast. Color never carries state alone; selection and focus also use weight, shape, position, or an outline.
+- 使用本机系统字体栈：-apple-system、BlinkMacSystemFont、Segoe UI、PingFang SC、Microsoft YaHei、sans-serif。
+- site-shell 最大宽度 1120px；手机左右留白 24px，640px 起左右留白 32px。
+- 内页 page-heading 为 40px／56px，section-heading 为 30px／36px，标题用较紧字距建立层级。首页姓名采用更大的独立字号。
+- 正文至少 16px，长段落行高约 1.8；引言在宽屏使用 18px，辅助信息为 13–14px。
+- 长文控制在约 720–800px 内，标题、邮箱和长技术名先自然换行，再考虑视觉压缩。
+- 间距采用 4/8px 基础，主要区段为 64–96px，内部间距通常为 16、24、32、48px。
 
-## Typography Rules
+## 页面与组件
 
-- Use the local system stack: `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `PingFang SC`, `Microsoft YaHei`, and `sans-serif`.
-- Use one family for display and body text. Create hierarchy through size, weight, line height, and whitespace rather than mixing decorative families.
-- Display text uses `-0.025em` to `-0.035em` tracking. Body text uses normal tracking.
-- Body copy is 16px minimum with approximately 1.7 line height. Metadata may use 13–14px when contrast remains sufficient.
-- Keep long-form paragraphs near 65–72 characters per line. Never scale type with viewport width.
+- 导航使用半透明背景和细边界，无大阴影；桌面导航保持轻量，手机菜单保留全部页面、语言与主题操作。
+- 首页首屏使用白色表面、人物双栏及固定比例肖像。主要操作是简历和项目，社交入口为带标签的轻量图标链接。
+- 关于我在桌面使用窄标题列和宽正文列；合作方向使用留白与顶部细线分组，避免重复的卡片套卡片。
+- 项目页默认时间线，分类总览拥有独立入口。时间线以日期列、细轴线和单列内容对齐；移动端日期移入项目顶部。详情保持显式展开按钮。
+- 论文列表突出标题和摘要；封面在手机为 128×160px，宽屏逐步增至 192×240px，不占据整个移动屏幕。
+- 简历页将页标题与下载入口统一放在顶部。教育和工作经历共用 cv-entry：640px 起为 192px 日期列加正文列，手机上下排列。
+- button-primary、button-secondary 使用 48px 最小高度、16px 文字和 12px 圆角；所有交互控件至少有 44×44px 的有效操作区域。
+- 重复项目可使用轻边界表面，标签可使用胶囊形；普通正文、标题和链接不增加装饰容器。
+- 图标统一使用 Lucide，单色且通常为 16–24px。纯装饰图标设置 aria-hidden。
 
-## Component Styling
+## 动效与可访问性
 
-- Navigation is a thin translucent surface with a hairline boundary. Active routes use accent text plus a small positional marker, not a filled navigation pill.
-- Primary buttons use the accent color with high-contrast text. Secondary buttons use a quiet surface and a hairline border.
-- Buttons and icon controls have at least 44×44px hit areas, visible focus rings, and explicit accessible names.
-- Cards are reserved for repeated content. Prefer flat lists, dividers, and grouped rows; never nest decorative cards.
-- Use Lucide icons only. Icons are single-color and normally 16–20px; do not place every icon on a colored tile.
-- Tags and filters may be pills. Ordinary links, section headings, and navigation items are not pills.
-- Portraits use a stable vertical aspect ratio, a restrained radius, a hairline boundary, and declared dimensions.
+- 页面内容默认可见。只有滚动观察器成功接管后才添加 reveal-pending；缺少相关能力或初始化失败时保留可读内容。
+- 淡入与位移动效约 180–300ms，位移不超过 4px；prefers-reduced-motion 下内容保持可见并停止明显动效。
+- 保留清晰焦点环、控件名称、展开状态和详情关联；年份及时间不能只靠颜色表达。
+- 页面第一个键盘入口为“跳至内容”，聚焦后显示，跳转目标允许程序化聚焦。
+- 不依赖悬停揭示必要信息，不使用渐变光球、霓虹、假终端或夸张悬浮效果。
 
-## Layout Principles
+## 验收
 
-- Use a 4/8px spacing foundation with key steps at 12, 16, 24, 32, 48, 72, and 96px.
-- The content shell is approximately 1120px wide. Reading surfaces use narrower 720–800px measures.
-- The homepage retains three regions only: hero, about, and collaboration. Do not add metrics or featured-work sections.
-- Desktop hero layout is a two-column editorial composition; mobile stacks without changing content order or hiding essential actions.
-- Projects, publications, and CV pages use stable list and timeline patterns. Dates and metadata align predictably and wrap before truncating.
+检查 375、768、1024、1440px。手机不能横向溢出；英文长标题、职业方向、邮箱和日期应正常换行。桌面及手机代表尺寸补查英文、暗色和英文暗色。
 
-## Depth and Elevation
-
-- Use one subtle shadow scale only, approximately `0 16px 40px rgba(15, 23, 42, 0.08)` in light mode and a lower-opacity equivalent in dark mode.
-- Elevation is reserved for the fixed navigation, open mobile navigation, and genuinely raised controls.
-- Most content surfaces use borders or background contrast rather than shadows.
-- Avoid glass panels inside glass panels, colored glows, blurred gradient orbs, and dramatic hover elevation.
-
-## Do and Don't
-
-Do:
-
-- Lead with the person's real portrait and role.
-- Keep resume and project actions visible in the first viewport.
-- Use whitespace and typography as the primary visual devices.
-- Preserve bilingual text wrapping and long technical names.
-- Provide hover, active, focus, expanded, and reduced-motion states.
-
-Don't:
-
-- Reproduce Apple assets, exact page compositions, or trademarked visual identity.
-- Use generic blue/purple AI gradients, neon glows, or fake terminal decoration.
-- Turn each sentence or metadata field into a card.
-- Hide navigation or project details behind hover-only behavior.
-- Use emoji as interface icons.
-
-## Responsive Behavior
-
-- Verify at 375, 768, 1024, and 1440px.
-- At 375px there must be no horizontal scroll. Long emails, URLs, project titles, and dates wrap safely.
-- Navigation collapses below the desktop breakpoint. The mobile panel exposes all links, language switching, and theme control with keyboard support.
-- Two-column hero, information, and capability grids collapse to one column where their content would become cramped.
-- Touch targets remain at least 44px and spacing prevents accidental activation.
-- Animations use transform and opacity, last 180–300ms, move no more than 4px, and are disabled or reduced under `prefers-reduced-motion`.
-
-## Agent Prompt Guide
-
-When editing this site, preserve the quiet technical editorial direction. Reuse semantic theme tokens, the system font stack, Lucide icons, hairline dividers, and the existing Vue/Tailwind architecture. Prefer fewer surfaces and clearer hierarchy over new decoration. Test both languages, both themes, keyboard focus, reduced motion, and widths of 375, 768, 1024, and 1440px. Do not add a homepage metrics or featured-work section unless the product decision changes explicitly.
+确认导航、视图切换、项目详情、简历下载及论文链接可用；完整检查一次键盘操作与减少动态效果模式。静态首屏与脚本加载后的内容应一致。

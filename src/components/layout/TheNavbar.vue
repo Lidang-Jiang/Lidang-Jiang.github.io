@@ -23,6 +23,15 @@ const navLinks = [
   { name: 'nav.projects', to: '/projects', exact: false },
 ]
 
+function isNavActive(link: typeof navLinks[number]) {
+  return route.path === link.to || (!link.exact && route.path.startsWith(`${link.to}/`))
+}
+
+function navCurrent(link: typeof navLinks[number]) {
+  if (!isNavActive(link)) return undefined
+  return route.path === link.to ? 'page' : 'location'
+}
+
 function toggleLanguage() {
   const newLang = locale.value === 'en' ? 'zh' : 'en'
   locale.value = newLang
@@ -46,11 +55,11 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
 <template>
   <nav
     :aria-label="t('nav.primary')"
-    class="fixed inset-x-0 top-0 z-50 border-b border-line bg-surface/90 shadow-soft backdrop-blur-xl"
+    class="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-surface/90 backdrop-blur-xl"
   >
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="site-shell">
       <div class="flex h-16 items-center justify-between">
-        <!-- Logo / Name -->
+        <!-- 姓名入口 -->
         <router-link
           to="/"
           class="inline-flex min-h-11 items-center rounded-md text-base font-semibold tracking-[-0.02em] text-ink transition-colors duration-200 hover:text-accent"
@@ -59,15 +68,17 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
           Lidang Jiang
         </router-link>
 
-        <!-- Desktop Nav -->
+        <!-- 桌面导航 -->
         <div class="hidden items-center gap-1 md:flex">
           <router-link
             v-for="link in navLinks"
             :key="link.to"
             :to="link.to"
             class="relative inline-flex min-h-11 items-center px-3 text-sm font-medium text-muted transition-colors duration-200 after:absolute after:inset-x-3 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-accent after:transition-transform hover:text-ink"
-            :active-class="link.exact ? '' : '!text-accent after:!scale-x-100'"
-            :exact-active-class="link.exact ? '!text-accent after:!scale-x-100' : ''"
+            active-class=""
+            exact-active-class=""
+            :class="isNavActive(link) ? '!text-accent after:!scale-x-100' : ''"
+            :aria-current="navCurrent(link)"
           >
             {{ t(link.name) }}
           </router-link>
@@ -85,7 +96,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
           </div>
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- 移动端菜单按钮 -->
         <div class="flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <button
@@ -97,13 +108,13 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
             aria-controls="mobile-navigation"
             @click="toggleMobileMenu"
           >
-            <Menu v-if="!mobileMenuOpen" :size="20" />
-            <X v-else :size="20" />
+            <Menu v-if="!mobileMenuOpen" :size="20" aria-hidden="true" />
+            <X v-else :size="20" aria-hidden="true" />
           </button>
         </div>
       </div>
 
-      <!-- Mobile Menu -->
+      <!-- 移动端导航 -->
       <Transition
         enter-active-class="transition duration-200 ease-out"
         enter-from-class="opacity-0 -translate-y-1"
@@ -122,8 +133,10 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
             :key="link.to"
             :to="link.to"
             class="flex min-h-11 items-center rounded-lg px-3 text-sm font-medium text-muted transition-colors duration-200 hover:bg-accent-soft hover:text-ink"
-            :active-class="link.exact ? '' : '!bg-accent-soft !text-accent'"
-            :exact-active-class="link.exact ? '!bg-accent-soft !text-accent' : ''"
+            active-class=""
+            exact-active-class=""
+            :class="isNavActive(link) ? '!bg-accent-soft !text-accent' : ''"
+            :aria-current="navCurrent(link)"
             @click="closeMobileMenu"
           >
             {{ t(link.name) }}

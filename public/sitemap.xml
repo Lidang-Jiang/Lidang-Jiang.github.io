@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lidang-jiang.pages.dev/projects/categories</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lidang-jiang.pages.dev/projects/ai-infra</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -8,6 +8,7 @@ export default {
     switchLanguage: 'Switch language',
     openMenu: 'Open navigation menu',
     closeMenu: 'Close navigation menu',
+    skipToContent: 'Skip to content',
   },
   hero: {
     name: 'Lidang Jiang',
@@ -87,6 +88,12 @@ export default {
   projects: {
     title: 'Projects and Engineering Portfolio',
     subtitle: 'Browse selected work across AI infrastructure, embodied AI, systems engineering, and digital applications',
+    views: 'Project views',
+    timeline: 'Timeline',
+    categories: 'Categories',
+    timelineDescription: 'Recent work first, ordered by completion date.',
+    ongoing: 'In progress',
+    unknownDate: 'Date to be added',
     browseByType: 'Browse by Type',
     allCategories: 'All Categories',
     categoryOverview: 'Category Overview',

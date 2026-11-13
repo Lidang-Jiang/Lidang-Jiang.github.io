@@ -26,20 +26,20 @@ function levelColor(level?: string): string {
   <section>
     <SectionTitle :title="t('cv.skills.title')" />
 
-    <div class="grid border-t border-line sm:grid-cols-2">
+    <div class="grid gap-x-12 sm:grid-cols-2">
       <div
         v-for="category in skills"
         :key="category.category.en"
-        class="border-b border-line py-6 sm:px-6 sm:even:border-l"
+        class="border-t border-line py-7"
       >
-        <h3 class="mb-4 text-base font-semibold text-ink">
+        <h3 class="mb-4 text-lg font-semibold tracking-[-0.015em] text-ink">
           {{ category.category[lang] }}
         </h3>
         <div class="flex flex-wrap gap-2">
           <span
             v-for="item in category.items"
             :key="item.name"
-            class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium"
+            class="inline-flex items-center rounded-full border px-3 py-1 text-[13px] font-medium"
             :class="levelColor(item.level)"
           >
             {{ item.name }}

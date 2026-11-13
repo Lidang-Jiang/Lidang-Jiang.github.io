@@ -14,7 +14,7 @@ const { isDark, toggleTheme } = useTheme()
     :aria-label="isDark ? t('theme.toLight') : t('theme.toDark')"
     @click="toggleTheme"
   >
-    <Moon v-if="!isDark" :size="18" />
-    <Sun v-else :size="18" />
+    <Moon v-if="!isDark" :size="18" aria-hidden="true" />
+    <Sun v-else :size="18" aria-hidden="true" />
   </button>
 </template>

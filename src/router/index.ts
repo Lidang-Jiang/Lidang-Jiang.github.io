@@ -18,6 +18,11 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('@/views/ProjectsView.vue'),
   },
   {
+    path: '/projects/categories',
+    name: 'project-categories',
+    component: () => import('@/views/ProjectsView.vue'),
+  },
+  {
     path: '/projects/:categorySlug',
     name: 'project-category',
     component: () => import('@/views/ProjectsView.vue'),

@@ -14,6 +14,7 @@ export interface ProjectCategoryNavItem {
 }
 
 export const PROJECTS_OVERVIEW_PATH = '/projects'
+export const PROJECT_CATEGORIES_PATH = '/projects/categories'
 
 export const PROJECT_CATEGORIES = {
   aiInfra: {
@@ -91,7 +92,7 @@ export function getProjectCategoryPaths(): string[] {
 }
 
 export function getProjectStaticPaths(): string[] {
-  return [PROJECTS_OVERVIEW_PATH, ...getProjectCategoryPaths()]
+  return [PROJECTS_OVERVIEW_PATH, PROJECT_CATEGORIES_PATH, ...getProjectCategoryPaths()]
 }
 
 export function getProjectGroups(projects: Project[]): ProjectGroup[] {

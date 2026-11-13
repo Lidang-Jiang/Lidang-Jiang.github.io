@@ -240,6 +240,7 @@ describe('project grouping', () => {
   it('exposes the expected static project paths for ssg', () => {
     expect(getProjectStaticPaths()).toEqual([
       PROJECTS_OVERVIEW_PATH,
+      '/projects/categories',
       '/projects/ai-infra',
       '/projects/embodied-ai',
       '/projects/systems-engineering',

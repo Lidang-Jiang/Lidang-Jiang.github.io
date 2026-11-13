@@ -33,7 +33,6 @@ interface BasicInfoItem {
   targetRoles?: string[]
   ariaLabel?: string
   wide?: boolean
-  rightColumn?: boolean
 }
 
 const basicInfoItems = computed<BasicInfoItem[]>(() => [
@@ -42,7 +41,6 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
     icon: Mail,
     label: t('cv.email'),
     value: profile.emails.join(', '),
-    rightColumn: true,
   },
   {
     icon: Briefcase,
@@ -56,14 +54,12 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
     icon: Clock,
     label: t('cv.status'),
     value: profile.employmentStatus[lang.value],
-    rightColumn: true,
   },
   { icon: MapPin, label: t('cv.hometown'), value: profile.hometown[lang.value] },
   {
     icon: MapPin,
     label: t('cv.currentCity'),
     value: profile.currentCity[lang.value],
-    rightColumn: true,
   },
   {
     icon: Globe,
@@ -77,42 +73,39 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
 
 <template>
   <div class="py-14 sm:py-20">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <!-- Title & Download -->
-      <SectionTitle :title="t('cv.title')" as="h1" />
-      <div class="mb-12">
+    <div class="site-shell">
+      <!-- 标题与下载入口 -->
+      <div class="mb-12 flex flex-col items-start gap-7 border-b border-line pb-10 lg:flex-row lg:items-center lg:justify-between sm:mb-16">
+        <h1 class="page-heading">{{ t('cv.title') }}</h1>
         <ResumeDownload />
       </div>
 
-      <!-- Basic Info -->
+      <!-- 基本信息 -->
       <section class="mb-16">
-        <h2 class="mb-6 text-2xl font-semibold tracking-[-0.025em] text-ink">
+        <h2 class="section-heading mb-8">
           {{ t('cv.basicInfo') }}
         </h2>
-        <dl class="grid border-t border-line sm:grid-cols-2">
+        <dl class="grid gap-x-12 sm:grid-cols-2">
           <div
             v-for="item in basicInfoItems"
             :key="item.label"
-            class="flex min-w-0 items-start gap-3 border-b border-line py-4 sm:px-4"
-            :class="[
-              item.wide ? 'sm:col-span-2' : '',
-              item.rightColumn ? 'sm:border-l' : '',
-            ]"
+            class="flex min-w-0 items-start gap-3 border-b border-line py-5"
+            :class="item.wide ? 'sm:col-span-2' : ''"
           >
             <component
               :is="item.icon"
               :size="18"
-              class="mt-0.5 shrink-0 text-accent"
+              class="mt-0.5 shrink-0 text-muted"
               aria-hidden="true"
             />
             <div class="min-w-0">
-              <dt class="text-xs font-medium text-muted">
+              <dt class="text-[13px] font-medium text-muted">
                 {{ item.label }}
               </dt>
-              <dd class="mt-0.5 break-words text-sm text-ink">
+              <dd class="mt-1.5 break-words text-base text-ink">
                 <ul
                   v-if="item.targetRoles"
-                  class="grid grid-cols-2 gap-x-4 gap-y-1"
+                  class="grid gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3"
                   :aria-label="item.ariaLabel"
                 >
                   <li
@@ -139,32 +132,32 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
         </dl>
       </section>
 
-      <!-- Education -->
+      <!-- 教育经历 -->
       <div class="mb-16">
         <EducationTimeline />
       </div>
 
-      <!-- Work Experience -->
+      <!-- 工作经历 -->
       <div class="mb-16">
         <WorkTimeline />
       </div>
 
-      <!-- Skills -->
+      <!-- 技能 -->
       <div class="mb-16">
         <SkillsSection />
       </div>
 
-      <!-- Self Evaluation -->
+      <!-- 自我评价 -->
       <section class="mb-16">
         <SectionTitle :title="t('cv.selfEvaluation.title')" />
         <div class="border-y border-line py-6">
-          <p class="max-w-3xl whitespace-pre-line text-sm leading-[1.8] text-muted">
+          <p class="max-w-3xl whitespace-pre-line text-base leading-[1.8] text-muted">
             {{ t('cv.selfEvaluation.content') }}
           </p>
         </div>
       </section>
 
-      <!-- Publications list in CV -->
+      <!-- 论文列表 -->
       <section>
         <SectionTitle :title="t('cv.publications.title')" />
         <ol class="border-t border-line">
@@ -173,18 +166,18 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
             :key="pub.id"
             class="border-b border-line py-5"
           >
-            <p class="text-sm leading-relaxed text-ink">
+            <p class="text-base leading-relaxed text-ink">
               {{ pub.citation }}
             </p>
-            <div class="mt-2 flex items-center gap-3">
-              <span class="rounded-full border border-line bg-surface px-2.5 py-0.5 text-xs font-medium text-muted">
+            <div class="mt-2 flex flex-wrap items-center gap-3">
+              <span class="rounded-full border border-line bg-surface px-2.5 py-0.5 text-[13px] font-medium text-muted">
                 {{ t('publications.impactFactor') }}={{ pub.impactFactor }}
               </span>
               <a
                 :href="pub.doi"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex min-h-11 items-center text-xs font-medium text-accent underline-offset-4 hover:underline"
+                class="inline-flex min-h-11 items-center text-sm font-medium text-accent underline-offset-4 hover:underline"
               >
                 DOI
               </a>
@@ -192,7 +185,7 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
                 :href="pub.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex min-h-11 items-center text-xs font-medium text-accent underline-offset-4 hover:underline"
+                class="inline-flex min-h-11 items-center text-sm font-medium text-accent underline-offset-4 hover:underline"
               >
                 PDF
               </a>

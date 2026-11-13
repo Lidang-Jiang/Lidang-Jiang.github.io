@@ -21,7 +21,7 @@ const socialLinks = [
 
 <template>
   <footer class="border-t border-line bg-canvas">
-    <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="site-shell py-7">
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <p class="text-sm text-muted">
           {{ t('footer.copyright', { year: currentYear }) }}
@@ -38,7 +38,7 @@ const socialLinks = [
           >
             <component :is="link.icon" :size="18" aria-hidden="true" />
           </a>
-          <span class="text-xs text-muted">
+          <span class="text-[13px] text-muted">
             {{ t('footer.builtWith') }}
           </span>
         </div>

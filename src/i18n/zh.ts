@@ -8,6 +8,7 @@ export default {
     switchLanguage: "切换语言",
     openMenu: "打开导航菜单",
     closeMenu: "关闭导航菜单",
+    skipToContent: "跳至内容",
   },
   hero: {
     name: "江李当",
@@ -91,7 +92,13 @@ export default {
   },
   projects: {
     title: "项目与工程经历",
-    subtitle: "按 AI 基础设施、具身智能、系统工程与数字化应用分类浏览",
+    subtitle: "AI 基础设施、具身智能、系统工程与数字化应用的实践与积累",
+    views: "项目浏览方式",
+    timeline: "时间线",
+    categories: "分类",
+    timelineDescription: "按结束时间由近到远，回顾每一段项目经历。",
+    ongoing: "进行中",
+    unknownDate: "日期待补充",
     browseByType: "按类型浏览",
     allCategories: "全部分类",
     categoryOverview: "分类总览",
