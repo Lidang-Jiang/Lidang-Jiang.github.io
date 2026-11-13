@@ -25,7 +25,7 @@ corepack pnpm@9.15.9 dev
 | `pnpm test:coverage` | 运行测试并生成 V8 覆盖率报告 |
 | `pnpm build` | 静态生成所有发布页面 |
 | `pnpm preview` | 预览已有的 `dist/` 构建产物 |
-| `pnpm test:e2e` | 使用 Chromium 验证构建后的页面与交互 |
+| `pnpm test:e2e` | 使用已安装的 Google Chrome 验证构建后的页面与交互 |
 
 ## 验证顺序
 
@@ -33,12 +33,13 @@ corepack pnpm@9.15.9 dev
 pnpm test
 pnpm typecheck
 pnpm test:coverage
-pnpm exec playwright install chromium
 pnpm build
 pnpm test:e2e
 ```
 
 Playwright 默认启动 `http://127.0.0.1:4173` 的预览服务；运行前必须重新构建，避免测试旧产物。需要检查已有站点时，可通过 `PLAYWRIGHT_BASE_URL` 指定地址，此时测试不会启动本地服务。失败追踪保存在 `test-results/`。
+
+浏览器默认使用系统已有的 Google Chrome，不下载 Playwright 附带的 Chromium。Windows + WSL 环境中，构建与预览服务可以在 WSL 运行，浏览器测试使用 Windows 的 Node.js、Playwright 和 Chrome，并通过 `PLAYWRIGHT_BASE_URL` 连接预览服务；不要额外启动 Linux 图形浏览器。`PLAYWRIGHT_BROWSER_CHANNEL` 可显式选择其他已安装的浏览器通道。仅运行 `e2e/site-verification.spec.ts` 的 HTTP 验证不需要浏览器。
 
 覆盖率门槛为语句、分支、函数和行各 80%，统计范围是 `src/utils/project-*.ts`、`useDisclosure.ts` 与 `useScrollReveal.ts` 的核心可测逻辑。该门槛不代表整个 Vue 应用的覆盖率。报告输出到 `coverage/`。
 

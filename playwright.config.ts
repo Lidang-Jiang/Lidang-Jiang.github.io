@@ -12,7 +12,7 @@ export default defineConfig({
   use: {
     baseURL,
     browserName: 'chromium',
-    channel: 'chromium',
+    channel: process.env.PLAYWRIGHT_BROWSER_CHANNEL ?? 'chrome',
     viewport: { width: 1440, height: 1000 },
     trace: 'retain-on-failure',
   },
