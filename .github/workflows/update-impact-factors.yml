@@ -6,11 +6,16 @@ on:
   workflow_dispatch: # 支持手动触发
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
 
@@ -18,13 +23,37 @@ jobs:
         with:
           node-version: 20
 
-      - name: Fetch impact factors from LetPub
+      - name: 测试官方影响因子更新脚本
+        run: node --test scripts/fetch-impact-factors.test.mjs
+
+      - name: 更新官方期刊影响因子
         run: node scripts/fetch-impact-factors.mjs
 
-      - name: Commit and push if changed
+      - name: 仅在官方影响因子变化时提交并推送
+        id: commit
+        shell: bash
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
         run: |
+          git add -- src/data/impact-factors.json
+          if git diff --cached --quiet -- src/data/impact-factors.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/impact-factors.json
-          git diff --cached --quiet || git commit -m "chore: update impact factors from LetPub"
-          git push
+          git commit -m "chore: update official journal impact factors" -- src/data/impact-factors.json
+          sha="$(git rev-parse HEAD)"
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.update.outputs.sha }}
+    secrets: inherit

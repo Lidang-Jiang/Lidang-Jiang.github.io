@@ -15,8 +15,8 @@ export function useImpactFactors(issns: string[]) {
   for (const issn of issns) {
     const entry = data[issn]
     if (!entry) continue
-    const value = entry.realtimeIF ?? entry.jcrIF
-    if (value !== null) {
+    const value = entry.jcrIF
+    if (value !== null && value !== undefined) {
       map.set(issn, value)
     }
   }

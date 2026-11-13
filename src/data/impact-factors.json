@@ -1,12 +1,18 @@
 {
   "0360-5442": {
-    "realtimeIF": 5.981,
-    "jcrIF": null,
-    "updatedAt": "2026-11-09"
+    "realtimeIF": null,
+    "jcrIF": 10.1,
+    "jcrYear": null,
+    "jcrSource": "https://shop.elsevier.com/journals/energy/0360-5442",
+    "verifiedAt": "2026-11-13",
+    "updatedAt": "2026-11-13"
   },
   "0306-2619": {
-    "realtimeIF": 8.415,
-    "jcrIF": null,
-    "updatedAt": "2026-11-09"
+    "realtimeIF": null,
+    "jcrIF": 12.2,
+    "jcrYear": null,
+    "jcrSource": "https://shop.elsevier.com/journals/applied-energy/0306-2619",
+    "verifiedAt": "2026-11-13",
+    "updatedAt": "2026-11-13"
   }
 }

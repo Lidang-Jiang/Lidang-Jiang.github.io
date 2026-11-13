@@ -1,9 +1,3 @@
-/**
- * 从 LetPub 抓取期刊实时影响因子。
- * 运行方式: node scripts/fetch-impact-factors.mjs
- * 输出: src/data/impact-factors.json
- */
-
 import { execFile as execFileCallback } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
@@ -18,42 +12,73 @@ const __dirname = dirname(__filename)
 const OUTPUT_PATH = resolve(__dirname, '../src/data/impact-factors.json')
 
 export const JOURNALS = [
-  { issn: '0360-5442', journalId: 2496, name: 'Energy' },
-  { issn: '0306-2619', journalId: 729, name: 'Applied Energy' },
+  {
+    issn: '0360-5442',
+    name: 'Energy',
+    url: 'https://shop.elsevier.com/journals/energy/0360-5442',
+  },
+  {
+    issn: '0306-2619',
+    name: 'Applied Energy',
+    url: 'https://shop.elsevier.com/journals/applied-energy/0306-2619',
+  },
 ]
 
-const LETPUB_BASE =
-  'https://www.letpub.com.cn/index.php?page=journalapp&view=detail&journalid='
 const DEFAULT_RETRY_DELAYS_MS = [2000, 5000]
 const DEFAULT_TIMEOUT_SECONDS = 30
 const USER_AGENT = 'Mozilla/5.0 (compatible; GitHub-Actions-Bot)'
 
-export function parseImpactFactorHtml(html) {
-  let realtimeIF = null
-  const realtimeTdMatch = html.match(
-    /实时影响因子[\s\S]*?<\/td>\s*<TD[^>]*>([\s\S]*?)<\/td>/i,
-  )
-
-  if (realtimeTdMatch) {
-    const numMatch = realtimeTdMatch[1].match(/(\d+\.?\d*)\s*$/)
-    realtimeIF = numMatch ? parseFloat(numMatch[1]) : null
-  }
-
-  let jcrIF = null
-  const jcrTdMatch = html.match(
-    /最新影响因子[\s\S]*?<\/td>\s*<TD[^>]*>([\s\S]*?)<\/td>/i,
-  )
-
-  if (jcrTdMatch) {
-    const numMatch = jcrTdMatch[1].match(/^\s*(\d+\.?\d*)/)
-    jcrIF = numMatch ? parseFloat(numMatch[1]) : null
-  }
-
-  return { realtimeIF, jcrIF }
+function cellText(html) {
+  return html
+    .replace(/<(?:[^>"']|"[^"]*"|'[^']*')*>/g, ' ')
+    .replace(/&nbsp;|&#160;|&#xA0;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
-function hasImpactFactorData(entry) {
-  return entry.realtimeIF !== null || entry.jcrIF !== null
+export function parseImpactFactorHtml(html, journal) {
+  const content = html
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
+  const title = content.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)
+  if (!title || cellText(title[1]).toLowerCase() !== journal.name.toLowerCase()) {
+    throw new Error('official journal title missing or mismatched')
+  }
+
+  const items = [...content.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
+    .map((match) => cellText(match[1]))
+  const issns = items.flatMap((item) => item.match(/^ISSN:\s*(.*)$/i)?.[1] ?? [])
+  if (issns.length === 0 || issns.some((issn) => issn !== journal.issn)) {
+    throw new Error('official journal ISSN missing or mismatched')
+  }
+
+  const values = items.flatMap((item) => item.match(/^Impact factor:\s*(.*)$/i)?.[1] ?? [])
+  const numbers = values.map(Number)
+  if (values.length === 0
+    || values.some((value) => !/^\d+(?:\.\d+)?$/.test(value))
+    || numbers.some((value) => !Number.isFinite(value))
+    || new Set(numbers).size !== 1) {
+    throw new Error('official impact factor missing, invalid or conflicting')
+  }
+
+  return {
+    realtimeIF: null,
+    jcrIF: numbers[0],
+    jcrYear: null,
+    jcrSource: getJournalUrl(journal),
+  }
+}
+
+function hasImpactFactorData(entry, journal) {
+  return Number.isFinite(entry?.jcrIF)
+    && entry.jcrIF >= 0
+    && entry.jcrSource === getJournalUrl(journal)
+}
+
+function hasVerifiedCache(entry, journal) {
+  return hasImpactFactorData(entry, journal)
+    && /^\d{4}-\d{2}-\d{2}$/.test(entry.verifiedAt)
+    && Number.isFinite(Date.parse(entry.verifiedAt))
 }
 
 function getToday() {
@@ -61,7 +86,7 @@ function getToday() {
 }
 
 function getJournalUrl(journal) {
-  return `${LETPUB_BASE}${journal.journalId}`
+  return journal.url
 }
 
 function normalizeError(error) {
@@ -104,12 +129,12 @@ function getRetryDelayMs(attemptIndex, retryDelayMs, retryDelaysMs) {
 
 export async function fetchJournalHtml(
   journal,
-  { timeoutSeconds = DEFAULT_TIMEOUT_SECONDS } = {},
+  { timeoutSeconds = DEFAULT_TIMEOUT_SECONDS, execFile: execFileImpl = execFile } = {},
 ) {
   const url = getJournalUrl(journal)
 
   try {
-    const { stdout } = await execFile(
+    const { stdout } = await execFileImpl(
       'curl',
       [
         '-L',
@@ -140,14 +165,14 @@ export async function fetchJournalData(journal, options = {}) {
   console.log(`Fetching ${journal.name} (ISSN: ${journal.issn}) from ${url}`)
 
   const html = await fetchJournalHtml(journal, options)
-  const parsed = parseImpactFactorHtml(html)
+  const parsed = parseImpactFactorHtml(html, journal)
 
-  if (!hasImpactFactorData(parsed)) {
-    throw new Error('no impact factor fields found')
+  if (!hasImpactFactorData(parsed, journal)) {
+    throw new Error('no valid official impact factor found')
   }
 
   console.log(
-    `  ${journal.name}: realtimeIF=${parsed.realtimeIF}, jcrIF=${parsed.jcrIF}`,
+    `  ${journal.name}: official JCR IF=${parsed.jcrIF}, year=${parsed.jcrYear ?? 'unknown'}`,
   )
 
   return parsed
@@ -163,8 +188,8 @@ async function fetchWithRetry(
     try {
       const entry = await fetchJournalDataImpl(journal)
 
-      if (!hasImpactFactorData(entry)) {
-        throw new Error('no impact factor fields found')
+      if (!hasImpactFactorData(entry, journal)) {
+        throw new Error('no valid official impact factor found')
       }
 
       return entry
@@ -225,14 +250,18 @@ export async function updateImpactFactors({
       })
 
       results[journal.issn] = {
-        realtimeIF: entry.realtimeIF,
+        ...existingEntry,
+        realtimeIF: null,
         jcrIF: entry.jcrIF,
+        jcrYear: entry.jcrYear ?? null,
+        jcrSource: entry.jcrSource,
+        verifiedAt: today,
         updatedAt: today,
       }
     } catch (error) {
       const normalizedError = normalizeError(error)
 
-      if (existingEntry) {
+      if (hasVerifiedCache(existingEntry, journal)) {
         warnings.push(
           `Using cached impact factors for ${journal.name} after refresh failed: ${normalizedError.message}`,
         )

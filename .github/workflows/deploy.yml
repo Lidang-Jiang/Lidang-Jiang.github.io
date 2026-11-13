@@ -4,12 +4,24 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        description: 要部署的提交；留空时使用触发事件的默认引用
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: read
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
       - uses: pnpm/action-setup@v4
 
@@ -30,4 +42,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=lidang-jiang
+          command: pages deploy dist --project-name=lidang-jiang --branch=${{ github.ref_name }}
