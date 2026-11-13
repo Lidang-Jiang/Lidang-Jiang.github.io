@@ -15,7 +15,7 @@ import {
 
 describe('project grouping', () => {
   it('keeps all projects categorized', () => {
-    expect(projects).toHaveLength(37)
+    expect(projects).toHaveLength(39)
 
     for (const project of projects) {
       expect(project.category).toBeDefined()
@@ -38,7 +38,7 @@ describe('project grouping', () => {
       PROJECT_CATEGORY_ORDER,
     )
     expect(groups.map((group) => group.projects)).toHaveLength(4)
-    expect(groups.map((group) => group.projects.length)).toEqual([15, 7, 5, 10])
+    expect(groups.map((group) => group.projects.length)).toEqual([15, 7, 7, 10])
   })
 
   it('preserves the resume order inside each category', () => {
@@ -71,6 +71,8 @@ describe('project grouping', () => {
       'ManiSkill',
     ])
     expect(groups[2]?.projects.map((project) => project.title.en)).toEqual([
+      'RP3 Lightweight Intelligence Requirements Delivery',
+      'OpenHarmony Ability Lite: CMSIS-RTOS2 Migration and LTS Backport',
       'Kubernetes',
       'crawlee-python',
       'opcua-asyncio',
@@ -161,6 +163,44 @@ describe('project grouping', () => {
         numbers.map((number) => `${project?.github}/pull/${number}`),
       )
     }
+  })
+
+  it('keeps RP3 product work separate from experimental optimization', () => {
+    const rp3 = projects.find((project) => project.title.zh === 'RP3轻智能需求交付')
+
+    expect(rp3).toBeDefined()
+    expect(rp3?.category?.en).toBe(PROJECT_CATEGORY_ORDER[2])
+    expect(rp3?.projectType?.zh).toBe('嵌入式产品开发与交付')
+    expect(rp3?.role?.zh).toBe('OpenHarmony 图形渲染与性能优化开发')
+    expect(rp3?.achievements?.zh).toMatch(/GLES.*进度条.*已合入产品分支/)
+    expect(rp3?.contributions.zh.join(' ')).toContain('阶段验证')
+    expect(rp3?.contributions.en.join(' ')).toContain('prototype')
+    expect(rp3?.github).toBeUndefined()
+    expect(rp3?.pullRequests).toBeUndefined()
+    expect(projects.filter((project) => project.id === rp3?.id)).toHaveLength(1)
+  })
+
+  it('links the RP2 migration and its LTS backport to their GitCode evidence', () => {
+    const abilityLite = projects.find(
+      (project) => project.title.en ===
+        'OpenHarmony Ability Lite: CMSIS-RTOS2 Migration and LTS Backport',
+    )
+
+    expect(abilityLite).toBeDefined()
+    expect(abilityLite?.category?.en).toBe(PROJECT_CATEGORY_ORDER[2])
+    expect(abilityLite?.background.zh).toContain('RP2')
+    expect(abilityLite?.achievements?.zh).toContain('主线适配与同一实现的 LTS 回移')
+    expect(abilityLite?.pullRequests).toEqual([
+      {
+        number: 402,
+        url: 'https://gitcode.com/openharmony/ability_ability_lite/pull/402',
+      },
+      {
+        number: 404,
+        url: 'https://gitcode.com/openharmony/ability_ability_lite/pull/404',
+      },
+    ])
+    expect(projects.filter((project) => project.id === abilityLite?.id)).toHaveLength(1)
   })
 
   it('defines stable category navigation metadata', () => {

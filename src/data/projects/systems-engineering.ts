@@ -4,6 +4,107 @@ import { PROJECT_CATEGORIES } from '@/utils/project-groups'
 
 export const systemsEngineeringProjects: Project[] = [
   {
+    id: 40,
+    title: {
+      en: 'RP3 Lightweight Intelligence Requirements Delivery',
+      zh: 'RP3轻智能需求交付',
+    },
+    period: '2026.10 — Present',
+    category: PROJECT_CATEGORIES.systemsEngineering,
+    projectType: {
+      en: 'Embedded Product Development and Delivery',
+      zh: '嵌入式产品开发与交付',
+    },
+    role: {
+      en: 'OpenHarmony Graphics and Performance Developer',
+      zh: 'OpenHarmony 图形渲染与性能优化开发',
+    },
+    module: {
+      en: 'GLES integration, GPU UI rendering, and performance validation',
+      zh: 'GLES 适配、GPU UI 绘制与性能验证',
+    },
+    background: {
+      en: 'Graphics-stack development for lightweight smart devices based on the OpenHarmony small system, with a focus on GPU rendering compatibility, UI performance, and on-device validation.',
+      zh: '基于 OpenHarmony small 系统的轻智能设备图形栈开发，围绕 GPU 渲染兼容性、UI 性能及板端验证推进功能交付。',
+    },
+    techStack: [
+      'C++',
+      'OpenHarmony',
+      'OpenGL ES',
+      'GPU Rendering',
+      'Embedded Systems',
+    ],
+    contributions: {
+      en: [
+        'Fixed GPU black-screen rendering by completing the declaration, loading, and forwarding of the missing glBlendFuncSeparate entry point in the GLES integration layer.',
+        'Implemented GPU drawing for rounded progress bars with solid and gradient colors, retaining CPU fallback and per-context GPU resource cleanup.',
+        'Developed and evaluated prototype font texture caching, atlas batching, and GPU optimization for image-sequence animation through staged performance validation.',
+      ],
+      zh: [
+        '补齐 GLES 适配层缺失的 glBlendFuncSeparate 声明、加载与转发，修复 GPU 渲染黑屏问题。',
+        '实现圆头纯色与渐变进度条的 GPU 绘制，保留 CPU 回退路径，并完善按 context 管理的 GPU 资源清理。',
+        '开展字体纹理缓存、图集批处理及序列帧动画 GPU 优化的原型开发与阶段验证。',
+      ],
+    },
+    achievements: {
+      en: 'The GLES black-screen fix and progress-bar GPU optimization are merged into the product branch. Font and image-sequence optimization remain staged research work; the earlier font-cache implementation was reverted after its initial merge.',
+      zh: 'GLES 黑屏修复与进度条 GPU 绘制优化已合入产品分支。字体及序列帧优化属于阶段研发，其中早期字体缓存实现在首次合入后已回退。',
+    },
+  },
+  {
+    id: 41,
+    title: {
+      en: 'OpenHarmony Ability Lite: CMSIS-RTOS2 Migration and LTS Backport',
+      zh: 'OpenHarmony Ability Lite：CMSIS-RTOS2 适配与 LTS 回移',
+    },
+    period: '2026.08 — 2026.10',
+    category: PROJECT_CATEGORIES.systemsEngineering,
+    projectType: {
+      en: 'Open-Source Contribution and Product Delivery',
+      zh: '开源贡献与产品交付',
+    },
+    role: {
+      en: 'RP2 Delivery Developer and Open-Source Contributor',
+      zh: 'RP2 需求交付开发与开源贡献者',
+    },
+    module: {
+      en: 'Ability Lite thread abstraction and lifecycle compatibility',
+      zh: 'Ability Lite 线程抽象与生命周期兼容',
+    },
+    background: {
+      en: 'Delivered the LiteOS-M task-interface migration for OpenHarmony Ability Lite as part of the RP2 framework-service abstraction effort, then backported the implementation to OpenHarmony-6.1-LTS.',
+      zh: '在 RP2 框架服务子系统统一抽象层适配中，承接 OpenHarmony Ability Lite 的 LiteOS-M 任务接口迁移，并将同一实现回移至 OpenHarmony-6.1-LTS。',
+    },
+    techStack: [
+      'C++',
+      'OpenHarmony',
+      'LiteOS-M',
+      'CMSIS-RTOS2',
+      'OS Abstraction',
+      'Embedded Systems',
+    ],
+    contributions: {
+      en: [
+        'Migrated LiteOS-M task creation, deletion, scheduler locking, and current-thread queries to CMSIS-RTOS2; propagated opaque osThreadId_t handles across the framework and service layers and standardized thread entry signatures.',
+        'Preserved per-instance JS threads and queues and shared Native threads and queues, while handling scheduler-lock state restoration and resource cleanup on creation failures.',
+        'Completed community review and the relevant code-check, compilation, and board-test gates; coordinated target-board integration validation and backported the same implementation to the LTS branch.',
+      ],
+      zh: [
+        '将 LiteOS-M 任务创建、删除、调度锁及当前线程查询迁移至 CMSIS-RTOS2，贯通 framework 与 service 的 osThreadId_t 句柄传递，并统一线程入口签名。',
+        '保持 JS 每实例线程与队列、Native 共享线程与队列的既有模型，处理调度锁状态恢复及创建失败时的资源回收。',
+        '完成社区评审及相关代码检查、编译和板测门禁，配合目标板集成验证，并将同一实现回移至 LTS 分支。',
+      ],
+    },
+    achievements: {
+      en: 'Merged 2 PRs: the mainline migration into master on September 17, 2026, and the same implementation backported to OpenHarmony-6.1-LTS on October 15, 2026.',
+      zh: '已合并 2 个 PR，完成主线适配与同一实现的 LTS 回移：分别于 2026 年 9 月 17 日合入 master、10 月 15 日合入 OpenHarmony-6.1-LTS。',
+    },
+    pullRequests: pullRequests(
+      'https://gitcode.com/openharmony/ability_ability_lite',
+      [402, 404],
+    ),
+  },
+  {
     id: 39,
     title: {
       en: 'Kubernetes',
