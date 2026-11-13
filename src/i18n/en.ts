@@ -98,7 +98,7 @@ export default {
     allCategories: 'All Categories',
     categoryOverview: 'Category Overview',
     exploreCategory: 'Explore Category',
-    projectCount: '{count} projects',
+    projectCount: '{count} project | {count} projects',
     showMore: 'Show Details',
     showLess: 'Hide Details',
     projectType: 'Type',
