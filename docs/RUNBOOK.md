@@ -1,6 +1,6 @@
 # 发布与回滚
 
-最后更新：2026-11-13。
+最后更新：2026-11-15。
 
 生产站点为 [lidang-jiang.pages.dev](https://lidang-jiang.pages.dev/)。配置来源是 [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) 和 [wrangler.json](../wrangler.json)。本地验证命令见 [CONTRIB.md](CONTRIB.md)。
 
@@ -18,11 +18,13 @@
 直接打开并刷新以下页面，确认页面内容与本次提交一致：
 
 - [首页](https://lidang-jiang.pages.dev/)：人物、主要入口及正文完整可见。
-- [项目时间线](https://lidang-jiang.pages.dev/projects)：默认显示时间线，进行中置顶，已结束项目按结束时间倒序。
+- [项目时间线](https://lidang-jiang.pages.dev/projects)：进行中置顶，已结束项目按结束时间倒序并按年份分组；1024px 起为双列，窄屏为单列，日期位于卡片上方。
 - [分类总览](https://lidang-jiang.pages.dev/projects/categories)：显示四个分类入口，可切换回时间线。
-- [系统工程分类](https://lidang-jiang.pages.dev/projects/systems-engineering)：既有分类直链、项目内容及详情展开正常。
+- [系统工程分类](https://lidang-jiang.pages.dev/projects/systems-engineering)：分类直链、时间线排序、单双列布局及详情展开正常；同时检查其余三个分类详情页使用相同的时间线展示。
 
-在手机与桌面上抽查中英文、明暗主题、导航和项目详情。HTTP 成功响应只能证明页面可访问，还需确认静态首屏和交互内容正确。
+在手机与桌面上抽查中英文、明暗主题、导航和项目详情，确认双列按“左→右→下一行”阅读且左右详情可独立展开。各页面滚动超过 400px 后，应显示右下角“回到顶部”按钮；检查键盘触发后回到顶部并聚焦正文，减少动态效果模式使用即时滚动，移动端按钮不侵入安全区。
+
+HTTP 成功响应只能证明页面可访问，还需确认静态首屏和交互内容正确。
 
 ## 微信验证
 
