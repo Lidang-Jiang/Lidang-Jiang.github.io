@@ -3,7 +3,6 @@ import { ArrowRight, LayoutGrid, List } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import ProjectCard from '@/components/projects/ProjectCard.vue'
 import ProjectTimeline from '@/components/projects/ProjectTimeline.vue'
 import { projects } from '@/data/projects'
 import {
@@ -29,6 +28,7 @@ const activeGroup = computed(() => activeSlug.value
 )
 const groups = getProjectGroups(projects)
 const timeline = getProjectTimeline(projects)
+const activeTimeline = computed(() => getProjectTimeline(activeGroup.value?.projects ?? []))
 const categoryCards = PROJECT_CATEGORY_NAV_ITEMS.map((item) => ({
   ...item,
   path: getProjectCategoryPath(item.slug),
@@ -127,9 +127,7 @@ const inactiveMode = 'text-muted hover:text-ink'
             </h2>
             <p class="text-sm text-muted">{{ t('projects.projectCount', { count: activeGroup.projects.length }) }}</p>
           </div>
-          <div class="space-y-5">
-            <ProjectCard v-for="project in activeGroup.projects" :key="project.id" :project="project" />
-          </div>
+          <ProjectTimeline :groups="activeTimeline" />
         </section>
       </div>
     </div>

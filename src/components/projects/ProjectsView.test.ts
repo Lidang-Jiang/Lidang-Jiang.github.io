@@ -9,6 +9,7 @@ import en from '@/i18n/en'
 import zh from '@/i18n/zh'
 import { routes } from '@/router'
 import { getProjectGroupBySlug, PROJECT_CATEGORY_NAV_ITEMS } from '@/utils/project-groups'
+import { getProjectTimeline } from '@/utils/project-timeline'
 
 async function renderProjects(path: string, locale = 'en') {
   const router = createRouter({ history: createMemoryHistory(), routes })
@@ -55,15 +56,34 @@ describe('项目页面路由与静态首屏', () => {
     }
   })
 
-  it.each(PROJECT_CATEGORY_NAV_ITEMS)('保留 $slug 直链和分类原始顺序', async ({ slug }) => {
+  it.each(PROJECT_CATEGORY_NAV_ITEMS)('$slug 直链仅显示该分类的完整时间线并按时间排序', async ({ slug }) => {
     const { html, router } = await renderProjects(`/projects/${slug}`)
-    const group = getProjectGroupBySlug(projects, slug)
+    const group = getProjectGroupBySlug(projects, slug)!
+    const expectedIds = getProjectTimeline(group.projects)
+      .flatMap((year) => year.entries.map((entry) => entry.project.id))
 
     expect(router.currentRoute.value.name).toBe('project-category')
-    expect(projectIds(html)).toEqual(group?.projects.map((item) => item.id))
-    expect(html).not.toContain('data-project-timeline')
+    expect(projectIds(html)).toEqual(expectedIds)
+    expect(new Set(projectIds(html)).size).toBe(group.projects.length)
+    expect(html.includes('data-project-timeline')).toBe(true)
     expect(linkTag(html, `/projects/${slug}`)).toContain('aria-current="page"')
   })
+
+  it.each(['/projects', ...PROJECT_CATEGORY_NAV_ITEMS.map(({ slug }) => `/projects/${slug}`)])(
+    '%s 在静态首屏中为每个项目展示一次时间线日期且默认收起详情',
+    async (path) => {
+      const { html } = await renderProjects(path, 'zh')
+      const ids = projectIds(html)
+
+      expect(html.match(/data-project-period/g)).toHaveLength(ids.length)
+      expect(html.match(/aria-expanded="false"/g)).toHaveLength(ids.length)
+      expect(html).not.toContain('2026.10 — Present')
+      for (const id of ids) {
+        expect(html).toContain(`aria-controls="project-details-${id}"`)
+        expect(html).toContain(`aria-labelledby="project-title-${id}"`)
+      }
+    },
+  )
 
   it('中文日期显示至今，项目详情默认收起且 ARIA ID 唯一', async () => {
     const { html } = await renderProjects('/projects', 'zh')

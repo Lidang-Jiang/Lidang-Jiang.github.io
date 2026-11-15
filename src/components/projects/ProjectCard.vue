@@ -56,8 +56,8 @@ const category = computed(() => PROJECT_CATEGORY_NAV_ITEMS.find(
           {{ category.category[lang] }}
         </router-link>
         <div
+          v-if="!timeline"
           class="flex items-center gap-1.5 text-[13px] text-muted tabular-nums"
-          :class="{ 'md:hidden': timeline }"
         >
           <Calendar :size="14" aria-hidden="true" />
           {{ period }}

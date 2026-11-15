@@ -17,7 +17,7 @@ function groupTitle(key: string): string {
 </script>
 
 <template>
-  <div data-project-timeline class="space-y-14 sm:space-y-20">
+  <div data-project-timeline class="space-y-12 sm:space-y-14">
     <section v-for="group in groups" :key="group.key" :aria-labelledby="`timeline-${group.key}`">
       <div class="mb-6 flex items-baseline gap-4 md:mb-8">
         <h2
@@ -29,19 +29,19 @@ function groupTitle(key: string): string {
         <span class="text-sm text-muted">{{ t('projects.projectCount', { count: group.entries.length }) }}</span>
       </div>
 
-      <ol class="space-y-6">
+      <ol class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <li
           v-for="entry in group.entries"
           :key="entry.project.id"
-          class="relative grid min-w-0 grid-cols-[12px_minmax(0,1fr)] gap-x-3 md:grid-cols-[148px_12px_minmax(0,1fr)] md:gap-x-6"
+          class="relative min-w-0 border-l border-line pl-5 sm:pl-6"
         >
-          <div class="hidden pt-7 text-[13px] leading-relaxed text-muted tabular-nums md:block">
+          <span
+            class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-accent bg-canvas"
+            aria-hidden="true"
+          />
+          <p data-project-period class="mb-3 text-[13px] leading-relaxed text-muted tabular-nums">
             {{ formatProjectPeriod(entry.project.period, t('projects.present')) }}
-          </div>
-          <div class="relative flex justify-center" aria-hidden="true">
-            <span class="absolute inset-y-0 w-px bg-line" />
-            <span class="relative mt-8 h-2.5 w-2.5 rounded-full border-2 border-accent bg-canvas" />
-          </div>
+          </p>
           <ProjectCard :project="entry.project" timeline />
         </li>
       </ol>
