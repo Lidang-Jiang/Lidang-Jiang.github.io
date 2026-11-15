@@ -187,10 +187,13 @@ export async function updateCitations({
 }
 
 /** 所有论文都有有效数据时才原子替换缓存，避免写入残缺快照。 */
-export async function refreshCitations({ outputPath = OUTPUT_PATH, ...options } = {}) {
+export async function refreshCitations({ outputPath = OUTPUT_PATH, requireFresh = false, ...options } = {}) {
   const existingData = existsSync(outputPath) ? JSON.parse(readFileSync(outputPath, 'utf8')) : {}
   const result = await updateCitations({ existingData, ...options })
   if (result.failures.length) throw new Error(`未覆盖引用缓存：${result.failures.join('；')}`)
+  if (requireFresh && result.warnings.length) {
+    throw new Error(`未获得全新引用数据：${result.warnings.join('；')}`)
+  }
   const temporaryPath = `${outputPath}.tmp`
   writeFileSync(temporaryPath, JSON.stringify(result.results, null, 2) + '\n')
   renameSync(temporaryPath, outputPath)
@@ -198,7 +201,7 @@ export async function refreshCitations({ outputPath = OUTPUT_PATH, ...options } 
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  refreshCitations().then(({ results, warnings }) => {
+  refreshCitations({ requireFresh: process.argv.includes('--require-fresh') }).then(({ results, warnings }) => {
     for (const warning of warnings) console.warn(warning)
     for (const [id, entry] of Object.entries(results)) {
       console.log(`${id}: Google Scholar ${entry.count}${entry.estimated ? '*' : ''}，核验日期 ${entry.verifiedAt}`)

@@ -1,8 +1,7 @@
 name: Update Google Scholar Citations
 
 on:
-  schedule:
-    - cron: '0 1 * * 1' # 每周一北京时间 09:00
+  # GitHub 托管出口被 Scholar 限制；每周刷新由本机调度执行。
   workflow_dispatch:
 
 permissions:
@@ -35,7 +34,7 @@ jobs:
         run: node --test scripts/fetch-citations.test.mjs
 
       - name: 更新 Google Scholar 被引用次数
-        run: node scripts/fetch-citations.mjs
+        run: node scripts/fetch-citations.mjs --require-fresh
 
       - name: 仅提交引用数据并安全同步
         id: commit

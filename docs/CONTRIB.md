@@ -55,10 +55,22 @@ Playwright 默认启动 `http://127.0.0.1:4173` 的预览服务；运行前必�
 
 ```sh
 node --test scripts/*.test.mjs
-node scripts/fetch-citations.mjs
+node scripts/fetch-citations.mjs --require-fresh
 ```
 
 刷新失败时保留上次成功的数量和核验日期，缺少有效缓存时失败退出；不将缺失数据写为零，也不切换其他引用来源。`e2e/citations.spec.ts` 验证中英文、禁用 JavaScript 的静态数据、每篇论文的计数与估算标记，以及手机布局。
+
+`--require-fresh` 要求所有论文均成功刷新，任何沿用缓存的情况都失败退出且不写文件。省略该参数时允许保留有效缓存，用于离线恢复；调度执行始终使用严格模式。
+
+Windows + WSL 的每周任务使用本机网络读取公开主页，避免 GitHub 托管出口的访问限制。先在 WSL 安装运行副本并手动验证（不需要安装项目依赖）：
+
+```sh
+mkdir -p "$HOME/.cache/lidang-website-citations"
+install -m 700 scripts/sync-citations.sh scripts/run-citation-schedule.sh "$HOME/.cache/lidang-website-citations/"
+bash "$HOME/.cache/lidang-website-citations/run-citation-schedule.sh"
+```
+
+将 `scripts/install-citation-schedule.ps1` 复制到 Windows 可读取的位置后，用 Windows PowerShell 执行该文件，传入当前 `-Distro`、`-LinuxUser` 及安装后的 `-WslScript /home/<user>/.cache/lidang-website-citations/run-citation-schedule.sh`。任务每周一 09:00 运行，保留退出码与本机日志，注册器不会覆盖已有同名任务。安装脚本的同步逻辑通过临时本地 Git 仓库测试，覆盖无变更、提交推送、抓取失败、脏状态及错误 origin。
 
 ## 项目内容维护
 

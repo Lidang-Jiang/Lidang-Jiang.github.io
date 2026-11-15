@@ -207,4 +207,24 @@ describe('Google Scholar 数据刷新与缓存', () => {
       rmSync(directory, { recursive: true, force: true })
     }
   })
+
+  it('要求全新数据时拒绝沿用缓存，且不写入部分刷新的快照', async () => {
+    const directory = mkdtempSync(join(tmpdir(), 'citation-strict-test-'))
+    const outputPath = join(directory, 'citations.json')
+    try {
+      const initial = JSON.stringify(cached)
+      writeFileSync(outputPath, initial)
+      await assert.rejects(refreshCitations({
+        outputPath, today, requireFresh: true, fetchHtml: async () => row(energy, 12),
+      }), /未获得全新引用数据/)
+      assert.equal(readFileSync(outputPath, 'utf8'), initial)
+
+      await refreshCitations({ outputPath, today, requireFresh: true, fetchHtml: async () => profile(12, 48) })
+      const refreshed = JSON.parse(readFileSync(outputPath, 'utf8'))
+      assert.equal(refreshed[energy.id].count, 12)
+      assert.equal(refreshed[appliedEnergy.id].verifiedAt, today)
+    } finally {
+      rmSync(directory, { recursive: true, force: true })
+    }
+  })
 })
