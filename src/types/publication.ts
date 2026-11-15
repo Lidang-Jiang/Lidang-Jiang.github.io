@@ -1,3 +1,5 @@
+import type { CitationMetric } from '@/types/citation'
+
 export interface Publication {
   id: string
   title: string
@@ -15,4 +17,5 @@ export interface Publication {
     zh: string
   }
   citation: string
+  citationMetric?: CitationMetric
 }

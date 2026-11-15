@@ -26,6 +26,14 @@
 
 HTTP 成功响应只能证明页面可访问，还需确认静态首屏和交互内容正确。
 
+## Google Scholar 被引次数
+
+论文页与简历页使用同一份 [Google Scholar 公开主页](https://scholar.google.com/citations?user=SvUCAeQAAAAJ&hl=en) 数据，核对每篇论文的计数、估算星号、来源链接及核验日期。`src/data/citation-counts.json` 保存最近一次成功快照；页面不在访问时向 Google 发起请求。
+
+**Update Google Scholar Citations** 每周一 UTC 01:00（北京时间 09:00）运行，也支持在 Actions 手动触发。任务先运行抓取脚本单元测试，再更新引用快照；数据变化时仅提交该 JSON，并显式调用发布工作流部署同步后的提交 SHA。核验日期也会随成功刷新更新，失败不会修改旧日期。
+
+遇到 HTTP 403、429、验证码、条目缺失、标题不符或非法计数时，不尝试绕过访问限制。保留有效快照并在日志中记录原因；没有有效快照时任务失败。Google Scholar 对不同出口 IP 的可用性可能不同，定时任务是否成功以每次 Actions 日志及页面核验日期为准。
+
 ## 微信验证
 
 验证文件 `public/f2d512139db34f256cb94797c2d8264b.txt` 通过已有的 Vite `public` → `dist` → GitHub Actions 流程发布。

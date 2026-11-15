@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ExternalLink, FileText } from 'lucide-vue-next'
 import type { Publication } from '@/types/publication'
+import CitationMetric from '@/components/publications/CitationMetric.vue'
 
 const props = defineProps<{
   publication: Publication
@@ -42,6 +43,7 @@ const abstract = computed(() => props.publication.abstract[lang.value])
           <span class="text-[13px] text-muted">
             {{ publication.year }}
           </span>
+          <CitationMetric :metric="publication.citationMetric" class="basis-full" />
         </div>
 
         <h2 class="text-xl font-semibold leading-snug tracking-[-0.025em] text-ink sm:text-2xl">

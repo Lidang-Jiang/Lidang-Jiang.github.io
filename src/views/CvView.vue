@@ -7,8 +7,10 @@ import ResumeDownload from '@/components/cv/ResumeDownload.vue'
 import EducationTimeline from '@/components/cv/EducationTimeline.vue'
 import WorkTimeline from '@/components/cv/WorkTimeline.vue'
 import SkillsSection from '@/components/cv/SkillsSection.vue'
+import CitationMetric from '@/components/publications/CitationMetric.vue'
 import { profile } from '@/data/profile'
 import { publications } from '@/data/publications'
+import { citationCounts } from '@/data/citations'
 import { useImpactFactors } from '@/composables/useImpactFactors'
 
 const { t, locale } = useI18n()
@@ -20,6 +22,7 @@ const enrichedPublications = computed(() =>
   publications.map(pub => ({
     ...pub,
     impactFactor: (pub.issn && impactFactors.value.get(pub.issn)) ?? pub.impactFactor,
+    citationMetric: citationCounts[pub.id],
   }))
 )
 
@@ -173,6 +176,7 @@ const basicInfoItems = computed<BasicInfoItem[]>(() => [
               <span class="rounded-full border border-line bg-surface px-2.5 py-0.5 text-[13px] font-medium text-muted">
                 {{ t('publications.impactFactor') }}={{ pub.impactFactor }}
               </span>
+              <CitationMetric :metric="pub.citationMetric" />
               <a
                 :href="pub.doi"
                 target="_blank"

@@ -47,6 +47,19 @@ Playwright 默认启动 `http://127.0.0.1:4173` 的预览服务；运行前必�
 
 `e2e/project-timeline.spec.ts` 检查项目总页与四个分类详情页的单双列布局、双列详情独立展开、分类静态时间线，以及全站“回到顶部”的键盘操作和焦点恢复。全局按钮滚动超过 400px 时显示，触发后聚焦 `#main-content`；普通模式平滑滚动，减少动态效果模式立即回到顶部。
 
+## 论文被引次数
+
+论文列表和简历中的每篇论文共用 `src/data/citation-counts.json`，引用次数唯一来源为 [Google Scholar 公开主页](https://scholar.google.com/citations?user=SvUCAeQAAAAJ&hl=en)。页面显示来源、核验日期和引用列表链接；Google Scholar 的估算星号同时保留，并提供说明。
+
+`scripts/fetch-citations.mjs` 每次只请求一次作者主页，按 Scholar 条目 ID 精确匹配并核对论文标题。测试和手动刷新命令为：
+
+```sh
+node --test scripts/*.test.mjs
+node scripts/fetch-citations.mjs
+```
+
+刷新失败时保留上次成功的数量和核验日期，缺少有效缓存时失败退出；不将缺失数据写为零，也不切换其他引用来源。`e2e/citations.spec.ts` 验证中英文、禁用 JavaScript 的静态数据、每篇论文的计数与估算标记，以及手机布局。
+
 ## 项目内容维护
 
 项目数据位于 `src/data/projects/`，由 `src/data/projects.ts` 汇总。每个项目的 `id` 必须在全量数据中唯一；它同时用于列表标识和详情区域的无障碍关联。

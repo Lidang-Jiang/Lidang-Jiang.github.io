@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import SectionTitle from '@/components/ui/SectionTitle.vue'
 import PublicationCard from '@/components/publications/PublicationCard.vue'
 import { publications } from '@/data/publications'
+import { citationCounts } from '@/data/citations'
 import { useImpactFactors } from '@/composables/useImpactFactors'
 
 const { t } = useI18n()
@@ -20,6 +21,7 @@ const enrichedPublications = computed(() =>
     return {
       ...pub,
       impactFactor: impactFactor ?? pub.impactFactor,
+      citationMetric: citationCounts[pub.id],
     }
   }),
 )
