@@ -9,6 +9,7 @@ export default {
     openMenu: "打开导航菜单",
     closeMenu: "关闭导航菜单",
     skipToContent: "跳至内容",
+    backToTop: "回到顶部",
   },
   hero: {
     name: "江李当",

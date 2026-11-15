@@ -10,6 +10,7 @@ export default mergeConfig(viteConfig, defineConfig({
         'src/utils/project-*.ts',
         'src/composables/useDisclosure.ts',
         'src/composables/useScrollReveal.ts',
+        'src/composables/useBackToTop.ts',
       ],
       exclude: ['**/*.test.ts'],
       reporter: ['text', 'json-summary', 'html'],

@@ -9,6 +9,7 @@ export default {
     openMenu: 'Open navigation menu',
     closeMenu: 'Close navigation menu',
     skipToContent: 'Skip to content',
+    backToTop: 'Back to top',
   },
   hero: {
     name: 'Lidang Jiang',

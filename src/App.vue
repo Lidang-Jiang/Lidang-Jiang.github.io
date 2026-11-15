@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import TheNavbar from '@/components/layout/TheNavbar.vue'
 import TheFooter from '@/components/layout/TheFooter.vue'
+import BackToTop from '@/components/layout/BackToTop.vue'
 import { useTheme } from '@/composables/useTheme'
 
 const { initTheme } = useTheme()
@@ -25,5 +26,6 @@ onMounted(() => {
       </router-view>
     </main>
     <TheFooter />
+    <BackToTop />
   </div>
 </template>
