@@ -20,12 +20,12 @@ export const systemsEngineeringProjects: Project[] = [
       zh: 'OpenHarmony 图形渲染与性能优化开发',
     },
     module: {
-      en: 'GPU component optimization, full-screen copy benchmarks, and drawing-behavior analysis',
-      zh: 'GPU 组件性能优化、全屏拷贝基准与绘制行为分析',
+      en: 'GPU component optimization, font-performance evaluation, full-screen copy benchmarks, and drawing-behavior analysis',
+      zh: 'GPU 组件性能优化、字体性能评估、全屏拷贝基准与绘制行为分析',
     },
     background: {
-      en: 'Graphics performance work for lightweight smart devices based on the OpenHarmony small system, focusing on existing GPU UI paths, reproducible on-device copy benchmarks, and drawing-behavior analysis.',
-      zh: '面向基于 OpenHarmony small 系统的轻智能设备，优化既有 GPU UI 绘制路径，建立可复现的板端拷贝基准，并分析绘制行为与性能开销。',
+      en: 'Graphics performance work for lightweight smart devices based on the OpenHarmony small system, covering existing GPU UI paths, CPU/GPU font-composition evaluation, reproducible on-device copy benchmarks, and drawing-behavior analysis to inform implementation choices.',
+      zh: '面向基于 OpenHarmony small 系统的轻智能设备，优化既有 GPU UI 绘制路径，评估 CPU/GPU 字体合成性能，建立可复现的板端拷贝基准，并通过绘制行为与性能分析支持方案选型。',
     },
     techStack: [
       'C++',
@@ -38,19 +38,23 @@ export const systemsEngineeringProjects: Project[] = [
       en: [
         'Optimized existing GPU paths for rounded solid-color and gradient progress bars by combining draw submissions and reusing gradient resources. In a same-board Mali-T820 microbenchmark with a 1024×600 offscreen FBO and a 300×30 solid-color rounded bar, all 300 samples after 30 warm-up iterations showed a mean OnDraw return time of 0.293 ms versus 1.520 ms at baseline, an 80.7% reduction in CPU-side function elapsed time.',
         'Conducted staged GPU performance research and optimization for existing image-sequence animation, including per-stage timing, texture-upload overhead analysis, and validation of existing final-frame cache behavior; consistent overall performance gains remain unconfirmed.',
+        'Completed CPU/GPU font-composition analysis and an atlas batching prototype with cache-correctness fixes and an 8bpp sampling fast path. Timed the production DrawLetter call directly and separately measured batch completion. Tested on Mali-T820 with Chinese glyphs at font size 40 and 8bpp and a 1024×600 RGB565 target, using a steady-state working set of at most 16 distinct glyphs, 100 warm-up batches, and 1,000 measured batches × 5 rounds; passed 23 Mesa pixel regressions and 8 on-device pixel checks.',
+        'Measured batch-completion speedups of 1.42× and 2.12× for 64 and 256 glyphs. For 16 glyphs, CPU/GPU completion took 1.067 ms / 1.908 ms, so the CPU remained faster. Used these results to defer product integration for the current few-glyph workload, retaining the experimental code in a local backup branch and documenting the findings.',
         'Developed an independent memcpy_s benchmark modeled on FlushWithModeCopy, using a gralloc dma_buf source and a write-combine DRM dumb buffer destination. Compared per-line and bulk copies and memcpy_s versus memcpy with correctness checks. At 1024×600 ARGB8888, three rounds of 20 warm-up iterations and 1,000 measurements each established a 14.426 ms mean full-screen per-line copy baseline; delivered the test report and code patch.',
         'Completed static analysis of UI_ROOT_VIEW / UI_VIEW_GROUP drawing and the effects of skipping background fills, comparing the default L0 path in the same-source baseline. Submitted a report explaining how GLES full-window redraw affects the drawing start point and container calls, and assessing transparent-background handling and partial-refresh risks.',
       ],
       zh: [
         '优化既有圆头纯色与渐变进度条的 GPU 绘制路径，合并绘制提交并复用渐变资源。在同板 Mali-T820、1024×600 离屏 FBO、300×30 圆头纯色条的组件微基准中，预热 30 次后统计全部 300 个样本，OnDraw 平均耗时由 1.520 ms 降至 0.293 ms，降低约 80.7%（CPU 侧函数返回耗时）。',
         '开展既有序列帧动画的 GPU 性能研究与阶段优化，完成分段耗时、纹理上传开销分析及既有末帧缓存场景验证；稳定的整体性能收益尚未确认。',
+        '完成 CPU/GPU 字体合成性能分析及 atlas 合批原型，修复字形缓存正确性并实现 8bpp 采样快路径；直接在生产 DrawLetter 调用点计时，另行测量批次实际完成耗时。在 Mali-T820、40 号 8bpp 中文、1024×600 RGB565 条件下，使用最多 16 个不同字形的稳态工作集，预热 100 批、正式测量 1,000 批 × 5 轮，通过 23 项 Mesa 像素回归与 8 组板端像素校验。',
+        '验证 64、256 字形负载的整批完成加速比分别为 1.42×、2.12×；16 字形负载 CPU/GPU 完成耗时为 1.067 ms / 1.908 ms，CPU 仍更快。依据实测结果，对当前少字场景暂缓产品接入，实验代码保留在本地备份分支，并形成性能分析结论。',
         '仿照 FlushWithModeCopy 编写独立 memcpy_s 基准，复现 gralloc dma_buf 源到 write-combine DRM dumb buffer 目标的内存条件，完成逐行与整块拷贝、memcpy_s 与 memcpy 对照及正确性检查。在 1024×600 ARGB8888、三轮各预热 20 次并测量 1,000 次的条件下，全屏逐行拷贝平均耗时为 14.426 ms，形成后续优化基线并交付测试报告与代码补丁。',
         '完成 UI_ROOT_VIEW / UI_VIEW_GROUP 绘制行为及跳过背景填充影响的静态分析，对照同源 L0 默认路径，明确 GLES 全窗口重绘对绘制起点和容器调用的影响，评估透明背景处理与局部刷新风险，并提交分析报告。',
       ],
     },
     achievements: {
-      en: 'Completed existing progress-bar GPU optimization and on-device comparisons; delivered the full-screen copy benchmark, test report, code patch, and UI_ROOT_VIEW / UI_VIEW_GROUP static-analysis report. Image-sequence optimization remains staged research.',
-      zh: '完成既有进度条 GPU 性能优化与板端对照，交付全屏拷贝测试基准、报告和代码补丁，以及 UI_ROOT_VIEW / UI_VIEW_GROUP 静态分析报告；序列帧优化保留阶段研发状态。',
+      en: 'Completed existing progress-bar GPU optimization and on-device comparisons; delivered the full-screen copy benchmark, test report, code patch, and UI_ROOT_VIEW / UI_VIEW_GROUP static-analysis report. Completed font-performance evaluation and informed the workload-based integration decision; the font prototype is backed up locally and not merged into the product. Image-sequence optimization remains staged research.',
+      zh: '完成既有进度条 GPU 性能优化与板端对照，交付全屏拷贝测试基准、报告和代码补丁，以及 UI_ROOT_VIEW / UI_VIEW_GROUP 静态分析报告；完成字体性能评估并支持场景选型，字体原型仅在本地备份、未合入产品；序列帧优化保留阶段研发状态。',
     },
   },
   {
