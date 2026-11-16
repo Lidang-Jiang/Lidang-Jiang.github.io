@@ -172,8 +172,8 @@ describe('project grouping', () => {
     expect(rp3?.category?.en).toBe(PROJECT_CATEGORY_ORDER[2])
     expect(rp3?.projectType?.zh).toBe('嵌入式产品开发与交付')
     expect(rp3?.role?.zh).toBe('OpenHarmony 图形渲染与性能优化开发')
-    expect(rp3?.contributions.zh).toHaveLength(6)
-    expect(rp3?.contributions.en).toHaveLength(6)
+    expect(rp3?.contributions.zh).toHaveLength(5)
+    expect(rp3?.contributions.en).toHaveLength(5)
     expect(rp3?.github).toBeUndefined()
     expect(rp3?.pullRequests).toBeUndefined()
     expect(projects.filter((project) => project.id === rp3?.id)).toHaveLength(1)
@@ -183,7 +183,7 @@ describe('project grouping', () => {
     expect(description).not.toMatch(/已合入产品分支|merged into the product branch/)
   })
 
-  it('records RP3 font research with measured batch limits and local-only prototype status', () => {
+  it('keeps RP3 font research, measured limits, and prototype status in one contribution', () => {
     const rp3 = projects.find((project) => project.id === 40)
     const analysisZh = rp3?.contributions.zh.find((item) => item.includes('DrawLetter'))
     const analysisEn = rp3?.contributions.en.find((item) => item.includes('DrawLetter'))
@@ -204,6 +204,8 @@ describe('project grouping', () => {
 
     const resultZh = rp3?.contributions.zh.find((item) => item.includes('1.42×'))
     const resultEn = rp3?.contributions.en.find((item) => item.includes('1.42×'))
+    expect(resultZh).toBe(analysisZh)
+    expect(resultEn).toBe(analysisEn)
     for (const text of [resultZh, resultEn]) {
       expect(text).toMatch(/64.*256/)
       expect(text).toContain('2.12×')
