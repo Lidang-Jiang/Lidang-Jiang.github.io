@@ -1,6 +1,6 @@
 # 发布与回滚
 
-最后更新：2026-11-15。
+最后更新：2026-11-16。
 
 生产站点为 [lidang-jiang.pages.dev](https://lidang-jiang.pages.dev/)。配置来源是 [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) 和 [wrangler.json](../wrangler.json)。本地验证命令见 [CONTRIB.md](CONTRIB.md)。
 
@@ -18,6 +18,7 @@
 直接打开并刷新以下页面，确认页面内容与本次提交一致：
 
 - [首页](https://lidang-jiang.pages.dev/)：人物、主要入口及正文完整可见。
+- [中文首页](https://lidang-jiang.pages.dev/zh)：不执行 JavaScript 也能看到江李当及中文介绍，两个首页语言切换链接互通。
 - [项目时间线](https://lidang-jiang.pages.dev/projects)：进行中置顶，已结束项目按结束时间倒序并按年份分组；1024px 起为双列，窄屏为单列，日期位于卡片上方。
 - [分类总览](https://lidang-jiang.pages.dev/projects/categories)：显示四个分类入口，可切换回时间线。
 - [系统工程分类](https://lidang-jiang.pages.dev/projects/systems-engineering)：分类直链、时间线排序、单双列布局及详情展开正常；同时检查其余三个分类详情页使用相同的时间线展示。
@@ -30,7 +31,7 @@ HTTP 成功响应只能证明页面可访问，还需确认静态首屏和交互
 
 生产发布在静态构建后运行 `node scripts/write-deployment-revision.mjs dist`，将实际 checkout 的完整 SHA 写入 `/deployment-revision.txt`。可复用工作流部署指定 `ref` 时，标记也以该 checkout 为准，不使用可能指向旧提交的事件 SHA。
 
-首次接入分别在 Bing Webmaster Tools 和百度搜索资源平台添加 `https://lidang-jiang.pages.dev/`。使用各平台实际生成的文件验证：Bing 文件通常为 `BingSiteAuth.xml`，百度按后台给出的文件名与内容原样保存到 `public/`，经正常发布后再完成验证，长期保留文件。没有取得真实验证材料时，不创建占位文件或虚构验证成功；需要登录或验证码时由账号持有人完成认证。
+首次接入分别在 Bing Webmaster Tools 和百度搜索资源平台添加 `https://lidang-jiang.pages.dev/`。已有 Google Search Console 验证时，可优先导入 Bing，授权由账号持有人完成；导入可带入所有权与 sitemap，但不等于必应已经收录。也可以使用本仓库已保存的真实 `BingSiteAuth.xml` 完成文件验证。百度按后台给出的文件名与内容原样保存到 `public/`，经正常发布后再完成验证，长期保留文件。没有取得真实验证材料时，不创建占位文件或虚构验证成功；需要账户资料、登录或验证码时由账号持有人完成认证。
 
 验证后，向 Bing 提交 `/sitemap.xml`，并用 URL Inspection 检查 `/`、`/zh` 和一个分类页面。百度通过普通收录提交这两个首页及其余有效页面，在后台开放 sitemap 提交时提交同一站点地图，并运行抓取诊断检查实际响应与正文。百度平台若拒绝添加当前域名或抓取失败，保留实际错误作为进一步处理依据；模拟 Baiduspider User-Agent 请求成功不能代替真实爬虫诊断。
 

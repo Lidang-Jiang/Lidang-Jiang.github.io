@@ -91,8 +91,9 @@ for (const settings of [
       localStorage.setItem('theme', theme)
     }, settings)
 
-    for (const path of ['/', '/publications', '/cv', '/projects/categories', ...timelinePaths]) {
+    for (const path of [settings.lang === 'zh' ? '/zh' : '/', '/publications', '/cv', '/projects/categories', ...timelinePaths]) {
       await page.goto(path)
+      await expect(page.locator('html')).toHaveAttribute('lang', settings.lang === 'zh' ? 'zh-CN' : 'en')
       const button = page.getByRole('button', { name: settings.label, exact: true })
       await expect(button).toBeHidden()
       await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }))

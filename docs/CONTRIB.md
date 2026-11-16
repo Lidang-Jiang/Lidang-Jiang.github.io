@@ -2,7 +2,7 @@
 
 项目固定使用 `pnpm@9.15.9`，依赖版本以 `pnpm-lock.yaml` 为准。
 
-最后更新：2026-11-15。
+最后更新：2026-11-16。
 
 本项目使用 Vue 3、TypeScript、Tailwind CSS 和 Vite SSG，构建产物位于 `dist/`。视觉规范见 [DESIGN.md](../DESIGN.md)，发布流程见 [RUNBOOK.md](RUNBOOK.md)。
 
@@ -41,7 +41,11 @@ Playwright 默认启动 `http://127.0.0.1:4173` 的预览服务；运行前必�
 
 浏览器默认使用系统已有的 Google Chrome，不下载 Playwright 附带的 Chromium。Windows + WSL 环境中，构建与预览服务可以在 WSL 运行，浏览器测试使用 Windows 的 Node.js、Playwright 和 Chrome，并通过 `PLAYWRIGHT_BASE_URL` 连接预览服务；不要额外启动 Linux 图形浏览器。`PLAYWRIGHT_BROWSER_CHANNEL` 可显式选择其他已安装的浏览器通道。仅运行 `e2e/site-verification.spec.ts` 的 HTTP 验证不需要浏览器。
 
-覆盖率门槛为语句、分支、函数和行各 80%，统计范围是 `src/utils/project-*.ts`、`useDisclosure.ts`、`useScrollReveal.ts` 与 `useBackToTop.ts` 的核心可测逻辑。该门槛不代表整个 Vue 应用的覆盖率。报告输出到 `coverage/`。
+覆盖率门槛为语句、分支、函数和行各 80%，统计项目工具函数、逐页 SEO、i18n 初始化与偏好处理，以及 `useDisclosure.ts`、`useScrollReveal.ts`、`useBackToTop.ts`、`useTheme.ts` 的核心可测逻辑。该门槛不代表整个 Vue 应用的覆盖率。报告输出到 `coverage/`。
+
+`/` 为英文首页，`/zh` 为中文首页；首页语言由 URL 决定，不被存储偏好覆盖。其余页面静态生成英文，浏览器挂载后可恢复语言偏好。每次 SSG 创建独立 i18n 实例，语言间不共享可变状态。页面通过 `useSiteSeo.ts` 生成独立标题、摘要、canonical 与分享信息，只有两个首页互相声明语言替代版本。修改路由或分类后，同步检查 sitemap 与 `e2e/seo.spec.ts`。
+
+构建根目录的 `404.html` 用于 Cloudflare Pages 的真实 404。Vite preview 的 SPA 回退行为与 Cloudflare 不同，HTTP 404 必须通过 Pages 本地预览或生产站点核验，不能仅凭 Vite preview 判断。
 
 浏览器回归覆盖项目视图切换、分类直链与刷新、前进后退、详情键盘展开、移动菜单、跳至内容和禁用 JavaScript 的静态首屏。布局检查包含 375、768、1024、1440px，并在手机和桌面尺寸检查中英文、明暗主题与减少动态效果模式。视觉修改还应人工查看截图，确认文字层级、换行和留白符合设计规范。
 

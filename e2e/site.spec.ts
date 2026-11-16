@@ -87,9 +87,11 @@ for (const width of [375, 768, 1024, 1440]) {
       localStorage.setItem('lang', 'zh')
       localStorage.setItem('theme', 'light')
     })
-    for (const path of ['/', '/projects', '/projects/categories', '/publications', '/cv']) {
+    for (const path of ['/zh', '/projects', '/projects/categories', '/publications', '/cv']) {
       await page.goto(path)
       await expect(page.locator('h1')).toBeVisible()
+      await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN')
+      if (path === '/zh') await expect(page.locator('h1')).toHaveText('江李当')
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
     }
   })
@@ -108,9 +110,13 @@ for (const width of [375, 1440]) {
         localStorage.setItem('lang', lang)
         localStorage.setItem('theme', theme)
       }, settings)
-      for (const path of ['/', '/projects', '/publications', '/cv']) {
+      for (const path of [settings.lang === 'zh' ? '/zh' : '/', '/projects', '/publications', '/cv']) {
         await page.goto(path)
         await expect(page.locator('h1')).toBeVisible()
+        await expect(page.locator('html')).toHaveAttribute('lang', settings.lang === 'zh' ? 'zh-CN' : 'en')
+        if (path === '/' || path === '/zh') {
+          await expect(page.locator('h1')).toHaveText(settings.lang === 'zh' ? '江李当' : 'Lidang Jiang')
+        }
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
         await expect(page.locator('html')).toHaveClass(settings.theme === 'dark' ? /dark/ : /^(?!.*dark).*$/)
         for (const section of await page.locator('.reveal').all()) {

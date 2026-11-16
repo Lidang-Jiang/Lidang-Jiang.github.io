@@ -66,9 +66,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
           :to="homePath"
           class="inline-flex min-h-11 items-center rounded-md text-base font-semibold tracking-[-0.02em] text-ink transition-colors duration-200 hover:text-accent"
           @click="closeMobileMenu"
-        >
-          Lidang Jiang
-        </router-link>
+        >Lidang Jiang</router-link>
 
         <!-- 桌面导航 -->
         <div class="hidden items-center gap-1 md:flex">

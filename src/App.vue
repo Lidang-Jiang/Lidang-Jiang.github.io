@@ -5,12 +5,14 @@ import { useRoute } from 'vue-router'
 import TheNavbar from '@/components/layout/TheNavbar.vue'
 import TheFooter from '@/components/layout/TheFooter.vue'
 import BackToTop from '@/components/layout/BackToTop.vue'
+import { useSiteSeo } from '@/composables/useSiteSeo'
 import { useTheme } from '@/composables/useTheme'
 import { getHomeLocale, readSavedLocale, saveLocale } from '@/i18n'
 
 const { initTheme } = useTheme()
 const { t, locale } = useI18n()
 const route = useRoute()
+useSiteSeo()
 
 watch(() => route.path, (path) => {
   const homeLocale = getHomeLocale(path)

@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { createSSRApp, defineComponent, h } from 'vue'
 import { renderToString } from 'vue/server-renderer'
 import { useI18n } from 'vue-i18n'
+import { createHead } from '@unhead/vue/server'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import { createSiteI18n, getHomeLocale, getHomePath, readSavedLocale, saveLocale } from './index'
 import App from '@/App.vue'
@@ -88,6 +89,7 @@ describe('首页静态语言', () => {
     vi.stubGlobal('localStorage', storage)
     const router = createRouter({ history: createMemoryHistory(), routes })
     const app = createSSRApp(App)
+    app.use(createHead())
     app.use(router)
     app.use(createSiteI18n())
     await router.push(path)

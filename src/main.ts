@@ -22,6 +22,8 @@ export const createApp = ViteSSG(
       })
     }
   },
+  // 复用已生成的 DOM，避免异步脚本挂载时清空正文并丢失键盘焦点。
+  { hydration: true },
 )
 
 export function includedRoutes(_paths: string[], routes: { name?: unknown; path: string }[]) {
