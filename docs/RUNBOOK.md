@@ -26,6 +26,30 @@
 
 HTTP 成功响应只能证明页面可访问，还需确认静态首屏和交互内容正确。
 
+## 搜索引擎验证与提交
+
+生产发布在静态构建后运行 `node scripts/write-deployment-revision.mjs dist`，将实际 checkout 的完整 SHA 写入 `/deployment-revision.txt`。可复用工作流部署指定 `ref` 时，标记也以该 checkout 为准，不使用可能指向旧提交的事件 SHA。
+
+首次接入分别在 Bing Webmaster Tools 和百度搜索资源平台添加 `https://lidang-jiang.pages.dev/`。使用各平台实际生成的文件验证：Bing 文件通常为 `BingSiteAuth.xml`，百度按后台给出的文件名与内容原样保存到 `public/`，经正常发布后再完成验证，长期保留文件。没有取得真实验证材料时，不创建占位文件或虚构验证成功；需要登录或验证码时由账号持有人完成认证。
+
+验证后，向 Bing 提交 `/sitemap.xml`，并用 URL Inspection 检查 `/`、`/zh` 和一个分类页面。百度通过普通收录提交这两个首页及其余有效页面，在后台开放 sitemap 提交时提交同一站点地图，并运行抓取诊断检查实际响应与正文。百度平台若拒绝添加当前域名或抓取失败，保留实际错误作为进一步处理依据；模拟 Baiduspider User-Agent 请求成功不能代替真实爬虫诊断。
+
+IndexNow 的公开验证文件由本仓库提供，服务于 Bing 及其他参与搜索引擎；百度的验证与提交需单独完成。首次修复完成后，显式提交本轮改变了 SEO 的页面及新增中文首页。后续只提交有实际内容变化的 URL，不周期性推送整站，也不在构建阶段发送尚未上线的更新。
+
+```sh
+node scripts/submit-indexnow.mjs --revision <已部署的完整SHA> \
+  --url https://lidang-jiang.pages.dev/ \
+  --url https://lidang-jiang.pages.dev/zh --dry-run
+```
+
+`--dry-run` 会只读核验线上版本、验证文件和各页面，不发送通知。移除 `--dry-run` 后执行一次真实提交；其他本轮更新页面用重复的 `--url` 参数显式列出。所有 URL 必须是生产域名的规范地址，不含查询参数、片段或尾斜杠别名。脚本拒绝跨域、预览网址、版本不一致、验证文件不一致、非 200 页面、错误 canonical 或禁止索引的页面。
+
+也可以在 `main` 上手动运行 **Submit Updated URLs to IndexNow**，填写已部署 SHA、以空格或换行分隔的 URL，以及 `dry_run`。此工作流沿用生产文件核验，不需要重新部署或额外账户密钥；用户输入仅通过环境变量传给脚本。流程未通过核验或提交失败时返回非零状态，不回滚已经成功的站点发布。
+
+通知返回 200 只表示已接收，202 表示等待验证，均不代表已经收录。429 时按照日志中 `Retry-After` 的秒数或日期等待后，再手动重试同一命令或工作流；没有该响应头时稍后重试。其他错误先处理对应原因，避免重复推送。以平台索引报告和真实抓取结果确认后续效果。
+
+参考：[IndexNow 协议](https://www.indexnow.org/documentation)、[Bing 站点验证](https://www2.bing.com/webmasters/help/add-and-verify-site-12184f8b)、[百度普通收录](https://ziyuan.baidu.com/college/courseinfo?id=267&page=2)。
+
 ## Google Scholar 被引次数
 
 论文页与简历页使用同一份 [Google Scholar 公开主页](https://scholar.google.com/citations?user=SvUCAeQAAAAJ&hl=en) 数据，核对每篇论文的计数、估算星号、来源链接及核验日期。`src/data/citation-counts.json` 保存最近一次成功快照；页面不在访问时向 Google 发起请求。

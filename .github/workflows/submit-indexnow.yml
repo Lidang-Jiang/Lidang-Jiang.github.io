@@ -1,0 +1,47 @@
+name: Submit Updated URLs to IndexNow
+
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: 已成功部署到生产的完整提交 SHA
+        required: true
+        type: string
+      urls:
+        description: 本次新增或更新的完整生产 URL，以空格或换行分隔
+        required: true
+        type: string
+      dry_run:
+        description: 仅核验生产页面，不发送通知
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify production and submit explicit URLs
+        env:
+          INDEXNOW_REVISION: ${{ inputs.revision }}
+          INDEXNOW_URLS: ${{ inputs.urls }}
+          INDEXNOW_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$INDEXNOW_DRY_RUN" = "true" ]; then
+            node scripts/submit-indexnow.mjs --dry-run
+          else
+            node scripts/submit-indexnow.mjs
+          fi

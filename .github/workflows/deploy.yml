@@ -40,6 +40,9 @@ jobs:
 
       - run: pnpm build
 
+      - name: Write the deployed source revision
+        run: node scripts/write-deployment-revision.mjs dist
+
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
