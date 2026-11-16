@@ -14,6 +14,7 @@ describe('页面索引信息', () => {
       paths.map((path) => `${SITE_ORIGIN}${path}`),
     )
     for (const page of pages) {
+      expect(page.title.length).toBeLessThanOrEqual(65)
       expect(page.description.length).toBeGreaterThanOrEqual(25)
       expect(page.description.length).toBeLessThanOrEqual(160)
     }

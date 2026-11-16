@@ -9,6 +9,13 @@ interface PageCopy {
   description: string
 }
 
+const categoryTitles: Record<string, string> = {
+  'ai-infra': 'AI Infrastructure Projects',
+  'embodied-ai': 'Embodied AI and Robotics Projects',
+  'systems-engineering': 'Systems Engineering Projects',
+  'web-development': 'Web Development Projects',
+}
+
 const pages: Record<string, Record<Language, PageCopy>> = {
   '/': {
     en: {
@@ -71,8 +78,11 @@ export function getSiteSeo(path: string, preferredLanguage: Language = 'en') {
     : null
   const page = pages[home ? '/' : normalizedPath]?.[language]
   const categoryName = category?.category[language]
+  const categoryTitle = category && language === 'en'
+    ? categoryTitles[category.slug] ?? categoryName
+    : categoryName
   const copy = page ?? (categoryName ? {
-    title: `${categoryName} | ${profile.name[language]}`,
+    title: `${categoryTitle} | ${profile.name[language]}`,
     description: language === 'zh'
       ? `查看江李当在${categoryName}方向的项目时间线，了解项目背景、使用技术、个人贡献、工程交付和开源成果，以及相关项目资料与链接。`
       : `Lidang Jiang’s ${categoryName.toLowerCase()} projects: technical background, contributions and results.`,
