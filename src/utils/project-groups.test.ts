@@ -165,24 +165,75 @@ describe('project grouping', () => {
     }
   })
 
-  it('keeps RP3 product work separate from experimental optimization', () => {
+  it('keeps RP3 contributions within the verified performance and analysis scope', () => {
     const rp3 = projects.find((project) => project.title.zh === 'RP3轻智能需求交付')
 
     expect(rp3).toBeDefined()
     expect(rp3?.category?.en).toBe(PROJECT_CATEGORY_ORDER[2])
     expect(rp3?.projectType?.zh).toBe('嵌入式产品开发与交付')
     expect(rp3?.role?.zh).toBe('OpenHarmony 图形渲染与性能优化开发')
-    expect(rp3?.achievements?.zh).toMatch(/GLES.*进度条.*已合入产品分支/)
-    expect(rp3?.contributions.zh.join(' ')).toContain('阶段验证')
-    expect(rp3?.contributions.en.join(' ')).toContain('prototype')
-    expect(rp3?.contributions.zh.join(' ')).toContain('L1 CPU 渲染与合成跨进程同步')
-    expect(rp3?.contributions.en.join(' ')).toContain('L1 CPU rendering and composition')
-    expect(rp3?.contributions.zh.join(' ')).toContain('末帧缓存场景验证')
-    expect(rp3?.achievements?.zh).toMatch(/UI_ROOT_VIEW.*UI_VIEW_GROUP.*进行中/)
-    expect(rp3?.achievements?.en).toMatch(/UI_ROOT_VIEW.*UI_VIEW_GROUP.*in progress/)
+    expect(rp3?.contributions.zh).toHaveLength(4)
+    expect(rp3?.contributions.en).toHaveLength(4)
     expect(rp3?.github).toBeUndefined()
     expect(rp3?.pullRequests).toBeUndefined()
     expect(projects.filter((project) => project.id === rp3?.id)).toHaveLength(1)
+
+    const description = JSON.stringify(rp3)
+    expect(description).not.toMatch(/glBlendFuncSeparate|黑屏|字体|font cache|cross-process synchronization|跨进程同步/)
+    expect(description).not.toMatch(/已合入产品分支|merged into the product branch/)
+  })
+
+  it('qualifies RP3 progress-bar improvements as an existing-path microbenchmark', () => {
+    const rp3 = projects.find((project) => project.id === 40)
+    const zh = rp3?.contributions.zh.find((item) => item.includes('OnDraw'))
+    const en = rp3?.contributions.en.find((item) => item.includes('OnDraw'))
+
+    expect(zh).toContain('既有')
+    expect(en).toContain('existing')
+    for (const text of [zh, en]) {
+      expect(text).toContain('Mali-T820')
+      expect(text).toContain('1024×600')
+      expect(text).toContain('300×30')
+      expect(text).toContain('FBO')
+      expect(text).toMatch(/30.*300/)
+      expect(text).toContain('1.520 ms')
+      expect(text).toContain('0.293 ms')
+      expect(text).toContain('80.7%')
+    }
+    expect(zh).toContain('平均耗时')
+    expect(en).toContain('mean OnDraw return time')
+  })
+
+  it('keeps the RP3 copy baseline and completed static report distinct from optimization gains', () => {
+    const rp3 = projects.find((project) => project.id === 40)
+    const copyZh = rp3?.contributions.zh.find((item) => item.includes('FlushWithModeCopy'))
+    const copyEn = rp3?.contributions.en.find((item) => item.includes('FlushWithModeCopy'))
+
+    for (const text of [copyZh, copyEn]) {
+      expect(text).toContain('dma_buf')
+      expect(text).toContain('write-combine DRM dumb buffer')
+      expect(text).toContain('1024×600 ARGB8888')
+      expect(text).toMatch(/20.*1,000/)
+      expect(text).toContain('14.426 ms')
+    }
+    expect(copyZh).toContain('三轮')
+    expect(copyZh).toContain('基线')
+    expect(copyEn).toContain('three rounds')
+    expect(copyEn).toContain('baseline')
+
+    const rootZh = rp3?.contributions.zh.find((item) => item.includes('UI_ROOT_VIEW'))
+    const rootEn = rp3?.contributions.en.find((item) => item.includes('UI_ROOT_VIEW'))
+    expect(rootZh).toMatch(/完成.*静态分析.*报告/)
+    expect(rootZh).toContain('同源 L0')
+    expect(rootEn).toMatch(/Completed.*static analysis.*report/)
+    expect(rootEn).toContain('L0')
+    expect(rootZh).not.toMatch(/正在|进行中/)
+    expect(rootEn).not.toMatch(/Investigating|in progress/)
+
+    expect(rp3?.contributions.zh.join(' ')).toContain('既有末帧缓存')
+    expect(rp3?.contributions.en.join(' ')).toContain('existing final-frame cache')
+    expect(rp3?.achievements?.zh).toMatch(/序列帧.*阶段研发/)
+    expect(rp3?.achievements?.en).toMatch(/Image-sequence.*staged research/)
   })
 
   it('links the RP2 migration and its LTS backport to their GitCode evidence', () => {

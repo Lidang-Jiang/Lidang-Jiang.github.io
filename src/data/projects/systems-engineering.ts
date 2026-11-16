@@ -20,12 +20,12 @@ export const systemsEngineeringProjects: Project[] = [
       zh: 'OpenHarmony 图形渲染与性能优化开发',
     },
     module: {
-      en: 'GLES integration, GPU UI rendering, and performance validation',
-      zh: 'GLES 适配、GPU UI 绘制与性能验证',
+      en: 'GPU component optimization, full-screen copy benchmarks, and drawing-behavior analysis',
+      zh: 'GPU 组件性能优化、全屏拷贝基准与绘制行为分析',
     },
     background: {
-      en: 'Graphics-stack development for lightweight smart devices based on the OpenHarmony small system, with a focus on GPU rendering compatibility, UI performance, and on-device validation.',
-      zh: '基于 OpenHarmony small 系统的轻智能设备图形栈开发，围绕 GPU 渲染兼容性、UI 性能及板端验证推进功能交付。',
+      en: 'Graphics performance work for lightweight smart devices based on the OpenHarmony small system, focusing on existing GPU UI paths, reproducible on-device copy benchmarks, and drawing-behavior analysis.',
+      zh: '面向基于 OpenHarmony small 系统的轻智能设备，优化既有 GPU UI 绘制路径，建立可复现的板端拷贝基准，并分析绘制行为与性能开销。',
     },
     techStack: [
       'C++',
@@ -36,23 +36,21 @@ export const systemsEngineeringProjects: Project[] = [
     ],
     contributions: {
       en: [
-        'Fixed GPU black-screen rendering by completing the declaration, loading, and forwarding of the missing glBlendFuncSeparate entry point in the GLES integration layer.',
-        'Implemented GPU drawing for rounded progress bars with solid and gradient colors, retaining CPU fallback and per-context GPU resource cleanup.',
-        'Developed and evaluated prototype font texture caching, atlas batching, and GPU optimization for image-sequence animation, including per-stage timing, texture-upload overhead analysis, and validation of existing final-frame cache behavior.',
-        'Contributed to analysis of the L1 CPU rendering and composition pipeline and its cross-process synchronization.',
-        'Investigating redundant drawing in UI_ROOT_VIEW and UI_VIEW_GROUP, including the impact of skipping draw operations and differences from L0.',
+        'Optimized existing GPU paths for rounded solid-color and gradient progress bars by combining draw submissions and reusing gradient resources. In a same-board Mali-T820 microbenchmark with a 1024×600 offscreen FBO and a 300×30 solid-color rounded bar, all 300 samples after 30 warm-up iterations showed a mean OnDraw return time of 0.293 ms versus 1.520 ms at baseline, an 80.7% reduction in CPU-side function elapsed time.',
+        'Conducted staged GPU performance research and optimization for existing image-sequence animation, including per-stage timing, texture-upload overhead analysis, and validation of existing final-frame cache behavior; consistent overall performance gains remain unconfirmed.',
+        'Developed an independent memcpy_s benchmark modeled on FlushWithModeCopy, using a gralloc dma_buf source and a write-combine DRM dumb buffer destination. Compared per-line and bulk copies and memcpy_s versus memcpy with correctness checks. At 1024×600 ARGB8888, three rounds of 20 warm-up iterations and 1,000 measurements each established a 14.426 ms mean full-screen per-line copy baseline; delivered the test report and code patch.',
+        'Completed static analysis of UI_ROOT_VIEW / UI_VIEW_GROUP drawing and the effects of skipping background fills, comparing the default L0 path in the same-source baseline. Submitted a report explaining how GLES full-window redraw affects the drawing start point and container calls, and assessing transparent-background handling and partial-refresh risks.',
       ],
       zh: [
-        '补齐 GLES 适配层缺失的 glBlendFuncSeparate 声明、加载与转发，修复 GPU 渲染黑屏问题。',
-        '实现圆头纯色与渐变进度条的 GPU 绘制，保留 CPU 回退路径，并完善按 context 管理的 GPU 资源清理。',
-        '开展字体纹理缓存、图集批处理及序列帧动画 GPU 优化的原型开发与阶段验证，分析分段耗时及纹理上传开销，并对既有实现进行末帧缓存场景验证。',
-        '参与 L1 CPU 渲染与合成跨进程同步的流程梳理和分析。',
-        '正在分析 UI_ROOT_VIEW 与 UI_VIEW_GROUP 的冗余绘制原因、跳过绘制的影响，以及与 L0 的差异。',
+        '优化既有圆头纯色与渐变进度条的 GPU 绘制路径，合并绘制提交并复用渐变资源。在同板 Mali-T820、1024×600 离屏 FBO、300×30 圆头纯色条的组件微基准中，预热 30 次后统计全部 300 个样本，OnDraw 平均耗时由 1.520 ms 降至 0.293 ms，降低约 80.7%（CPU 侧函数返回耗时）。',
+        '开展既有序列帧动画的 GPU 性能研究与阶段优化，完成分段耗时、纹理上传开销分析及既有末帧缓存场景验证；稳定的整体性能收益尚未确认。',
+        '仿照 FlushWithModeCopy 编写独立 memcpy_s 基准，复现 gralloc dma_buf 源到 write-combine DRM dumb buffer 目标的内存条件，完成逐行与整块拷贝、memcpy_s 与 memcpy 对照及正确性检查。在 1024×600 ARGB8888、三轮各预热 20 次并测量 1,000 次的条件下，全屏逐行拷贝平均耗时为 14.426 ms，形成后续优化基线并交付测试报告与代码补丁。',
+        '完成 UI_ROOT_VIEW / UI_VIEW_GROUP 绘制行为及跳过背景填充影响的静态分析，对照同源 L0 默认路径，明确 GLES 全窗口重绘对绘制起点和容器调用的影响，评估透明背景处理与局部刷新风险，并提交分析报告。',
       ],
     },
     achievements: {
-      en: 'The GLES black-screen fix and progress-bar GPU optimization are merged into the product branch. Font and image-sequence optimization remain staged research work; the earlier font-cache implementation was reverted after its initial merge. Analysis of UI_ROOT_VIEW/UI_VIEW_GROUP drawing remains in progress.',
-      zh: 'GLES 黑屏修复与进度条 GPU 绘制优化已合入产品分支。字体及序列帧优化属于阶段研发，其中早期字体缓存实现在首次合入后已回退。UI_ROOT_VIEW/UI_VIEW_GROUP 绘制分析仍在进行中。',
+      en: 'Completed existing progress-bar GPU optimization and on-device comparisons; delivered the full-screen copy benchmark, test report, code patch, and UI_ROOT_VIEW / UI_VIEW_GROUP static-analysis report. Image-sequence optimization remains staged research.',
+      zh: '完成既有进度条 GPU 性能优化与板端对照，交付全屏拷贝测试基准、报告和代码补丁，以及 UI_ROOT_VIEW / UI_VIEW_GROUP 静态分析报告；序列帧优化保留阶段研发状态。',
     },
   },
   {
