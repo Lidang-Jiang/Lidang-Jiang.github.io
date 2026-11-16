@@ -1,24 +1,18 @@
 import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
 import { routes } from './router'
-import { i18n } from './i18n'
+import { createSiteI18n } from './i18n'
 import { getProjectCategoryPaths } from './utils/project-groups'
 import './assets/styles/main.css'
 
 export const createApp = ViteSSG(
   App,
   { routes },
-  ({ app, router, isClient }) => {
-    app.use(i18n)
+  ({ app, router, isClient, routePath }) => {
+    app.use(createSiteI18n(routePath))
 
     if (isClient) {
-      // Restore language preference
-      const savedLang = localStorage.getItem('lang')
-      if (savedLang && (savedLang === 'en' || savedLang === 'zh')) {
-        i18n.global.locale.value = savedLang
-      }
-
-      // GA4 page view tracking
+      // GA4 页面访问统计。
       router.afterEach((to) => {
         if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
           window.gtag('config', 'G-QD3Z5S371D', {

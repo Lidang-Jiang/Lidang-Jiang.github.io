@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { Menu, X } from 'lucide-vue-next'
 import { useDisclosure } from '@/composables/useDisclosure'
+import { getHomeLocale, getHomePath, saveLocale } from '@/i18n'
 import ThemeToggle from './ThemeToggle.vue'
 
 const { t, locale } = useI18n()
@@ -16,18 +17,21 @@ const {
   handleKeydown,
 } = useDisclosure()
 
-const navLinks = [
-  { name: 'nav.home', to: '/', exact: true },
+const homePath = computed(() => getHomePath(locale.value))
+const isHome = computed(() => getHomeLocale(route.path) !== undefined)
+const alternateHomePath = computed(() => locale.value === 'en' ? '/zh' : '/')
+const navLinks = computed(() => [
+  { name: 'nav.home', to: homePath.value, exact: true },
   { name: 'nav.publications', to: '/publications', exact: false },
   { name: 'nav.cv', to: '/cv', exact: false },
   { name: 'nav.projects', to: '/projects', exact: false },
-]
+])
 
-function isNavActive(link: typeof navLinks[number]) {
+function isNavActive(link: typeof navLinks.value[number]) {
   return route.path === link.to || (!link.exact && route.path.startsWith(`${link.to}/`))
 }
 
-function navCurrent(link: typeof navLinks[number]) {
+function navCurrent(link: typeof navLinks.value[number]) {
   if (!isNavActive(link)) return undefined
   return route.path === link.to ? 'page' : 'location'
 }
@@ -35,9 +39,7 @@ function navCurrent(link: typeof navLinks[number]) {
 function toggleLanguage() {
   const newLang = locale.value === 'en' ? 'zh' : 'en'
   locale.value = newLang
-  if (typeof localStorage !== 'undefined') {
-    localStorage.setItem('lang', newLang)
-  }
+  saveLocale(newLang)
 }
 
 function handleWindowKeydown(event: KeyboardEvent) {
@@ -61,7 +63,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
       <div class="flex h-16 items-center justify-between">
         <!-- 姓名入口 -->
         <router-link
-          to="/"
+          :to="homePath"
           class="inline-flex min-h-11 items-center rounded-md text-base font-semibold tracking-[-0.02em] text-ink transition-colors duration-200 hover:text-accent"
           @click="closeMobileMenu"
         >
@@ -85,7 +87,16 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
 
           <div class="ml-2 flex items-center gap-1 border-l border-line pl-2">
             <ThemeToggle />
+            <router-link
+              v-if="isHome"
+              :to="alternateHomePath"
+              class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2 text-sm font-semibold text-muted transition-colors duration-200 hover:bg-accent-soft hover:text-accent"
+              :aria-label="t('nav.switchLanguage')"
+            >
+              {{ locale === 'en' ? '中' : 'EN' }}
+            </router-link>
             <button
+              v-else
               type="button"
               class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2 text-sm font-semibold text-muted transition-colors duration-200 hover:bg-accent-soft hover:text-accent"
               :aria-label="t('nav.switchLanguage')"
@@ -141,7 +152,16 @@ onUnmounted(() => window.removeEventListener('keydown', handleWindowKeydown))
           >
             {{ t(link.name) }}
           </router-link>
+          <router-link
+            v-if="isHome"
+            :to="alternateHomePath"
+            class="mt-1 flex min-h-11 w-full items-center rounded-lg px-3 text-left text-sm font-medium text-muted transition-colors duration-200 hover:bg-accent-soft hover:text-ink"
+            @click="closeMobileMenu"
+          >
+            {{ locale === 'en' ? '切换到中文' : 'Switch to English' }}
+          </router-link>
           <button
+            v-else
             type="button"
             class="mt-1 flex min-h-11 w-full items-center rounded-lg px-3 text-left text-sm font-medium text-muted transition-colors duration-200 hover:bg-accent-soft hover:text-ink"
             @click="toggleLanguage"

@@ -5,7 +5,12 @@ const isDark = ref(false)
 function initTheme() {
   if (typeof window === 'undefined') return
 
-  const stored = localStorage.getItem('theme')
+  let stored: string | null = null
+  try {
+    stored = localStorage.getItem('theme')
+  } catch {
+    // 禁止读取存储时继续使用系统主题。
+  }
   if (stored) {
     isDark.value = stored === 'dark'
   } else {
@@ -26,7 +31,11 @@ function applyTheme() {
 
 function toggleTheme() {
   isDark.value = !isDark.value
-  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+  try {
+    localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+  } catch {
+    // 禁止持久化时仍然更新当前页面。
+  }
   applyTheme()
 }
 

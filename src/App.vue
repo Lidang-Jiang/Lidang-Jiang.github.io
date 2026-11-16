@@ -1,15 +1,28 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 import TheNavbar from '@/components/layout/TheNavbar.vue'
 import TheFooter from '@/components/layout/TheFooter.vue'
 import BackToTop from '@/components/layout/BackToTop.vue'
 import { useTheme } from '@/composables/useTheme'
+import { getHomeLocale, readSavedLocale, saveLocale } from '@/i18n'
 
 const { initTheme } = useTheme()
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const route = useRoute()
+
+watch(() => route.path, (path) => {
+  const homeLocale = getHomeLocale(path)
+  if (homeLocale) locale.value = homeLocale
+}, { immediate: true, flush: 'sync' })
 
 onMounted(() => {
+  if (!getHomeLocale(route.path)) {
+    locale.value = readSavedLocale() ?? locale.value
+  }
+  saveLocale(locale.value)
+  watch(locale, saveLocale, { flush: 'sync' })
   initTheme()
 })
 </script>
