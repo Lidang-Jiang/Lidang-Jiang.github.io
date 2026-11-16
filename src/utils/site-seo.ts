@@ -13,7 +13,7 @@ const pages: Record<string, Record<Language, PageCopy>> = {
   '/': {
     en: {
       title: 'Lidang Jiang | MLsys, Embodied AI and Embedded Engineering',
-      description: 'Lidang Jiang works on ML systems, embodied intelligence, robotics and embedded engineering. Explore his projects, open-source contributions, resume and research publications.',
+      description: 'Lidang Jiang’s work in ML systems, embodied AI, robotics and embedded engineering. Explore projects, open-source contributions, resume and publications.',
     },
     zh: {
       title: '江李当 | MLsys、具身智能与嵌入式工程',
@@ -23,7 +23,7 @@ const pages: Record<string, Record<Language, PageCopy>> = {
   '/cv': {
     en: {
       title: 'Resume | Lidang Jiang',
-      description: 'Explore Lidang Jiang’s professional experience, education, technical skills, engineering projects, open-source contributions and research. Download his English or Chinese resume.',
+      description: 'Lidang Jiang’s experience, education, technical skills, engineering projects and research. Download his English or Chinese resume.',
     },
     zh: {
       title: '个人简历 | 江李当',
@@ -33,7 +33,7 @@ const pages: Record<string, Record<Language, PageCopy>> = {
   '/publications': {
     en: {
       title: 'Research Publications | Lidang Jiang',
-      description: 'Read Lidang Jiang’s research publications in machine learning, battery health prediction and energy systems, with publication details, citations and links to the original papers.',
+      description: 'Research publications by Lidang Jiang on machine learning, battery health prediction and energy systems, with citations and links to the papers.',
     },
     zh: {
       title: '研究论文 | 江李当',
@@ -43,7 +43,7 @@ const pages: Record<string, Record<Language, PageCopy>> = {
   '/projects': {
     en: {
       title: 'Engineering Projects | Lidang Jiang',
-      description: 'Browse Lidang Jiang’s engineering project timeline, including model inference, robotics, embedded systems, developer tools and web applications, with contributions and delivery details.',
+      description: 'Lidang Jiang’s engineering project timeline, covering model inference, robotics, embedded systems, developer tools and web applications.',
     },
     zh: {
       title: '工程项目 | 江李当',
@@ -53,7 +53,7 @@ const pages: Record<string, Record<Language, PageCopy>> = {
   '/projects/categories': {
     en: {
       title: 'Project Categories | Lidang Jiang',
-      description: 'Discover Lidang Jiang’s projects by category: AI infrastructure, embodied intelligence, systems engineering and web development. Follow each category to its detailed project timeline.',
+      description: 'Browse Lidang Jiang’s projects in AI infrastructure, embodied intelligence, systems engineering and web development, with detailed project timelines.',
     },
     zh: {
       title: '项目分类 | 江李当',
@@ -75,7 +75,7 @@ export function getSiteSeo(path: string, preferredLanguage: Language = 'en') {
     title: `${categoryName} | ${profile.name[language]}`,
     description: language === 'zh'
       ? `查看江李当在${categoryName}方向的项目时间线，了解项目背景、使用技术、个人贡献、工程交付和开源成果，以及相关项目资料与链接。`
-      : `Explore Lidang Jiang’s ${categoryName.toLowerCase()} projects, including technical background, individual contributions, engineering results and links to related work.`,
+      : `Lidang Jiang’s ${categoryName.toLowerCase()} projects: technical background, contributions and results.`,
   } : {
     title: language === 'zh' ? '页面未找到 | 江李当' : 'Page Not Found | Lidang Jiang',
     description: language === 'zh' ? '请求的页面不存在，请返回首页浏览个人介绍与项目。' : 'The requested page could not be found. Return home to explore the site.',

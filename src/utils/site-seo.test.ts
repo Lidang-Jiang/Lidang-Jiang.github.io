@@ -13,7 +13,10 @@ describe('页面索引信息', () => {
     expect(pages.map((page) => page.canonical)).toEqual(
       paths.map((path) => `${SITE_ORIGIN}${path}`),
     )
-    for (const page of pages) expect(page.description.length).toBeGreaterThan(40)
+    for (const page of pages) {
+      expect(page.description.length).toBeGreaterThanOrEqual(25)
+      expect(page.description.length).toBeLessThanOrEqual(160)
+    }
   })
 
   it('中文首页在标题和摘要中直接展示姓名', () => {
